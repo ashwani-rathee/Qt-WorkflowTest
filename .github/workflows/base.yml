@@ -14,7 +14,18 @@ jobs:
 
       - name: Install Qt
         uses: jurplel/install-qt-action@v3
-        
+        with:
+            version: '5.15.2'
+            host: 'windows'
+            arch: 'win32_msvc2019'
+            dir: 'C:\\Qt'
+            qtModules: 'qtbase,qtdeclarative,qtquickcontrols2,qttools,qttranslations'
+            vcVarsPath: '"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Auxiliary\\Build\\vcvarsall.bat"'
+
+      - name: List contents of C:\
+        run: |
+          ls C:\
+
       - name: Print working directory
         run: |
           echo "Present working directory:"
