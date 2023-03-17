@@ -18,4 +18,4 @@ jobs:
       - name: Print directory subtree
         run: |
           echo "Directory subtree:"
-          dir /s
+          dir
