@@ -12,6 +12,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v3
+        
       - name: Print working directory
         run: |
           echo "Present working directory:"
@@ -35,3 +38,6 @@ jobs:
         run: |
           echo "Directory subtree:"
           dir
+          cd repository
+          dir
+          cd ..
