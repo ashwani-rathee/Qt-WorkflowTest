@@ -11,6 +11,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+
       - name: Print working directory
         run: |
           echo "Present working directory:"
@@ -27,7 +28,7 @@ jobs:
         run: |
           curl -L -o downloads/repogen.exe "https://firebasestorage.googleapis.com/v0/b/dwi-weightpro.appspot.com/o/repository%2Frepogen.exe?alt=media&token=d202fcd5-13da-4e96-8fe5-eca69c0e27f1"
 
-      -name: Build online repository
+      - name: Build online repository
         run: downloads/repogen.exe -p packages repository
 
       - name: Print directory subtree
