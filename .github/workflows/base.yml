@@ -1,0 +1,21 @@
+name: print-directory-tree
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  print-directory-tree:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Print working directory
+        run: |
+          echo "Present working directory:"
+          pwd
+      - name: Print directory subtree
+        run: |
+          echo "Directory subtree:"
+          dir /s
