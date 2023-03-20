@@ -52,3 +52,17 @@ jobs:
           cd repository
           dir
           cd ..
+
+      - name: Environment Setup
+        run: |
+          call "C:\Qt\5.15.2\msvc2019\bin\qtenv2.bat"
+          call "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Auxiliary\Build\vcvars32.bat"
+          cd D:\a\Qt-WorkflowTest\Qt-WorkflowTest
+          pwd
+          
+      - name: Build
+        run: |
+          cd src\A
+          qmake 
+          nmake
+          nmake clean
