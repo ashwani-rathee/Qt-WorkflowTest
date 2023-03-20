@@ -28,7 +28,6 @@ jobs:
           install-deps: 'true'
           cache: 'true'
           cache-key-prefix: 'install-qt-action'
-          setup-python: 'true'
           tools: 'tools_ifw tools_qtcreator,qt.tools.qtcreator'
           set-env: 'true'
           tools-only: 'false'
@@ -69,8 +68,8 @@ jobs:
 
       - name: Find my files
         run: |
-          IF EXIST C:\Qt\5.15.2\msvc2019\bin\qtenv2.bat ECHO C:\Qt\5.15.2\msvc2019\bin\qtenv2.bat exists.
-          IF EXIST "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Auxiliary\Build\vcvars32.bat" ECHO VC Vars32 exists.
+          ls C:\Qt\5.15.2\msvc2019\bin\
+          ls "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Auxiliary\Build\"
          
       - name: Environment Setup
         run: |
