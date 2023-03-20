@@ -19,15 +19,26 @@ jobs:
             host: 'windows'
             arch: 'win32_msvc2019'
             dir: 'C:\Qt'
+            cache: true
             qtModules: 'qtbase,qtdeclarative,qtquickcontrols2,qttools,qttranslations'
             vcVarsPath: '"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Auxiliary\\Build\\vcvarsall.bat"'
 
-      - name: Save Cache
-        uses: actions/cache@v3
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v3
         with:
-          path: |
-            C:\Qt\Qt-5.15.2
-          key: ${{ runner.os }}-qt-${{ matrix.qt }}-${{ hashFiles('**/qmake.conf') }}
+          version: '5.15.2'
+          host: 'windows'
+          target: 'desktop'
+          arch: 'win32_msvc2019'
+          dir: 'C:\Qt'
+          install-deps: 'true'
+          cache: 'true'
+          cache-key-prefix: 'install-qt-action'
+          set-env: 'true'
+          tools-only: 'false'
+          aqtversion: '==2.1.*' 
+          py7zrversion: '==0.19.*'
+          extra: '--external 7z'
 
       - name: List contents of C:\
         run: |
