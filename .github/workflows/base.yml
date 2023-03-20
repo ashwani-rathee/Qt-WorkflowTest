@@ -20,16 +20,21 @@ jobs:
       - name: Install Qt
         uses: jurplel/install-qt-action@v3
         with:
-            version: '5.15.2'
-            host: 'windows'
-            arch: 'win32_msvc2019'
-            dir: 'C:\Qt'
-            install-deps: 'true'
-            cache: 'true'
-            cache-key-prefix: 'install-qt-action'
-            qtModules: 'qtbase,qtdeclarative,qtquickcontrols2,qttools,qttranslations'
-            set-env: 'true'
-            vcVarsPath: '"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Auxiliary\\Build\\vcvarsall.bat"'
+          version: '5.15.2'
+          host: 'windows'
+          target: 'desktop'
+          arch: 'win32_msvc2019'
+          dir: 'C:\Qt'
+          install-deps: 'true'
+          cache: 'true'
+          cache-key-prefix: 'install-qt-action'
+          setup-python: 'true'
+          tools: 'tools_ifw tools_qtcreator,qt.tools.qtcreator'
+          set-env: 'true'
+          tools-only: 'false'
+          aqtversion: '==2.1.*'
+          py7zrversion: '==0.19.*'
+          extra: '--external 7z'
 
       - name: List contents of C:\
         run: |
