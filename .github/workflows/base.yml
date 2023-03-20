@@ -54,6 +54,11 @@ jobs:
           dir
           cd ..
 
+      - name: Find my files
+        run: |
+          where /r c:\ qtenv2.bat vcvars32.bat
+
+         
       - name: Environment Setup
         run: |
           C:\Qt\5.15.2\msvc2019\bin\qtenv2.bat
