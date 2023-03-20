@@ -18,10 +18,16 @@ jobs:
             version: '5.15.2'
             host: 'windows'
             arch: 'win32_msvc2019'
-            dir: 'C:\\Qt'
-            cache: true
+            dir: 'C:\Qt'
             qtModules: 'qtbase,qtdeclarative,qtquickcontrols2,qttools,qttranslations'
             vcVarsPath: '"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Auxiliary\\Build\\vcvarsall.bat"'
+
+      - name: Save Cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            C:\Qt\Qt-5.15.2
+          key: ${{ runner.os }}-qt-${{ matrix.qt }}-${{ hashFiles('**/qmake.conf') }}
 
       - name: List contents of C:\
         run: |
@@ -56,7 +62,8 @@ jobs:
 
       - name: Find my files
         run: |
-          where /r c:\ qtenv2.bat vcvars32.bat
+          where /r C:\Qt qtenv2.bat
+          where /r C:\Program Files (x86)\Microsoft Visual Studio vcvars32.bat
 
          
       - name: Environment Setup
