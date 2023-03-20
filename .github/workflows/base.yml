@@ -74,6 +74,8 @@ jobs:
               ls C:\Qt\5.15.2\msvc2019\
               ls C:\Qt\5.15.2\msvc2019\bin\
               ${{ env.SOURCE_DIR }}\downloads/windeployqt.exe A.exe --pdb --release --compiler-runtime
+              ls .
+              
 
       - name: List contents of C:\
         run: |
