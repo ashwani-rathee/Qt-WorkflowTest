@@ -42,11 +42,25 @@ jobs:
           vs-version: 'latest'
           include-prerelease: true
 
-      - name: Set up x86 environment
-        shell: powershell
-        run: |
-          cmd /C ""C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Auxiliary\Build\vcvars32.bat"" 
+      - name: (4) Download JOM
+        uses: suisei-cn/actions-download-file@v1
+        with:
+          url:    http://download.qt.io/official_releases/jom/jom.zip
+          target: ${{ runner.temp }}\
 
+      - name: (5) Unzip JOM
+        working-directory: ${{ runner.temp }}
+        run:  |
+              7z x jom.zip -ojom
+              
+      - name: (6) Create build directory
+        run:  mkdir ${{ runner.temp }}\build
+
+      - name: (7) Set up Visual Studio shell
+        uses: egor-tensin/vs-shell@v2
+        with:
+          arch: x86
+          
       - name: List contents of C:\
         run: |
           ls C:\
