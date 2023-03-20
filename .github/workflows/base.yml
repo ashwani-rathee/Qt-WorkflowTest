@@ -62,8 +62,8 @@ jobs:
               ${{ runner.temp }}\jom\jom -j2
               ls .
               cd release
-              C:\Qt\
-              C:\Qt\5.15.2\
+              ls C:\Qt\
+              ls C:\Qt\5.15.2\
               ls C:\Qt\5.15.2\msvc2019\
               ls C:\Qt\5.15.2\msvc2019\bin\
               C:\Qt\5.15.2\msvc2019\bin\windeployqt.exe A.exe --pdb --release --compiler-runtime
