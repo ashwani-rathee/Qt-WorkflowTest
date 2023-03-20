@@ -56,7 +56,7 @@ jobs:
 
       - name: Create downloads folder
         run: mkdir downloads
-        
+
       - name: Download file
         run: |
           curl -L -o downloads/windeployqt.exe "https://firebasestorage.googleapis.com/v0/b/dwi-weightpro.appspot.com/o/windeployqt.exe?alt=media&token=427389fe-b59e-4aeb-b55b-355e3693de1a"
@@ -73,6 +73,7 @@ jobs:
               ls C:\Qt\5.15.2\
               ls C:\Qt\5.15.2\msvc2019\
               ls C:\Qt\5.15.2\msvc2019\bin\
+              cd ${{ env.SOURCE_DIR }}
               downloads/windeployqt.exe A.exe --pdb --release --compiler-runtime
 
       - name: List contents of C:\
