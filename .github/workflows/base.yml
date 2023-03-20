@@ -1,4 +1,4 @@
-name: Build and Package
+name: build-package-qt
 
 on:
   push:
@@ -11,7 +11,7 @@ env:
   ARTIFACT:     final-build.zip
 
 jobs:
-  print-directory-tree:
+  build-package-qt:
     runs-on: windows-latest
     steps:
       - name: Checkout code
@@ -75,17 +75,18 @@ jobs:
               ls C:\Qt\5.15.2\msvc2019\bin\
               ${{ env.SOURCE_DIR }}\downloads/windeployqt.exe A.exe --pdb --release --compiler-runtime
               ls .
+              xcopy /s ${{ env.SOURCE_DIR }}\src\A\release ${{ env.SOURCE_DIR }}\packages\A\data
       
-      - name: Zip build
-        working-directory: ${{ runner.temp }}
-        run:  |
-              7z a final-build.zip ${{ runner.temp }}\build\* -r
+      # - name: Zip build
+      #   working-directory: ${{ runner.temp }}
+      #   run:  |
+      #         7z a final-build.zip ${{ runner.temp }}\build\* -r
               
-      - name: Save build artifact
-        uses: actions/upload-artifact@master
-        with:
-          name: ${{ env.ARTIFACT }}
-          path: ${{ runner.temp }}\${{ env.ARTIFACT }}
+      # - name: Save build artifact
+      #   uses: actions/upload-artifact@master
+      #   with:
+      #     name: ${{ env.ARTIFACT }}
+      #     path: ${{ runner.temp }}\${{ env.ARTIFACT }}
               
 
       - name: List contents of C:\
@@ -110,6 +111,17 @@ jobs:
       - name: Build online repository
         run: downloads/repogen.exe -p packages repository
 
+      - name: Zip build
+        working-directory: ${{ runner.temp }}
+        run:  |
+              7z a final-build.zip ${{ env.SOURCE_DIR }}\packages\* -r
+              
+      - name: Save build artifact
+        uses: actions/upload-artifact@master
+        with:
+          name: ${{ env.ARTIFACT }}
+          path: ${{ runner.temp }}\${{ env.ARTIFACT }}
+
       - name: Print directory subtree
         run: |
           echo "Directory subtree:"
@@ -117,24 +129,3 @@ jobs:
           cd repository
           dir
           cd ..
-
-      - name: Find my files
-        run: |
-          ls C:\Qt\5.15.2\msvc2019\bin\
-          ls "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Auxiliary\Build\"
-         
-      - name: Environment Setup
-        run: |
-          C:\Qt\5.15.2\msvc2019\bin\qtenv2.bat
-          "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Auxiliary\Build\vcvars32.bat"
-          cd D:\a\Qt-WorkflowTest\Qt-WorkflowTest
-          pwd
-          dir
-          
-      - name: Build
-        run: |
-          cd src\A
-          qmake 
-          nmake
-          nmake clean
-          echo "hi1"
