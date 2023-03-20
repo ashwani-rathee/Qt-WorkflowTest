@@ -62,13 +62,13 @@ jobs:
 
       - name: Find my files
         run: |
-          dir C:\Qt\qtenv2.bat /s/b
-          dir "C:\Program Files (x86)\Microsoft Visual Studio\vcvars32.bat" /s/b
+          IF EXIST C:\Qt\5.15.2\msvc2019\bin\qtenv2.bat ECHO C:\Qt\5.15.2\msvc2019\bin\qtenv2.bat exists.
+          IF EXIST "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Auxiliary\Build\vcvars32.bat" ECHO VC Vars32 exists.
          
       - name: Environment Setup
         run: |
           C:\Qt\5.15.2\msvc2019\bin\qtenv2.bat
-          C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Auxiliary\Build\vcvars32.bat
+          "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Auxiliary\Build\vcvars32.bat"
           cd D:\a\Qt-WorkflowTest\Qt-WorkflowTest
           pwd
           dir
