@@ -45,9 +45,8 @@ jobs:
       - name: Set up x86 environment
         shell: powershell
         run: |
-          cmd /C ""C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Auxiliary\Build\vcvars32.bat"" && \
-          set MSBUILD_ARCHITECTURE=x86
-          
+          cmd /C ""C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Auxiliary\Build\vcvars32.bat"" 
+
       - name: List contents of C:\
         run: |
           ls C:\
