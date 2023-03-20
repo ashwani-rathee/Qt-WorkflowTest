@@ -5,6 +5,11 @@ on:
     branches:
       - main
 
+env:
+  SOURCE_DIR:   ${{ github.workspace }}
+  QT_VERSION:   5.15.2
+  ARTIFACT:     final-build.zip
+
 jobs:
   print-directory-tree:
     runs-on: windows-latest
