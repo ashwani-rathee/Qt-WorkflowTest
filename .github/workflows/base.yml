@@ -85,3 +85,4 @@ jobs:
           qmake 
           nmake
           nmake clean
+          echo "hi"
