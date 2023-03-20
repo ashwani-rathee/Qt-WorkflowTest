@@ -75,7 +75,7 @@ jobs:
               ls C:\Qt\5.15.2\msvc2019\bin\
               ${{ env.SOURCE_DIR }}\downloads/windeployqt.exe A.exe --pdb --release --compiler-runtime
               ls .
-              xcopy /s ${{ env.SOURCE_DIR }}\src\A\release\* ${{ env.SOURCE_DIR }}\packages\A\data\
+              xcopy /s ${{ runner.temp }}\build\release\* ${{ env.SOURCE_DIR }}\packages\A\data\
       
       # - name: Zip build
       #   working-directory: ${{ runner.temp }}
