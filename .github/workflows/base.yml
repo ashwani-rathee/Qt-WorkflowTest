@@ -75,6 +75,17 @@ jobs:
               ls C:\Qt\5.15.2\msvc2019\bin\
               ${{ env.SOURCE_DIR }}\downloads/windeployqt.exe A.exe --pdb --release --compiler-runtime
               ls .
+      
+      - name: Zip build
+        working-directory: ${{ runner.temp }}
+        run:  |
+              7z a final-build.zip ${{ runner.temp }}\build\* -r
+              
+      - name: Save build artifact
+        uses: actions/upload-artifact@master
+        with:
+          name: ${{ env.ARTIFACT }}
+          path: ${{ runner.temp }}\${{ env.ARTIFACT }}
               
 
       - name: List contents of C:\
