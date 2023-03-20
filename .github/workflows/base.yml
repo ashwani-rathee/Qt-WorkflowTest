@@ -23,7 +23,7 @@ jobs:
             vcVarsPath: '"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Auxiliary\\Build\\vcvarsall.bat"'
 
       - name: Save Cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: |
             C:\Qt\Qt-5.15.2
@@ -62,9 +62,8 @@ jobs:
 
       - name: Find my files
         run: |
-          where /r C:\Qt qtenv2.bat
-          where /r C:\Program Files (x86)\Microsoft Visual Studio vcvars32.bat
-
+          dir C:\Qt\qtenv2.bat /s/b
+          dir "C:\Program Files (x86)\Microsoft Visual Studio\vcvars32.bat" /s/b
          
       - name: Environment Setup
         run: |
