@@ -69,8 +69,10 @@ jobs:
       - name: (8) Build
         working-directory: ${{ runner.temp }}\build
         run:  |
-              qmake -r ${{ env.SOURCE_DIR }}\A.pro
+              qmake -r ${{ env.SOURCE_DIR }}\src\A\A.pro
+              ls .
               ${{ runner.temp }}\jom\jom -j2
+              ls .
               cd release
               windeployqt A.exe --pdb --release --compiler-runtime
 
