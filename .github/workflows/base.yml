@@ -24,7 +24,7 @@ jobs:
           host: 'windows'
           target: 'desktop'
           arch: 'win32_msvc2019'
-          dir: 'C:\Qt'
+          dir: 'C:\'
           install-deps: 'true'
           cache: 'true'
           cache-key-prefix: 'install-qt-action'
