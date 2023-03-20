@@ -12,22 +12,22 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Install Qt
-        uses: jurplel/install-qt-action@v3
-        with:
-          version: '5.15.2'
-          host: 'windows'
-          target: 'desktop'
-          arch: 'win32_msvc2019'
-          dir: 'C:\Qt'
-          install-deps: 'true'
-          cache: 'true'
-          cache-key-prefix: 'install-qt-action'
-          set-env: 'true'
-          tools-only: 'false'
-          aqtversion: '==2.1.*' 
-          py7zrversion: '==0.19.*'
-          extra: '--external 7z'
+      # - name: Install Qt
+      #   uses: jurplel/install-qt-action@v3
+      #   with:
+      #     version: '5.15.2'
+      #     host: 'windows'
+      #     target: 'desktop'
+      #     arch: 'win32_msvc2019'
+      #     dir: 'C:\Qt'
+      #     install-deps: 'true'
+      #     cache: 'true'
+      #     cache-key-prefix: 'install-qt-action'
+      #     set-env: 'true'
+      #     tools-only: 'false'
+      #     aqtversion: '==2.1.*' 
+      #     py7zrversion: '==0.19.*'
+      #     extra: '--external 7z'
 
       - name: List contents of C:\
         run: |
