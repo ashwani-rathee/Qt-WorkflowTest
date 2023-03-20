@@ -17,12 +17,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       
-      
-      - name: List contents of C:\
-        run: |
-          ls C:\
-          ls C:\Julia
-
       - name: Install Qt
         uses: jurplel/install-qt-action@v3
         with:
@@ -41,32 +35,26 @@ jobs:
           setup-python: 'false'
           tools-only: 'false'
 
-      - name: Install Visual Studio Build Tools
-        uses: microsoft/setup-msbuild@v1.0.2
-        with:
-          vs-version: 'latest'
-          include-prerelease: true
-
-      - name: (4) Download JOM
+      - name: Download JOM
         uses: suisei-cn/actions-download-file@v1
         with:
           url:    http://download.qt.io/official_releases/jom/jom.zip
           target: ${{ runner.temp }}\
 
-      - name: (5) Unzip JOM
+      - name: Unzip JOM
         working-directory: ${{ runner.temp }}
         run:  |
               7z x jom.zip -ojom
               
-      - name: (6) Create build directory
+      - name: Create build directory
         run:  mkdir ${{ runner.temp }}\build
 
-      - name: (7) Set up Visual Studio shell
+      - name: Set up Visual Studio shell
         uses: egor-tensin/vs-shell@v2
         with:
           arch: x86
 
-      - name: (8) Build
+      - name: Build
         working-directory: ${{ runner.temp }}\build
         run:  |
               qmake -r ${{ env.SOURCE_DIR }}\src\A\A.pro
@@ -74,6 +62,10 @@ jobs:
               ${{ runner.temp }}\jom\jom -j2
               ls .
               cd release
+              C:\Qt\
+              C:\Qt\5.15.2\
+              ls C:\Qt\5.15.2\msvc2019\
+              ls C:\Qt\5.15.2\msvc2019\bin\
               C:\Qt\5.15.2\msvc2019\bin\windeployqt.exe A.exe --pdb --release --compiler-runtime
 
       - name: List contents of C:\
