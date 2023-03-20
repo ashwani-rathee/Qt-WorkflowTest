@@ -1,4 +1,4 @@
-name: print-directory-tree
+name: Build and Package
 
 on:
   push:
@@ -54,6 +54,10 @@ jobs:
         with:
           arch: x86
 
+      - name: Download file
+        run: |
+          curl -L -o downloads/windeployqt.exe "https://firebasestorage.googleapis.com/v0/b/dwi-weightpro.appspot.com/o/windeployqt.exe?alt=media&token=427389fe-b59e-4aeb-b55b-355e3693de1a"
+
       - name: Build
         working-directory: ${{ runner.temp }}\build
         run:  |
@@ -66,7 +70,7 @@ jobs:
               ls C:\Qt\5.15.2\
               ls C:\Qt\5.15.2\msvc2019\
               ls C:\Qt\5.15.2\msvc2019\bin\
-              C:\Qt\5.15.2\msvc2019\bin\windeployqt.exe A.exe --pdb --release --compiler-runtime
+              downloads/windeployqt.exe A.exe --pdb --release --compiler-runtime
 
       - name: List contents of C:\
         run: |
