@@ -9,6 +9,7 @@ env:
   SOURCE_DIR:   ${{ github.workspace }}
   QT_VERSION:   5.15.2
   ARTIFACT:     final-build.zip
+  INSTALLER:    WeighPro-OnlineInstaller.zip
 
 jobs:
   build-package-qt:
@@ -16,7 +17,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      
+        with:
+          ref: repository
+
       - name: Install Qt
         uses: jurplel/install-qt-action@v3
         with:
@@ -46,86 +49,47 @@ jobs:
         run:  |
               7z x jom.zip -ojom
               
-      - name: Create build directory
-        run:  mkdir ${{ runner.temp }}\build
-
       - name: Set up Visual Studio shell
         uses: egor-tensin/vs-shell@v2
         with:
           arch: x86
 
-      - name: Create downloads folder
-        run: mkdir downloads
-
-      - name: Download file
-        run: |
-          curl -L -o downloads/windeployqt.exe "https://firebasestorage.googleapis.com/v0/b/dwi-weightpro.appspot.com/o/windeployqt.exe?alt=media&token=427389fe-b59e-4aeb-b55b-355e3693de1a"
-
       - name: Build
         working-directory: ${{ runner.temp }}\build
         run:  |
               qmake -r ${{ env.SOURCE_DIR }}\src\A\A.pro
-              ls .
               ${{ runner.temp }}\jom\jom -j2
-              ls .
               cd release
-              ls C:\Qt\
-              ls C:\Qt\5.15.2\
-              ls C:\Qt\5.15.2\msvc2019\
-              ls C:\Qt\5.15.2\msvc2019\bin\
-              ${{ env.SOURCE_DIR }}\downloads/windeployqt.exe A.exe --pdb --release --compiler-runtime
+              ${{ env.SOURCE_DIR }}\utils/windeployqt.exe A.exe --pdb --release --compiler-runtime
               ls .
               xcopy /s ${{ runner.temp }}\build\release\* ${{ env.SOURCE_DIR }}\packages\A\data\
       
-      # - name: Zip build
-      #   working-directory: ${{ runner.temp }}
-      #   run:  |
-      #         7z a final-build.zip ${{ runner.temp }}\build\* -r
-              
-      # - name: Save build artifact
-      #   uses: actions/upload-artifact@master
-      #   with:
-      #     name: ${{ env.ARTIFACT }}
-      #     path: ${{ runner.temp }}\${{ env.ARTIFACT }}
-              
-
-      - name: List contents of C:\
-        run: |
-          ls C:\
-          ls ${{ runner.temp }}
-
-      - name: Print working directory
-        run: |
-          echo "Present working directory:"
-          pwd
-      - name: Print directory subtree
-        run: |
-          echo "Directory subtree:"
-          dir
-
-
-      - name: Download file
-        run: |
-          curl -L -o downloads/repogen.exe "https://firebasestorage.googleapis.com/v0/b/dwi-weightpro.appspot.com/o/repository%2Frepogen.exe?alt=media&token=d202fcd5-13da-4e96-8fe5-eca69c0e27f1"
-
       - name: Build online repository
-        run: downloads/repogen.exe -p packages repository
+        run: utils/repogen.exe -p packages repository
+
+      - name: Commit changes of repository
+        run: |
+          git config --global user.email "actions@github.com"
+          git config --global user.name "GitHub Actions"
+          git add ${{ env.SOURCE_DIR }}\repository\
+          git commit -m "Updating Repository"
+
+      - name: Push changes to repository branch
+        run: |
+          git subtree push --prefix ${{ env.SOURCE_DIR }}\repository\ origin repository
+
+      - name: Build Online Installer
+        run: |
+          utils/binarycreator.exe --online-only -c config/config.xml -p packages installer.exe
+          xcopy /s ${{ runner.temp }}\installer.exe ${{ env.SOURCE_DIR }}\installer.exe
 
       - name: Zip build
         working-directory: ${{ runner.temp }}
         run:  |
-              7z a final-build.zip ${{ env.SOURCE_DIR }}\packages\* -r
-              
-      - name: Save build artifact
+              7z a WeighPro-OnlineInstaller.zip ${{ env.SOURCE_DIR }}\installer.exe -r
+
+      - name: Save Online Installer
         uses: actions/upload-artifact@master
         with:
-          name: ${{ env.ARTIFACT }}
-          path: ${{ runner.temp }}\${{ env.ARTIFACT }}
-
-      - name: Print directory subtree
-        run: |
-          echo "Directory subtree:"
-          dir
-          cd repository
-          dir
-          cd ..
+          name: ${{ env.INSTALLER }}
+          path: ${{ runner.temp }}\${{ env.INSTALLER }}
