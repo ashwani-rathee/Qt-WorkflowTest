@@ -55,7 +55,6 @@ jobs:
           arch: x86
 
       - name: Build
-        working-directory: ${{ runner.temp }}\build
         run:  |
               qmake -r ${{ env.SOURCE_DIR }}\src\A\A.pro
               ${{ runner.temp }}\jom\jom -j2
