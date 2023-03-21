@@ -8,7 +8,7 @@ on:
 env:
   SOURCE_DIR:   ${{ github.workspace }}
   QT_VERSION:   5.15.2
-  ARTIFACT:     final-build.zip
+  ARTIFACT:     deployment.zip
 
 jobs:
   build-package-qt:
@@ -20,7 +20,7 @@ jobs:
       - name: Zip build
         working-directory: ${{ runner.temp }}
         run:  |
-              7z a final-build.zip ${{ env.SOURCE_DIR }}\repository\* -r
+              7z a deployment.zip ${{ env.SOURCE_DIR }}\repository\* -r
               
       - name: Save Build artifact
         uses: actions/upload-artifact@master
