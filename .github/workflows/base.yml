@@ -54,7 +54,11 @@ jobs:
         with:
           arch: x86
 
+      - name: Create build directory
+        run:  mkdir ${{ runner.temp }}\build
+
       - name: Build
+        working-directory: ${{ runner.temp }}\build
         run:  |
               qmake -r ${{ env.SOURCE_DIR }}\src\A\A.pro
               ${{ runner.temp }}\jom\jom -j2
@@ -73,7 +77,7 @@ jobs:
           git add ${{ env.SOURCE_DIR }}\repository\
           git commit -m "Updating Repository"
 
-      - name: Push changes to repository branch
+      - name: Push changes to repository branchs
         run: |
           git subtree push --prefix ${{ env.SOURCE_DIR }}\repository\ origin repository
 
