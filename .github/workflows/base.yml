@@ -74,7 +74,7 @@ jobs:
               ${{ runner.temp }}\jom\jom -j2
               ls .
               cd release
-              ${{ env.SOURCE_DIR }}\utils/windeployqt.exe A.exe --pdb --release --compiler-runtime
+              ${{ env.SOURCE_DIR }}/utils/windeployqt.exe A.exe --pdb --release --compiler-runtime
               ls .
               xcopy /s ${{ runner.temp }}\build\release\* ${{ env.SOURCE_DIR }}\packages\A\data\
       
