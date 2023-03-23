@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package>
+    <DisplayName>WeightPro</DisplayName>
+    <Description>Main Code</Description>
+    <Version>0.0.1</Version>
+    <ReleaseDate>2023-03-23</ReleaseDate>
+    <Default>true</Default>
+</Package>

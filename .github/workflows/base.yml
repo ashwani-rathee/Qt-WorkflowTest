@@ -71,16 +71,16 @@ jobs:
         working-directory: ${{ runner.temp }}\build
         run:  |
               ls .
-              qmake -r ${{ env.SOURCE_DIR }}\src\A\A.pro
+              qmake -r ${{ env.SOURCE_DIR }}\src\com.dwi.weightpro\com.dwi.weightpro.pro
               ${{ runner.temp }}\jom\jom -j2
               ls .
               cd release
-              ${{ env.SOURCE_DIR }}/utils/windeployqt.exe A.exe --pdb --release --compiler-runtime
+              ${{ env.SOURCE_DIR }}/utils/windeployqt.exe weightpro.exe --pdb --release --compiler-runtime
               ls .
-              xcopy /s ${{ runner.temp }}\build\release\* ${{ env.SOURCE_DIR }}\packages\A\data\
-              ls ${{ env.SOURCE_DIR }}\packages\A\data\
-              ls ${{ env.SOURCE_DIR }}\src\A\lib\
-              xcopy /s ${{ env.SOURCE_DIR }}\src\A\lib\* ${{ env.SOURCE_DIR }}\packages\A\data\
+              xcopy /s ${{ runner.temp }}\build\release\* ${{ env.SOURCE_DIR }}\packages\com.dwi.weightpro\data\
+              ls ${{ env.SOURCE_DIR }}\packages\com.dwi.weightpro\data\
+              ls ${{ env.SOURCE_DIR }}\src\com.dwi.weightpro\lib\
+              xcopy /s ${{ env.SOURCE_DIR }}\src\com.dwi.weightpro\lib\* ${{ env.SOURCE_DIR }}\packages\com.dwi.weightpro\data\
 
       - name: Build Online Installer
         run: |

@@ -8,16 +8,16 @@ CONFIG += c++17
 CONFIG += console
 CONFIG += testcase
 
-TARGET = weighbridgeapp
+TARGET = weightpro
 
 #Release:DESTDIR = C:\Users\lenono\Documents\WeighBridgeAppCode\build\com.dwi.weightpro
 #Debug:DESTDIR = C:\Users\lenono\Documents\WeighBridgeAppCode\build\com.dwi.weightpro
 
-CONFIG(debug, debug|release) {
-    DESTDIR = build\debug
-} else {
-    DESTDIR = build\release
-}
+#CONFIG(debug, debug|release) {
+#    DESTDIR = build\debug
+#} else {
+#    DESTDIR = build\release
+#}
 
 SOURCES += src/main.cpp \
     src/modules/MainWindowManager/mainwindow.cpp \
@@ -104,10 +104,10 @@ INCLUDEPATH += $$PWD/src/modules/TestManager/
 
 
 INCLUDEPATH += $$PWD/libs/uhfreader/include
-LIBS += "C:/Users/lenono/Documents/WeighBridgeAppCode/src/com.dwi.weightpro/libs/uhfreader/lib/uhfreader.lib"
+LIBS += "libs/uhfreader/lib/uhfreader.lib"
 
 INCLUDEPATH += $$PWD/libs/sqlcipher/include
-LIBS += "C:/Users/lenono/Documents/WeighBridgeAppCode/src/com.dwi.weightpro/libs/sqlcipher/lib/sqlite3.lib"
+LIBS += "libs/sqlcipher/lib/sqlite3.lib"
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
