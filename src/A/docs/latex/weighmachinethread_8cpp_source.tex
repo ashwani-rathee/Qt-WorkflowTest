@@ -1,0 +1,66 @@
+\hypertarget{weighmachinethread_8cpp_source}{}\doxysection{weighmachinethread.\+cpp}
+\label{weighmachinethread_8cpp_source}\index{src/modules/WeighMachineManager/weighmachinethread.cpp@{src/modules/WeighMachineManager/weighmachinethread.cpp}}
+\mbox{\hyperlink{weighmachinethread_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{weighmachinethread_8h}{weighmachinethread.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <QMessageBox>}}
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00003}00003\ \textcolor{comment}{//\ hellothread/hellothread.cpp}}
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <QtSerialPort\(\backslash\)QSerialPort>}}
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <QRegularExpression>}}
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <QTextCodec>}}
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00008}\mbox{\hyperlink{class_weigh_machine_thread_a1a51072472b2db830cbe29dd77a86468}{00008}}\ \mbox{\hyperlink{class_weigh_machine_thread_a1a51072472b2db830cbe29dd77a86468}{WeighMachineThread::WeighMachineThread}}(QString\ portname,\ QSerialPort::BaudRate\ baudrate,\ QSerialPort::DataBits\ databits,\ QSerialPort::Parity\ parity)\{}
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00009}00009\ \ \ \ \ this-\/>portname\ =\ portname;}
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00010}00010\ \ \ \ \ this-\/>baudrate\ =\ baudrate;}
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00011}00011\ \ \ \ \ this-\/>databits\ =\ databits;}
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00012}00012\ \ \ \ \ this-\/>parity\ =\ parity;}
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00014}00014\ \ \ \ \ serial.setPortName(portname);}
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00015}00015\ \ \ \ \ \ \textcolor{keywordflow}{if}(!serial.setBaudRate(baudrate))}
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \ qDebug()\ <<\ serial.errorString();}
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00017}00017\ \ \ \ \ \ \textcolor{keywordflow}{if}(!serial.setDataBits(databits))}
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \ qDebug()\ <<\ serial.errorString();}
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00019}00019\ \ \ \ \ \ \textcolor{keywordflow}{if}(!serial.setParity(parity))}
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \ qDebug()\ <<\ serial.errorString();}
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00021}00021\ \ \ \ \ \ \textcolor{keywordflow}{if}(!serial.setFlowControl(QSerialPort::HardwareControl))}
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ qDebug()\ <<\ serial.errorString();}
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00023}00023\ \ \ \ \ \ \textcolor{keywordflow}{if}(!serial.setStopBits(QSerialPort::OneStop))}
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \ qDebug()\ <<\ serial.errorString();}
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00025}00025\ \ \ \ \ \ \textcolor{keywordflow}{if}(!serial.open(QIODevice::ReadOnly))}
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \ qDebug()\ <<\ serial.errorString();}
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00029}00029\ \ \ \ \ \ QObject::connect(\&serial,\ \&QSerialPort::readyRead,\ \textcolor{keyword}{this},\ [\&]}
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00030}00030\ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(serial.canReadLine())\{}
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ QString\ weight\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ QByteArray\ data\ =\ serial.readLine().simplified();}
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ for(int\ i=0;\ i<data.length();i++)\{}
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if(data[i]\ >=\ \textcolor{stringliteral}{'0'}\ \&\&\ data[i]\ <=\textcolor{stringliteral}{'9'})\{}
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ weight\ =\ weight\ +\ data[i];}
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_weigh_machine_thread_adfd557dee1756b09e6e7245c487b72ee}{weightgm}}\ =\ weight.toInt();}
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ emit\ \mbox{\hyperlink{class_weigh_machine_thread_a1807fb2d91ac2f6fc5bf1237c2793a60}{onIntValueChange}}();}
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00042}00042\ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00043}00043\ \}}
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00046}\mbox{\hyperlink{class_weigh_machine_thread_a61e57c52b72b970702c13ff50f7af909}{00046}}\ \mbox{\hyperlink{class_weigh_machine_thread_a61e57c52b72b970702c13ff50f7af909}{WeighMachineThread::\string~WeighMachineThread}}()\{}
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00047}00047\ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}Weigh\ Machine\ Thread\ Destructor!!"{}}\ ;}
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00049}00049\ \}}
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00051}00051\ \textcolor{keywordtype}{void}\ WeighMachineThread::run()}
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00052}00052\ \{}
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00053}00053\ \ \ \ \ \ \textcolor{comment}{//\ qDebug()\ <<\ "{}New\ Machine\ Thread:"{}\ <<\ thread()-\/>currentThreadId();}}
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00054}00054\ \ \ \ \ \ \textcolor{comment}{//\ setup\ serial\ port\ manager}}
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00056}00056\ \}}
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00058}\mbox{\hyperlink{class_weigh_machine_thread_afcabdde9ceb05c53ef015374e626ff97}{00058}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_weigh_machine_thread_afcabdde9ceb05c53ef015374e626ff97}{WeighMachineThread::setProperties}}(QString\ portname,\ QSerialPort::BaudRate\ baudrate,\ QSerialPort::DataBits\ databits,\ QSerialPort::Parity\ parity)\{}
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{weighmachinethread_8cpp_source_l00060}00060\ \}}
+
+\end{DoxyCode}

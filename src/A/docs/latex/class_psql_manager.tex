@@ -1,0 +1,232 @@
+\hypertarget{class_psql_manager}{}\doxysection{Psql\+Manager Class Reference}
+\label{class_psql_manager}\index{PsqlManager@{PsqlManager}}
+
+
+{\ttfamily \#include $<$psqlmanager.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_psql_manager_a00174b3c3b4e6a87bf03d901c54273dc}{Psql\+Manager}} ()
+\item 
+\mbox{\hyperlink{class_psql_manager_a5db14f20e78ad503de03be7614d12e4a}{$\sim$\+Psql\+Manager}} ()
+\item 
+bool \mbox{\hyperlink{class_psql_manager_a0dd1c82b7e5eae88f11b96e39b71d092}{is\+Open}} () const
+\item 
+bool \mbox{\hyperlink{class_psql_manager_a8e3f66df44f7b93146af2b9195697343}{user\+Check}} (QString username, QString password)
+\item 
+void \mbox{\hyperlink{class_psql_manager_aaeacb17a992dbd0015c3350916adc300}{log}} (QString username, QString activity)
+\item 
+void \mbox{\hyperlink{class_psql_manager_ace4bd2a456f4521272fd5c0a901637ac}{open\+Database}} (QString hostname=\char`\"{}localhost\char`\"{}, int port=2001, QString database\+Name=\char`\"{}wbapp\char`\"{}, QString user\+Name=\char`\"{}postgres\char`\"{}, QString password=\char`\"{}postgres\char`\"{})
+\item 
+void \mbox{\hyperlink{class_psql_manager_ac40e714a50900331e554342a8d2cb729}{close\+Database}} ()
+\item 
+void \mbox{\hyperlink{class_psql_manager_a721ac9e2afe6cca8132f01c511aa9240}{update\+Admin\+Ip\+Settings}} (QString name, QString ip, int port, QString uname, QString password)
+\item 
+void \mbox{\hyperlink{class_psql_manager_a411077dec6c49457c6af738b2508ce0d}{insert\+Admin\+Ip\+Settings}} (QString name, QString ip, int port, QString uname, QString password)
+\item 
+void \mbox{\hyperlink{class_psql_manager_a143be16987f5b3a12414ac552b9b661a}{get\+Admin\+Ip\+Settings\+Row\+By\+Name}} (QString name, QString \&ip, int \&port, QString \&uname, QString \&password)
+\item 
+void \mbox{\hyperlink{class_psql_manager_a5ff5824a4bb8ce79cb72c62177b3cb24}{update\+Weigh\+Bridge\+Settings}} (QString portname, int baudrate, int databits, int parity)
+\item 
+void \mbox{\hyperlink{class_psql_manager_ab0bfe9ac846171852ba3ee2bd6ce19f7}{get\+Weigh\+Bridge\+Settings}} (QString \&portname, QString \&baudrate, QString \&databits, QString \&parity)
+\item 
+void \mbox{\hyperlink{class_psql_manager_a7a3e910761155c1c286ef42acb6bf3db}{add\+New\+Rfid}} (QString TAGNO=\char`\"{}\char`\"{}, QString V\+\_\+\+NO=\char`\"{}\char`\"{}, QDate ISSUE=QDate\+::current\+Date(), QDate EXPIRY=QDate\+::current\+Date(), QString TC\+\_\+\+CODE=\char`\"{}\char`\"{}, QString OWNER=\char`\"{}\char`\"{}, QString OWNER\+\_\+\+ADDRESS=\char`\"{}\char`\"{}, QString OWNER\+\_\+\+EMAIL=\char`\"{}\char`\"{}, QString OWNER\+\_\+\+PHONE=\char`\"{}\char`\"{}, QString DRIVER=\char`\"{}\char`\"{}, QString DRIVER\+\_\+\+ADDRESS=\char`\"{}\char`\"{}, QString DRIVER\+\_\+\+EMAIL=\char`\"{}\char`\"{}, QString DRIVER\+\_\+\+PHONE=\char`\"{}\char`\"{}, QString PHOTO=\char`\"{}\char`\"{}, QString TM\+\_\+\+CODE=\char`\"{}\char`\"{}, qint64 RLW=100, qint64 GVW=100, qint64 MAX\+\_\+\+TARE\+\_\+\+WT=100, qint64 MIN\+\_\+\+TARE\+\_\+\+WT=100, QString DO\+\_\+\+NO=\char`\"{}1\char`\"{}, QString COLL\+\_\+\+CODE=\char`\"{}collc\char`\"{}, QString WB\+\_\+\+CODE=\char`\"{}wbc\char`\"{}, QString VALID=\char`\"{}0\char`\"{}, int TAGTRIPS=1, int TRIPS\+\_\+\+DONE=1, QString V\+\_\+\+TYPE=\char`\"{}1\char`\"{}, QString TAG\+\_\+\+TYPE=\char`\"{}tagtype\char`\"{}, QString TSNO=\char`\"{}tsno\char`\"{}, QString UNIT=\char`\"{}unit\char`\"{}, QString MODE=\char`\"{}mode\char`\"{}, QString WMODE=\char`\"{}wmode\char`\"{}, QString DEST=\char`\"{}dest\char`\"{}, QString TRIPTIME=\char`\"{}triptime\char`\"{})
+\item 
+int \mbox{\hyperlink{class_psql_manager_ad764d1dc1da255abca489920f40499a8}{get\+Validity\+Status}} (int \&a, QString vehicleno)
+\item 
+void \mbox{\hyperlink{class_psql_manager_a57ce497ace4fabd56e3362f4fe864b9b}{get\+So\+Data}} (QString \&auction\+\_\+id, QString \&customer\+\_\+code, QString \&customer\+\_\+name, QString \&so\+\_\+no, QString \&so\+\_\+date, QString \&so\+\_\+grade, QString \&so\+\_\+coal\+\_\+size, QString \&so\+\_\+qty, QString \&valid\+\_\+start\+\_\+date, QString \&valid\+\_\+end\+\_\+date, QString \&location\+\_\+id, QString \&location\+\_\+desc, QString \&bal\+\_\+qty, QString \&state\+\_\+code)
+\item 
+void \mbox{\hyperlink{class_psql_manager_a063a52090dac169e07db6ff74e47e3aa}{push\+So\+Data}} (QString auction\+\_\+id, QString customer\+\_\+code, QString customer\+\_\+name, QString so\+\_\+no, QString so\+\_\+date, QString so\+\_\+grade, QString so\+\_\+coal\+\_\+size, QString so\+\_\+qty, QString valid\+\_\+start\+\_\+date, QString valid\+\_\+end\+\_\+date, QString location\+\_\+id, QString location\+\_\+desc, QString bal\+\_\+qty, QString state\+\_\+code)
+\item 
+void \mbox{\hyperlink{class_psql_manager_ac084164ec62410d20f2d2ce462d10808}{update\+So\+Data}} (QString auction\+\_\+id, QString customer\+\_\+code, QString customer\+\_\+name, QString so\+\_\+no, QString so\+\_\+date, QString so\+\_\+grade, QString so\+\_\+coal\+\_\+size, QString so\+\_\+qty, QString valid\+\_\+start\+\_\+date, QString valid\+\_\+end\+\_\+date, QString location\+\_\+id, QString location\+\_\+desc, QString bal\+\_\+qty, QString state\+\_\+code)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{psqlmanager_8h_source_l00007}{7}} of file \mbox{\hyperlink{psqlmanager_8h_source}{psqlmanager.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_psql_manager_a00174b3c3b4e6a87bf03d901c54273dc}\label{class_psql_manager_a00174b3c3b4e6a87bf03d901c54273dc}} 
+\index{PsqlManager@{PsqlManager}!PsqlManager@{PsqlManager}}
+\index{PsqlManager@{PsqlManager}!PsqlManager@{PsqlManager}}
+\doxysubsubsection{\texorpdfstring{PsqlManager()}{PsqlManager()}}
+{\footnotesize\ttfamily Psql\+Manager\+::\+Psql\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{psqlmanager_8cpp_source_l00071}{71}} of file \mbox{\hyperlink{psqlmanager_8cpp_source}{psqlmanager.\+cpp}}.
+
+\mbox{\Hypertarget{class_psql_manager_a5db14f20e78ad503de03be7614d12e4a}\label{class_psql_manager_a5db14f20e78ad503de03be7614d12e4a}} 
+\index{PsqlManager@{PsqlManager}!````~PsqlManager@{$\sim$PsqlManager}}
+\index{````~PsqlManager@{$\sim$PsqlManager}!PsqlManager@{PsqlManager}}
+\doxysubsubsection{\texorpdfstring{$\sim$PsqlManager()}{~PsqlManager()}}
+{\footnotesize\ttfamily Psql\+Manager\+::$\sim$\+Psql\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{psqlmanager_8cpp_source_l00076}{76}} of file \mbox{\hyperlink{psqlmanager_8cpp_source}{psqlmanager.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_psql_manager_a7a3e910761155c1c286ef42acb6bf3db}\label{class_psql_manager_a7a3e910761155c1c286ef42acb6bf3db}} 
+\index{PsqlManager@{PsqlManager}!addNewRfid@{addNewRfid}}
+\index{addNewRfid@{addNewRfid}!PsqlManager@{PsqlManager}}
+\doxysubsubsection{\texorpdfstring{addNewRfid()}{addNewRfid()}}
+{\footnotesize\ttfamily void Psql\+Manager\+::add\+New\+Rfid (\begin{DoxyParamCaption}\item[{QString}]{TAGNO = {\ttfamily \char`\"{}\char`\"{}},  }\item[{QString}]{V\+\_\+\+NO = {\ttfamily \char`\"{}\char`\"{}},  }\item[{QDate}]{ISSUE = {\ttfamily QDate\+:\+:currentDate()},  }\item[{QDate}]{EXPIRY = {\ttfamily QDate\+:\+:currentDate()},  }\item[{QString}]{TC\+\_\+\+CODE = {\ttfamily \char`\"{}\char`\"{}},  }\item[{QString}]{OWNER = {\ttfamily \char`\"{}\char`\"{}},  }\item[{QString}]{OWNER\+\_\+\+ADDRESS = {\ttfamily \char`\"{}\char`\"{}},  }\item[{QString}]{OWNER\+\_\+\+EMAIL = {\ttfamily \char`\"{}\char`\"{}},  }\item[{QString}]{OWNER\+\_\+\+PHONE = {\ttfamily \char`\"{}\char`\"{}},  }\item[{QString}]{DRIVER = {\ttfamily \char`\"{}\char`\"{}},  }\item[{QString}]{DRIVER\+\_\+\+ADDRESS = {\ttfamily \char`\"{}\char`\"{}},  }\item[{QString}]{DRIVER\+\_\+\+EMAIL = {\ttfamily \char`\"{}\char`\"{}},  }\item[{QString}]{DRIVER\+\_\+\+PHONE = {\ttfamily \char`\"{}\char`\"{}},  }\item[{QString}]{PHOTO = {\ttfamily \char`\"{}\char`\"{}},  }\item[{QString}]{TM\+\_\+\+CODE = {\ttfamily \char`\"{}\char`\"{}},  }\item[{qint64}]{RLW = {\ttfamily 100},  }\item[{qint64}]{GVW = {\ttfamily 100},  }\item[{qint64}]{MAX\+\_\+\+TARE\+\_\+\+WT = {\ttfamily 100},  }\item[{qint64}]{MIN\+\_\+\+TARE\+\_\+\+WT = {\ttfamily 100},  }\item[{QString}]{DO\+\_\+\+NO = {\ttfamily \char`\"{}1\char`\"{}},  }\item[{QString}]{COLL\+\_\+\+CODE = {\ttfamily \char`\"{}collc\char`\"{}},  }\item[{QString}]{WB\+\_\+\+CODE = {\ttfamily \char`\"{}wbc\char`\"{}},  }\item[{QString}]{VALID = {\ttfamily \char`\"{}0\char`\"{}},  }\item[{int}]{TAGTRIPS = {\ttfamily 1},  }\item[{int}]{TRIPS\+\_\+\+DONE = {\ttfamily 1},  }\item[{QString}]{V\+\_\+\+TYPE = {\ttfamily \char`\"{}1\char`\"{}},  }\item[{QString}]{TAG\+\_\+\+TYPE = {\ttfamily \char`\"{}tagtype\char`\"{}},  }\item[{QString}]{TSNO = {\ttfamily \char`\"{}tsno\char`\"{}},  }\item[{QString}]{UNIT = {\ttfamily \char`\"{}unit\char`\"{}},  }\item[{QString}]{MODE = {\ttfamily \char`\"{}mode\char`\"{}},  }\item[{QString}]{WMODE = {\ttfamily \char`\"{}wmode\char`\"{}},  }\item[{QString}]{DEST = {\ttfamily \char`\"{}dest\char`\"{}},  }\item[{QString}]{TRIPTIME = {\ttfamily \char`\"{}triptime\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{psqlmanager_8cpp_source_l00224}{224}} of file \mbox{\hyperlink{psqlmanager_8cpp_source}{psqlmanager.\+cpp}}.
+
+\mbox{\Hypertarget{class_psql_manager_ac40e714a50900331e554342a8d2cb729}\label{class_psql_manager_ac40e714a50900331e554342a8d2cb729}} 
+\index{PsqlManager@{PsqlManager}!closeDatabase@{closeDatabase}}
+\index{closeDatabase@{closeDatabase}!PsqlManager@{PsqlManager}}
+\doxysubsubsection{\texorpdfstring{closeDatabase()}{closeDatabase()}}
+{\footnotesize\ttfamily void Psql\+Manager\+::close\+Database (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{psqlmanager_8cpp_source_l00112}{112}} of file \mbox{\hyperlink{psqlmanager_8cpp_source}{psqlmanager.\+cpp}}.
+
+\mbox{\Hypertarget{class_psql_manager_a143be16987f5b3a12414ac552b9b661a}\label{class_psql_manager_a143be16987f5b3a12414ac552b9b661a}} 
+\index{PsqlManager@{PsqlManager}!getAdminIpSettingsRowByName@{getAdminIpSettingsRowByName}}
+\index{getAdminIpSettingsRowByName@{getAdminIpSettingsRowByName}!PsqlManager@{PsqlManager}}
+\doxysubsubsection{\texorpdfstring{getAdminIpSettingsRowByName()}{getAdminIpSettingsRowByName()}}
+{\footnotesize\ttfamily void Psql\+Manager\+::get\+Admin\+Ip\+Settings\+Row\+By\+Name (\begin{DoxyParamCaption}\item[{QString}]{name,  }\item[{QString \&}]{ip,  }\item[{int \&}]{port,  }\item[{QString \&}]{uname,  }\item[{QString \&}]{password }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{psqlmanager_8cpp_source_l00178}{178}} of file \mbox{\hyperlink{psqlmanager_8cpp_source}{psqlmanager.\+cpp}}.
+
+\mbox{\Hypertarget{class_psql_manager_a57ce497ace4fabd56e3362f4fe864b9b}\label{class_psql_manager_a57ce497ace4fabd56e3362f4fe864b9b}} 
+\index{PsqlManager@{PsqlManager}!getSoData@{getSoData}}
+\index{getSoData@{getSoData}!PsqlManager@{PsqlManager}}
+\doxysubsubsection{\texorpdfstring{getSoData()}{getSoData()}}
+{\footnotesize\ttfamily void Psql\+Manager\+::get\+So\+Data (\begin{DoxyParamCaption}\item[{QString \&}]{auction\+\_\+id,  }\item[{QString \&}]{customer\+\_\+code,  }\item[{QString \&}]{customer\+\_\+name,  }\item[{QString \&}]{so\+\_\+no,  }\item[{QString \&}]{so\+\_\+date,  }\item[{QString \&}]{so\+\_\+grade,  }\item[{QString \&}]{so\+\_\+coal\+\_\+size,  }\item[{QString \&}]{so\+\_\+qty,  }\item[{QString \&}]{valid\+\_\+start\+\_\+date,  }\item[{QString \&}]{valid\+\_\+end\+\_\+date,  }\item[{QString \&}]{location\+\_\+id,  }\item[{QString \&}]{location\+\_\+desc,  }\item[{QString \&}]{bal\+\_\+qty,  }\item[{QString \&}]{state\+\_\+code }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{psqlmanager_8cpp_source_l00294}{294}} of file \mbox{\hyperlink{psqlmanager_8cpp_source}{psqlmanager.\+cpp}}.
+
+\mbox{\Hypertarget{class_psql_manager_ad764d1dc1da255abca489920f40499a8}\label{class_psql_manager_ad764d1dc1da255abca489920f40499a8}} 
+\index{PsqlManager@{PsqlManager}!getValidityStatus@{getValidityStatus}}
+\index{getValidityStatus@{getValidityStatus}!PsqlManager@{PsqlManager}}
+\doxysubsubsection{\texorpdfstring{getValidityStatus()}{getValidityStatus()}}
+{\footnotesize\ttfamily int Psql\+Manager\+::get\+Validity\+Status (\begin{DoxyParamCaption}\item[{int \&}]{a,  }\item[{QString}]{vehicleno }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{psqlmanager_8cpp_source_l00273}{273}} of file \mbox{\hyperlink{psqlmanager_8cpp_source}{psqlmanager.\+cpp}}.
+
+\mbox{\Hypertarget{class_psql_manager_ab0bfe9ac846171852ba3ee2bd6ce19f7}\label{class_psql_manager_ab0bfe9ac846171852ba3ee2bd6ce19f7}} 
+\index{PsqlManager@{PsqlManager}!getWeighBridgeSettings@{getWeighBridgeSettings}}
+\index{getWeighBridgeSettings@{getWeighBridgeSettings}!PsqlManager@{PsqlManager}}
+\doxysubsubsection{\texorpdfstring{getWeighBridgeSettings()}{getWeighBridgeSettings()}}
+{\footnotesize\ttfamily void Psql\+Manager\+::get\+Weigh\+Bridge\+Settings (\begin{DoxyParamCaption}\item[{QString \&}]{portname,  }\item[{QString \&}]{baudrate,  }\item[{QString \&}]{databits,  }\item[{QString \&}]{parity }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{psqlmanager_8cpp_source_l00211}{211}} of file \mbox{\hyperlink{psqlmanager_8cpp_source}{psqlmanager.\+cpp}}.
+
+\mbox{\Hypertarget{class_psql_manager_a411077dec6c49457c6af738b2508ce0d}\label{class_psql_manager_a411077dec6c49457c6af738b2508ce0d}} 
+\index{PsqlManager@{PsqlManager}!insertAdminIpSettings@{insertAdminIpSettings}}
+\index{insertAdminIpSettings@{insertAdminIpSettings}!PsqlManager@{PsqlManager}}
+\doxysubsubsection{\texorpdfstring{insertAdminIpSettings()}{insertAdminIpSettings()}}
+{\footnotesize\ttfamily void Psql\+Manager\+::insert\+Admin\+Ip\+Settings (\begin{DoxyParamCaption}\item[{QString}]{name,  }\item[{QString}]{ip,  }\item[{int}]{port,  }\item[{QString}]{uname,  }\item[{QString}]{password }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{psqlmanager_8cpp_source_l00166}{166}} of file \mbox{\hyperlink{psqlmanager_8cpp_source}{psqlmanager.\+cpp}}.
+
+\mbox{\Hypertarget{class_psql_manager_a0dd1c82b7e5eae88f11b96e39b71d092}\label{class_psql_manager_a0dd1c82b7e5eae88f11b96e39b71d092}} 
+\index{PsqlManager@{PsqlManager}!isOpen@{isOpen}}
+\index{isOpen@{isOpen}!PsqlManager@{PsqlManager}}
+\doxysubsubsection{\texorpdfstring{isOpen()}{isOpen()}}
+{\footnotesize\ttfamily bool Psql\+Manager\+::is\+Open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{psqlmanager_8cpp_source_l00084}{84}} of file \mbox{\hyperlink{psqlmanager_8cpp_source}{psqlmanager.\+cpp}}.
+
+\mbox{\Hypertarget{class_psql_manager_aaeacb17a992dbd0015c3350916adc300}\label{class_psql_manager_aaeacb17a992dbd0015c3350916adc300}} 
+\index{PsqlManager@{PsqlManager}!log@{log}}
+\index{log@{log}!PsqlManager@{PsqlManager}}
+\doxysubsubsection{\texorpdfstring{log()}{log()}}
+{\footnotesize\ttfamily void Psql\+Manager\+::log (\begin{DoxyParamCaption}\item[{QString}]{username,  }\item[{QString}]{activity }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{psqlmanager_8cpp_source_l00139}{139}} of file \mbox{\hyperlink{psqlmanager_8cpp_source}{psqlmanager.\+cpp}}.
+
+\mbox{\Hypertarget{class_psql_manager_ace4bd2a456f4521272fd5c0a901637ac}\label{class_psql_manager_ace4bd2a456f4521272fd5c0a901637ac}} 
+\index{PsqlManager@{PsqlManager}!openDatabase@{openDatabase}}
+\index{openDatabase@{openDatabase}!PsqlManager@{PsqlManager}}
+\doxysubsubsection{\texorpdfstring{openDatabase()}{openDatabase()}}
+{\footnotesize\ttfamily void Psql\+Manager\+::open\+Database (\begin{DoxyParamCaption}\item[{QString}]{hostname = {\ttfamily \char`\"{}localhost\char`\"{}},  }\item[{int}]{port = {\ttfamily 2001},  }\item[{QString}]{database\+Name = {\ttfamily \char`\"{}wbapp\char`\"{}},  }\item[{QString}]{user\+Name = {\ttfamily \char`\"{}postgres\char`\"{}},  }\item[{QString}]{password = {\ttfamily \char`\"{}postgres\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{psqlmanager_8cpp_source_l00096}{96}} of file \mbox{\hyperlink{psqlmanager_8cpp_source}{psqlmanager.\+cpp}}.
+
+\mbox{\Hypertarget{class_psql_manager_a063a52090dac169e07db6ff74e47e3aa}\label{class_psql_manager_a063a52090dac169e07db6ff74e47e3aa}} 
+\index{PsqlManager@{PsqlManager}!pushSoData@{pushSoData}}
+\index{pushSoData@{pushSoData}!PsqlManager@{PsqlManager}}
+\doxysubsubsection{\texorpdfstring{pushSoData()}{pushSoData()}}
+{\footnotesize\ttfamily void Psql\+Manager\+::push\+So\+Data (\begin{DoxyParamCaption}\item[{QString}]{auction\+\_\+id,  }\item[{QString}]{customer\+\_\+code,  }\item[{QString}]{customer\+\_\+name,  }\item[{QString}]{so\+\_\+no,  }\item[{QString}]{so\+\_\+date,  }\item[{QString}]{so\+\_\+grade,  }\item[{QString}]{so\+\_\+coal\+\_\+size,  }\item[{QString}]{so\+\_\+qty,  }\item[{QString}]{valid\+\_\+start\+\_\+date,  }\item[{QString}]{valid\+\_\+end\+\_\+date,  }\item[{QString}]{location\+\_\+id,  }\item[{QString}]{location\+\_\+desc,  }\item[{QString}]{bal\+\_\+qty,  }\item[{QString}]{state\+\_\+code }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{psqlmanager_8cpp_source_l00323}{323}} of file \mbox{\hyperlink{psqlmanager_8cpp_source}{psqlmanager.\+cpp}}.
+
+\mbox{\Hypertarget{class_psql_manager_a721ac9e2afe6cca8132f01c511aa9240}\label{class_psql_manager_a721ac9e2afe6cca8132f01c511aa9240}} 
+\index{PsqlManager@{PsqlManager}!updateAdminIpSettings@{updateAdminIpSettings}}
+\index{updateAdminIpSettings@{updateAdminIpSettings}!PsqlManager@{PsqlManager}}
+\doxysubsubsection{\texorpdfstring{updateAdminIpSettings()}{updateAdminIpSettings()}}
+{\footnotesize\ttfamily void Psql\+Manager\+::update\+Admin\+Ip\+Settings (\begin{DoxyParamCaption}\item[{QString}]{name,  }\item[{QString}]{ip,  }\item[{int}]{port,  }\item[{QString}]{uname,  }\item[{QString}]{password }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{psqlmanager_8cpp_source_l00154}{154}} of file \mbox{\hyperlink{psqlmanager_8cpp_source}{psqlmanager.\+cpp}}.
+
+\mbox{\Hypertarget{class_psql_manager_ac084164ec62410d20f2d2ce462d10808}\label{class_psql_manager_ac084164ec62410d20f2d2ce462d10808}} 
+\index{PsqlManager@{PsqlManager}!updateSoData@{updateSoData}}
+\index{updateSoData@{updateSoData}!PsqlManager@{PsqlManager}}
+\doxysubsubsection{\texorpdfstring{updateSoData()}{updateSoData()}}
+{\footnotesize\ttfamily void Psql\+Manager\+::update\+So\+Data (\begin{DoxyParamCaption}\item[{QString}]{auction\+\_\+id,  }\item[{QString}]{customer\+\_\+code,  }\item[{QString}]{customer\+\_\+name,  }\item[{QString}]{so\+\_\+no,  }\item[{QString}]{so\+\_\+date,  }\item[{QString}]{so\+\_\+grade,  }\item[{QString}]{so\+\_\+coal\+\_\+size,  }\item[{QString}]{so\+\_\+qty,  }\item[{QString}]{valid\+\_\+start\+\_\+date,  }\item[{QString}]{valid\+\_\+end\+\_\+date,  }\item[{QString}]{location\+\_\+id,  }\item[{QString}]{location\+\_\+desc,  }\item[{QString}]{bal\+\_\+qty,  }\item[{QString}]{state\+\_\+code }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{psqlmanager_8cpp_source_l00349}{349}} of file \mbox{\hyperlink{psqlmanager_8cpp_source}{psqlmanager.\+cpp}}.
+
+\mbox{\Hypertarget{class_psql_manager_a5ff5824a4bb8ce79cb72c62177b3cb24}\label{class_psql_manager_a5ff5824a4bb8ce79cb72c62177b3cb24}} 
+\index{PsqlManager@{PsqlManager}!updateWeighBridgeSettings@{updateWeighBridgeSettings}}
+\index{updateWeighBridgeSettings@{updateWeighBridgeSettings}!PsqlManager@{PsqlManager}}
+\doxysubsubsection{\texorpdfstring{updateWeighBridgeSettings()}{updateWeighBridgeSettings()}}
+{\footnotesize\ttfamily void Psql\+Manager\+::update\+Weigh\+Bridge\+Settings (\begin{DoxyParamCaption}\item[{QString}]{portname,  }\item[{int}]{baudrate,  }\item[{int}]{databits,  }\item[{int}]{parity }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{psqlmanager_8cpp_source_l00197}{197}} of file \mbox{\hyperlink{psqlmanager_8cpp_source}{psqlmanager.\+cpp}}.
+
+\mbox{\Hypertarget{class_psql_manager_a8e3f66df44f7b93146af2b9195697343}\label{class_psql_manager_a8e3f66df44f7b93146af2b9195697343}} 
+\index{PsqlManager@{PsqlManager}!userCheck@{userCheck}}
+\index{userCheck@{userCheck}!PsqlManager@{PsqlManager}}
+\doxysubsubsection{\texorpdfstring{userCheck()}{userCheck()}}
+{\footnotesize\ttfamily bool Psql\+Manager\+::user\+Check (\begin{DoxyParamCaption}\item[{QString}]{username,  }\item[{QString}]{password }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{psqlmanager_8cpp_source_l00126}{126}} of file \mbox{\hyperlink{psqlmanager_8cpp_source}{psqlmanager.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/modules/\+Psql\+Manager/\mbox{\hyperlink{psqlmanager_8h}{psqlmanager.\+h}}\item 
+src/modules/\+Psql\+Manager/\mbox{\hyperlink{psqlmanager_8cpp}{psqlmanager.\+cpp}}\end{DoxyCompactItemize}

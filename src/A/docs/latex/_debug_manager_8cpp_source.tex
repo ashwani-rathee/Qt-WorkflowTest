@@ -1,0 +1,78 @@
+\hypertarget{_debug_manager_8cpp_source}{}\doxysection{Debug\+Manager.\+cpp}
+\label{_debug_manager_8cpp_source}\index{src/modules/DebugManager/DebugManager.cpp@{src/modules/DebugManager/DebugManager.cpp}}
+\mbox{\hyperlink{_debug_manager_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_debug_manager_8h}{DebugManager.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}qsqlerror.h"{}}}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}ui\_DebugManager.h"{}}}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}qlistwidget.h"{}}}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}qscrollbar.h"{}}}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <QDebug>}}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <QDateTime>}}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mainwindow_8h}{mainwindow.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <QMessageBox>}}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00012}\mbox{\hyperlink{class_debug_manager_a998fb359c9437f01aca598012aa73cc9}{00012}}\ \mbox{\hyperlink{class_debug_manager_a998fb359c9437f01aca598012aa73cc9}{DebugManager::DebugManager}}(\mbox{\hyperlink{class_main_window}{MainWindow}}\ *parent,\ QString\ name)\ :\ ui(new\ \mbox{\hyperlink{namespace_ui}{Ui}}::\mbox{\hyperlink{class_debug_manager}{DebugManager}})\{}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00013}00013\ \ \ \ \ ui-\/>setupUi(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00015}00015\ \ \ \ \ this-\/>parent\ =\ parent;}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00016}00016\ \ \ \ \ \mbox{\hyperlink{class_debug_manager_a640592562de523efbc57d1167caf3103}{map}}.insert(LogTypes::Info,\ Qt::blue);}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00017}00017\ \ \ \ \ \mbox{\hyperlink{class_debug_manager_a640592562de523efbc57d1167caf3103}{map}}.insert(LogTypes::Warning,\ Qt::red);}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00018}00018\ \ \ \ \ \mbox{\hyperlink{class_debug_manager_a640592562de523efbc57d1167caf3103}{map}}.insert(LogTypes::Alert,\ Qt::yellow);}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00020}00020\ \ \ \ \ \mbox{\hyperlink{class_debug_manager_acca464b2df8f0167c62fe9138deee157}{mapStr}}.insert(LogTypes::Info,\ \textcolor{stringliteral}{"{}INFO"{}});}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00021}00021\ \ \ \ \ \mbox{\hyperlink{class_debug_manager_acca464b2df8f0167c62fe9138deee157}{mapStr}}.insert(LogTypes::Warning,\ \textcolor{stringliteral}{"{}WARNING"{}});}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00022}00022\ \ \ \ \ \mbox{\hyperlink{class_debug_manager_acca464b2df8f0167c62fe9138deee157}{mapStr}}.insert(LogTypes::Alert,\ \textcolor{stringliteral}{"{}ALERT"{}});}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00023}00023\ \ \ \ \ connect(ui-\/>logger\_save\ ,\ SIGNAL(clicked()),\ \textcolor{keyword}{this},\ SLOT(onpushButtonSaveClicked()));}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00024}00024\ \ \ \ \ connect(ui-\/>test\_connection\_button,\ SIGNAL(clicked()),\ \textcolor{keyword}{this},\ SLOT(onpushButtonTestConnectionClicked()));}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00025}00025\ \}}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00027}\mbox{\hyperlink{class_debug_manager_acc6abe356ece9ec1a3f78b9161dd4e3e}{00027}}\ \mbox{\hyperlink{class_debug_manager_acc6abe356ece9ec1a3f78b9161dd4e3e}{DebugManager::\string~DebugManager}}()\{}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00029}00029\ \}}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00032}\mbox{\hyperlink{class_debug_manager_ac83936d773e945db1df5cae53e9037e8}{00032}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_debug_manager_ac83936d773e945db1df5cae53e9037e8}{DebugManager::log}}(\mbox{\hyperlink{_debug_manager_8h_a0e4c244f5254ca12ffeadcaf83e225b4}{LogTypes}}\ a,\ QString\ logstring)\{}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00033}00033\ \ \ \ \ ui-\/>debug\_console-\/>addItem(QDateTime::currentDateTime().toString()\ +\ \textcolor{stringliteral}{"{}\ ["{}}\ +\ \mbox{\hyperlink{class_debug_manager_acca464b2df8f0167c62fe9138deee157}{mapStr}}[a]\ +\ \textcolor{stringliteral}{"{}]\ "{}}\ +\ QString::number(ui-\/>debug\_console-\/>count()));}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00034}00034\ \ \ \ \ qDebug()\ <<\ \mbox{\hyperlink{class_debug_manager_a640592562de523efbc57d1167caf3103}{map}}[a]\ <<\ QDateTime::currentDateTime().toString();}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00035}00035\ \ \ \ \ ui-\/>debug\_console-\/>item(ui-\/>debug\_console-\/>count()-\/1)-\/>setForeground(\mbox{\hyperlink{class_debug_manager_a640592562de523efbc57d1167caf3103}{map}}[a]);}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00036}00036\ \ \ \ \ \textcolor{keywordflow}{if}(ui-\/>debug\_console-\/>count()\ >\ MaxLines)\{}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ QListWidgetItem\ *item\ =\ ui-\/>debug\_console-\/>item(0);}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ item;}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00039}00039\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00040}00040\ \ \ \ \ ui-\/>debug\_console-\/>verticalScrollBar()-\/>setValue(ui-\/>debug\_console-\/>verticalScrollBar()-\/>maximum());}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00041}00041\ \}}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00043}00043\ \textcolor{keywordtype}{void}\ DebugManager::onpushButtonSaveClicked()\{}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00044}00044\ \ \ \ \ MaxLines\ =\ ui-\/>maxLinesLineEdit-\/>text().toInt();}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00045}00045\ \}}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00047}00047\ \textcolor{keywordtype}{void}\ DebugManager::onpushButtonTestConnectionClicked()\{}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00048}00048\ \ \ \ \ QString\ server\ =\ ui-\/>serverNameLineEdit-\/>text();}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00049}00049\ \ \ \ \ \textcolor{keywordtype}{int}\ port\ =\ ui-\/>portLineEdit-\/>text().toInt();}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00050}00050\ \ \ \ \ QString\ database\ =\ ui-\/>databaseLineEdit-\/>text();}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00051}00051\ \ \ \ \ QString\ username\ =\ ui-\/>usernameLineEdit-\/>text();}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00052}00052\ \ \ \ \ QString\ password\ =\ ui-\/>passwordLineEdit-\/>text();}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00054}00054\ \ \ \ \ QSqlDatabase\ db\ =\ QSqlDatabase::addDatabase(\textcolor{stringliteral}{"{}QPSQL"{}});}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00055}00055\ \ \ \ \ db.setHostName(server);}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00056}00056\ \ \ \ \ db.setPort(port);}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00057}00057\ \ \ \ \ db.setDatabaseName(database);}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00058}00058\ \ \ \ \ db.setUserName(username);}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00059}00059\ \ \ \ \ db.setPassword(password);}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00061}00061\ \ \ \ \ \textcolor{keywordflow}{if}\ (db.open())\ \{}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ if\ connection\ succesful!}}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ QMessageBox::information(0,\ QObject::tr(\textcolor{stringliteral}{"{}Connection\ Test"{}}),\ \textcolor{stringliteral}{"{}Database\ Connection\ Successful!!"{}});}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00065}00065\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00066}00066\ \ \ \ \ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ in\ case\ any\ thing\ else\ happens}}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ QMessageBox::warning(0,\ QObject::tr(\textcolor{stringliteral}{"{}Database\ Error"{}}),\ db.lastError().text());}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00069}00069\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00070}00070\ \ \ \ \ db.close();}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00071}00071\ \ \ \ \ db.removeDatabase(\textcolor{stringliteral}{"{}QPSQL"{}});}
+\DoxyCodeLine{\Hypertarget{_debug_manager_8cpp_source_l00072}00072\ \}}
+
+\end{DoxyCode}

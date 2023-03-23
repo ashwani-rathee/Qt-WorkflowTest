@@ -1,0 +1,71 @@
+                 Original/ Duplicate/ Triplicate/ Quadruplicate                 
+--------------------------------------------------------------------------------
+                                                  for Road                      
+           BHARAT COKING COAL LIMITED             Pre Authenticated             
+       A Subsidiary of Coal India Limited         
+       Regd. Office: Koyla Bhavan, DHANBAD        for Bharat Coking Coal Limited
+                                                  Authorized Signatory          
+--------------------------------------------------------------------------------
+                  Tax Invoice under rule 11 of C/E Rules 2002                   
+Type of Customer: FSA/MOU/E-AUC/OTHER
+Bill No: 2/092/700006/14710011029/001479       Bill Date: 05/12/2013
+--------------------------------------------------------------------------------
+Unit Name:      BARORA AREA             Purchaser Name: TATA STEEL- BHELATAND WA
+Address:        Bastacolla Area (09)    Address:        TATA STEEL LIMITED      
+Sel.Exc.Reg.No.:AAACB7934MEMO18         Pur.Exc.RegNo.: AAACT2803MEM142         
+Range:          DHANBAD                 Range:          SINDRI                  
+Division:       Dhanbad                 Division:       BOKARO                  
+Commissionerate:RANCHI                  Commissionerate:RANCHI                  
+Vat Tin No.:    20181700811             Vat Tin No.:    20671800791             
+CST No.:        DH1276(C)               CST No.:        20671800791-01          
+--------------------------------------------------------------------------------
+  MODE OF |    APPLICATION     | DO QTY |    DRAFT   |  DRAFT   |     DRAFT     
+TRANSPORT |  NUMBER   |  DATE  |        |   NUMBER   |   DATE   |    AMOUNT     
+--------------------------------------------------------------------------------
+   ROAD   |  XXXXXXXX |XXXXXXXX|11200.00| 14710011028| 23072013 |39932338.79    
+   ROAD   |  XXXXXXXX |XXXXXXXX|11200.00| XXX        | XXX      |00000000.00    
+   ROAD   |  XXXXXXXX |XXXXXXXX|11200.00|XXX         | XXX      |00000000.00    
+OTHER QTY/AMOUNT:                      Other amount deposited : 00000000.00    
+--------------------------------------------------------------------------------
+                                        Total amount deposited : 39932338.79    
+--------------------------------------------------------------------------------
+DO.No.: 14710011029 Date: 23072013 Grade: 0    DO Qty : 11200.000
+--------------------------------------------------------------------------------
+  Loading Date   Challan No       Truck No        Grade       Qty Lifted   
+--------------------------------------------------------------------------------
+  05/12/2013       a111111           a             0        11.50          
+--------------------------------------------------------------------------------
+                         BILLED HEAD                   RATE        VALUE        
+                                                       -------------------------
+                         Basic Value                   1920.00     22080.00     
+                         Add on Price (WRC)            753         8659.50      
+                         Selective Loading Charge      180         2070.00      
+Item Code: 27011910      Weighment Charge              1           11.50        
+Type of Coal:            Royalty                       268.8       3091.20      
+Non-Coking Coal          Stowing Excise Duty(SED)      10          115.00       
+Description of Goods          Excisable Gross                 36027.20     
+Raw Coal                      Cent Excise @   6.00%           2161.63      
+Destination: JH               Ed Cess on Excise @   2.00%     43.23        
+                              S/H Cess on Excise @   1.00%    21.62        
+                         Total Excise Duty                         2226.48      
+Rupees Two Thousand Two Hundred Twenty Six  and Forty Eight  paise only
+--------------------------------------------------------------------------------
+                         Clean Energy Cess             50          575.00       
+                         Road/ RE Cess                 0           0.00         
+                         PWD Cess/ MADA(Bazaar)        19.2        220.80       
+                         AMBH Cess                     0           0.00         
+                         Other Charges                             0            
+                         -------------------------------------------------------
+                         TOTAL VALUE                               39049.48     
+                         VAT/CST@  5.00%               JST         1952.47      
+                         TCS@ 1%                                   390.49       
+                         -------------------------------------------------------
+                         Gross Value                               41392.45     
+                         -------------------------------------------------------
+Gross value in words:
+Rupees Forty One Thousand Three Hundred Ninety Two  and Forty Five  paise only
+--------------------------------------------------------------------------------
+                                                                                
+Prepared By               Checked By                Auth. Signatory           
+                                             Under Jurisdiction of Jharkhand    
+

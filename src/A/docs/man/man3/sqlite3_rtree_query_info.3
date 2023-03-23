@@ -1,0 +1,135 @@
+.TH "sqlite3_rtree_query_info" 3 "Tue Mar 7 2023" "Version 0.0.1" "WeighBridgeApplication" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sqlite3_rtree_query_info
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <sqlite3\&.h>\fP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "void * \fBpContext\fP"
+.br
+.ti -1c
+.RI "int \fBnParam\fP"
+.br
+.ti -1c
+.RI "\fBsqlite3_rtree_dbl\fP * \fBaParam\fP"
+.br
+.ti -1c
+.RI "void * \fBpUser\fP"
+.br
+.ti -1c
+.RI "void(* \fBxDelUser\fP )(void *)"
+.br
+.ti -1c
+.RI "\fBsqlite3_rtree_dbl\fP * \fBaCoord\fP"
+.br
+.ti -1c
+.RI "unsigned int * \fBanQueue\fP"
+.br
+.ti -1c
+.RI "int \fBnCoord\fP"
+.br
+.ti -1c
+.RI "int \fBiLevel\fP"
+.br
+.ti -1c
+.RI "int \fBmxLevel\fP"
+.br
+.ti -1c
+.RI "\fBsqlite3_int64\fP \fBiRowid\fP"
+.br
+.ti -1c
+.RI "\fBsqlite3_rtree_dbl\fP \fBrParentScore\fP"
+.br
+.ti -1c
+.RI "int \fBeParentWithin\fP"
+.br
+.ti -1c
+.RI "int \fBeWithin\fP"
+.br
+.ti -1c
+.RI "\fBsqlite3_rtree_dbl\fP \fBrScore\fP"
+.br
+.ti -1c
+.RI "\fBsqlite3_value\fP ** \fBapSqlParam\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB10563\fP of file \fBsqlite3\&.h\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBsqlite3_rtree_dbl\fP* sqlite3_rtree_query_info::aCoord"
+
+.PP
+Definition at line \fB10569\fP of file \fBsqlite3\&.h\fP\&.
+.SS "unsigned int* sqlite3_rtree_query_info::anQueue"
+
+.PP
+Definition at line \fB10570\fP of file \fBsqlite3\&.h\fP\&.
+.SS "\fBsqlite3_rtree_dbl\fP* sqlite3_rtree_query_info::aParam"
+
+.PP
+Definition at line \fB10566\fP of file \fBsqlite3\&.h\fP\&.
+.SS "\fBsqlite3_value\fP** sqlite3_rtree_query_info::apSqlParam"
+
+.PP
+Definition at line \fB10580\fP of file \fBsqlite3\&.h\fP\&.
+.SS "int sqlite3_rtree_query_info::eParentWithin"
+
+.PP
+Definition at line \fB10576\fP of file \fBsqlite3\&.h\fP\&.
+.SS "int sqlite3_rtree_query_info::eWithin"
+
+.PP
+Definition at line \fB10577\fP of file \fBsqlite3\&.h\fP\&.
+.SS "int sqlite3_rtree_query_info::iLevel"
+
+.PP
+Definition at line \fB10572\fP of file \fBsqlite3\&.h\fP\&.
+.SS "\fBsqlite3_int64\fP sqlite3_rtree_query_info::iRowid"
+
+.PP
+Definition at line \fB10574\fP of file \fBsqlite3\&.h\fP\&.
+.SS "int sqlite3_rtree_query_info::mxLevel"
+
+.PP
+Definition at line \fB10573\fP of file \fBsqlite3\&.h\fP\&.
+.SS "int sqlite3_rtree_query_info::nCoord"
+
+.PP
+Definition at line \fB10571\fP of file \fBsqlite3\&.h\fP\&.
+.SS "int sqlite3_rtree_query_info::nParam"
+
+.PP
+Definition at line \fB10565\fP of file \fBsqlite3\&.h\fP\&.
+.SS "void* sqlite3_rtree_query_info::pContext"
+
+.PP
+Definition at line \fB10564\fP of file \fBsqlite3\&.h\fP\&.
+.SS "void* sqlite3_rtree_query_info::pUser"
+
+.PP
+Definition at line \fB10567\fP of file \fBsqlite3\&.h\fP\&.
+.SS "\fBsqlite3_rtree_dbl\fP sqlite3_rtree_query_info::rParentScore"
+
+.PP
+Definition at line \fB10575\fP of file \fBsqlite3\&.h\fP\&.
+.SS "\fBsqlite3_rtree_dbl\fP sqlite3_rtree_query_info::rScore"
+
+.PP
+Definition at line \fB10578\fP of file \fBsqlite3\&.h\fP\&.
+.SS "void(* sqlite3_rtree_query_info::xDelUser) (void *)"
+
+.PP
+Definition at line \fB10568\fP of file \fBsqlite3\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for WeighBridgeApplication from the source code\&.

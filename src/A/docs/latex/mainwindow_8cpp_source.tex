@@ -1,0 +1,405 @@
+\hypertarget{mainwindow_8cpp_source}{}\doxysection{mainwindow.\+cpp}
+\label{mainwindow_8cpp_source}\index{src/modules/MainWindowManager/mainwindow.cpp@{src/modules/MainWindowManager/mainwindow.cpp}}
+\mbox{\hyperlink{mainwindow_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mainwindow_8h}{mainwindow.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{videoframegrabber_8h}{VideoFrameGrabber.h}}>}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}ui\_mainwindow.h"{}}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{login_8h}{login.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <uhfreader.h>}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <QNetworkReply>}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <QCloseEvent>}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <QCryptographicHash>}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00009}00009\ \textcolor{comment}{//C:\(\backslash\)Users\(\backslash\)lenono\(\backslash\)Documents\(\backslash\)fsiapp\(\backslash\)lib\(\backslash\)include\(\backslash\)uhfreader.h}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <iomanip>}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{weighmachinethread_8h}{weighmachinethread.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <QMessageBox>}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <QMediaPlayer>}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00014}00014\ \textcolor{preprocessor}{\#include\ <QMediaPlaylist>}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00015}00015\ \textcolor{preprocessor}{\#include\ <QUrl>}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00016}00016\ \textcolor{preprocessor}{\#include\ <CString>}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00017}00017\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00022}\mbox{\hyperlink{class_main_window_ad08c5e26cb967ed82bd633553b9d8261}{00022}}\ \mbox{\hyperlink{class_main_window_ad08c5e26cb967ed82bd633553b9d8261}{MainWindow::MainWindow}}(QApplication\ *parent,\ QString\ appname)\ :\ ui(new\ \mbox{\hyperlink{namespace_ui}{Ui}}::\mbox{\hyperlink{class_main_window}{MainWindow}})}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00023}00023\ \{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00024}00024\ \ \ \ \ \textcolor{comment}{//\ sets\ up\ the\ ui}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00025}00025\ \ \ \ \ ui-\/>setupUi(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00026}00026\ \ \ \ \ this-\/>setAttribute(Qt::WA\_DeleteOnClose);}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00027}00027\ \ \ \ \ this-\/>appname\ =\ \mbox{\hyperlink{class_main_window_a6ce608f9d15fc451b6495ee23c95d36e}{appname}};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00028}00028\ \ \ \ \ this-\/>setWindowTitle(\mbox{\hyperlink{class_main_window_a6ce608f9d15fc451b6495ee23c95d36e}{appname}});}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00029}00029\ \ \ \ \ ui-\/>debugger\_button-\/>setVisible(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00031}00031\ \ \ \ \ QMenu*\ menu\ =\ \textcolor{keyword}{new}\ QMenu(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00032}00032\ \ \ \ \ QAction\ *action1\ =\ menu-\/>addAction(tr(\textcolor{stringliteral}{"{}Sub-\/action"{}}));}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00033}00033\ \ \ \ \ menu-\/>addAction(tr(\textcolor{stringliteral}{"{}Sub-\/action1"{}}));}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00034}00034\ \ \ \ \ menu-\/>addAction(tr(\textcolor{stringliteral}{"{}Sub-\/action2"{}}));}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00035}00035\ \ \ \ \ ui-\/>toolButton2-\/>setMenu(menu);}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00036}00036\ \textcolor{comment}{//\ \ \ \ connect(action1,\ SIGNAL(triggered()),\ this,\ SLOT(test1()));}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00038}00038\ \ \ \ \ \textcolor{comment}{//\ logout\ handler}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00039}00039\ \ \ \ \ connect(ui-\/>logout,\ SIGNAL(triggered()),\ \textcolor{keyword}{this},\ SLOT(onActionLogoutTriggered()));}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00041}00041\ \ \ \ \ \textcolor{comment}{//\ error\ handling\ for\ bad\ database\ connection}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00042}00042\ \ \ \ \ rfidcontroller\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_rfid_manager}{RfidManager}}(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00043}00043\ \ \ \ \ rfidcontroller-\/>\mbox{\hyperlink{class_rfid_manager_a6910daa89a34bec832583471a62e5560}{ConnectToRfid}}();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00044}00044\ \ \ \ \ rfidcontroller-\/>start();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00046}00046\ \ \ \ \ sodatacontroller\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_so_data_manager}{SoDataManager}}(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00048}00048\ \ \ \ \ setupDatabase();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00049}00049\ \ \ \ \ setupDefaults();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00050}00050\ \ \ \ \ setupWeighMachine();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00051}00051\ \ \ \ \ setupSignals();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00055}00055\ \textcolor{comment}{//\ \ \ \ QMediaPlayer\ *\_player1\ =\ new\ QMediaPlayer;}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00056}00056\ \textcolor{comment}{//\ \ \ \ const\ QUrl\ url1\ =\ QUrl("{}rtsp://admin:admin123@192.168.1.250:554/cam/realmonitor?channel=1\&subtype=0"{});}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00057}00057\ \textcolor{comment}{//\ \ \ \ const\ QNetworkRequest\ requestRtsp1(url1);}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00058}00058\ \textcolor{comment}{//\ \ \ \ \_player1-\/>setMedia(requestRtsp1);}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00060}00060\ \textcolor{comment}{//\ \ \ \ VideoFrameGrabber*\ grabber\ =\ new\ VideoFrameGrabber(this);}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00061}00061\ \textcolor{comment}{//\ \ \ \ \_player1-\/>setVideoOutput(grabber);}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00063}00063\ \textcolor{comment}{//\ \ \ \ \_player1-\/>play();}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00065}00065\ \textcolor{comment}{//\ \ \ \ connect(grabber,\ SIGNAL(frameAvailable(QImage)),\ this,\ SLOT(processFrame(QImage)));}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00068}00068\ \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00070}00070\ \textcolor{keywordtype}{void}\ MainWindow::onActionLogoutTriggered()\{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00071}00071\ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}Someone\ pushed\ me"{}};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00072}00072\ \ \ \ \ ui-\/>toolButton2-\/>setText(\textcolor{stringliteral}{"{}Action1"{}});}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00073}00073\ \ \ \ \ ui-\/>toolButton2-\/>setMenu(NULL);}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00074}00074\ \ \ \ \ this-\/>hide();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00075}00075\ \ \ \ \ \textcolor{keywordtype}{int}\ res\ =\ this-\/>\mbox{\hyperlink{class_main_window_af882adcea07a0c19422c78caa38029f8}{loginDialog}}();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00076}00076\ \ \ \ \ \textcolor{keywordflow}{if}(res)\{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ QString\ activity\ =\ \textcolor{stringliteral}{"{}login"{}};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_main_window_a055cd2ac6efe1e2827342e46b2620bf1}{pSetup}}();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ this-\/>show();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00080}00080\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00081}00081\ \ \ \ \ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ this-\/>close();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00083}00083\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00084}00084\ \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00086}00086\ \textcolor{keywordtype}{void}\ MainWindow::processFrame(QImage\ test)\{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00087}00087\ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}New"{}};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00088}00088\ \ \ \ \ ui-\/>frame-\/>setPixmap(QPixmap::fromImage(test));}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00089}00089\ \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00091}00091\ \textcolor{keywordtype}{void}\ MainWindow::on\_pushButtonPlayClicked()\{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00092}00092\ \textcolor{comment}{//\ \ \ \ qDebug()\ <<\ "{}Data\ set!!"{};}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00093}00093\ \textcolor{comment}{//\ \ \ \ QMediaPlayer\ *\_player1\ =\ new\ QMediaPlayer;}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00094}00094\ \textcolor{comment}{//\ \ \ \ \_player1-\/>setVideoOutput(ui-\/>video);}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00095}00095\ \textcolor{comment}{//\ \ \ \ const\ QUrl\ url1\ =\ QUrl("{}rtsp://admin:admin123@192.168.1.250:554/cam/realmonitor?channel=1\&subtype=0"{});}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00096}00096\ \textcolor{comment}{//\ \ \ \ const\ QNetworkRequest\ requestRtsp1(url1);}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00097}00097\ \textcolor{comment}{//\ \ \ \ \_player1-\/>setMedia(requestRtsp1);}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00098}00098\ \textcolor{comment}{//\ \ \ \ \_player1-\/>play();}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00099}00099\ \ \ \ \ QImage\ test;}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00100}00100\ \ \ \ \ QImage\ image\ =\ ui-\/>frame-\/>pixmap()-\/>toImage();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00101}00101\ \ \ \ \ QString\ imagePath\ =\ \textcolor{stringliteral}{"{}test.jpg"{}};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00102}00102\ \ \ \ \ image.save(imagePath);}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00103}00103\ \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00106}00106\ \textcolor{keywordtype}{void}\ MainWindow::onpushButtonGetInventoryClicked()\{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00107}00107\ \ \ \ \ rfidcontroller-\/>\mbox{\hyperlink{class_rfid_manager_aab035048b810bfd58a70adb957c62d90}{MPrintInventory}}();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00108}00108\ \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00110}00110\ \textcolor{keywordtype}{void}\ MainWindow::setupWeighMachine()\{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00111}00111\ \ \ \ \ wthread\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_weigh_machine_thread}{WeighMachineThread}}(ui-\/>port\_name-\/>text(),\ (QSerialPort::BaudRate)ui-\/>baud\_rate-\/>text().toInt(),\ (QSerialPort::DataBits)ui-\/>data\_bits-\/>text().toInt(),\ (QSerialPort::Parity)ui-\/>parity\_data-\/>text().toInt());}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00112}00112\ \ \ \ \ wthread-\/>start();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00113}00113\ \ \ \ \ wthread-\/>wait();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00114}00114\ \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00116}00116\ \textcolor{keywordtype}{void}\ MainWindow::setupDatabase()\{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00117}00117\ \ \ \ \ \mbox{\hyperlink{class_main_window_a7d04f9d754c4efb98172dc68db9dfb2b}{db}}.\mbox{\hyperlink{class_psql_manager_ace4bd2a456f4521272fd5c0a901637ac}{openDatabase}}(\textcolor{stringliteral}{"{}localhost"{}},\ 2001,\ \textcolor{stringliteral}{"{}wbapp"{}},\ \textcolor{stringliteral}{"{}postgres"{}},\ \textcolor{stringliteral}{"{}postgres"{}});}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00118}00118\ \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00120}00120\ \textcolor{keywordtype}{void}\ MainWindow::setupSignals()\{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00121}00121\ \ \ \ \ \textcolor{comment}{//\ connect\ the\ buttons}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00122}00122\ \ \ \ \ connect(ui-\/>save\_button,\ SIGNAL(clicked()),\ \textcolor{keyword}{this},\ SLOT(saveIpSettings()));}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00123}00123\ \ \ \ \ connect(ui-\/>get\_data,\ SIGNAL(clicked()),\ \textcolor{keyword}{this},\ SLOT(on\_pushButtonGetClicked()));}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00124}00124\ \ \ \ \ connect(ui-\/>wb\_save,\ SIGNAL(clicked()),\ \textcolor{keyword}{this},\ SLOT(on\_pushButtonWbsaveClicked()));}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00125}00125\ \ \ \ \ connect(wthread,\ SIGNAL(onIntValueChange()),\ \textcolor{keyword}{this},\ SLOT(on\_serialChangeWeightgm()));}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00126}00126\ \ \ \ \ connect(ui-\/>get\_weight,\ SIGNAL(clicked()),\ \textcolor{keyword}{this},\ SLOT(on\_pushButtonGetweightClicked()));}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00127}00127\ \ \ \ \ connect(ui-\/>debugger\_button,\ SIGNAL(clicked()),\ \textcolor{keyword}{this},\ SLOT(onpushButtonLogClicked()));}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00128}00128\ \ \ \ \ connect(ui-\/>play,\ SIGNAL(clicked()),\ \textcolor{keyword}{this},\ SLOT(on\_pushButtonPlayClicked()));}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00129}00129\ \ \ \ \ connect(ui-\/>get\_inventory,\ SIGNAL(clicked()),\ \textcolor{keyword}{this},\ SLOT(onpushButtonGetInventoryClicked()));}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00130}00130\ \ \ \ \ connect(ui-\/>clear\_inventory,\ SIGNAL(clicked()),\ \textcolor{keyword}{this},\ SLOT(onpushButtonClearInventoryClicked()));}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00131}00131\ \ \ \ \ connect(ui-\/>rfid\_new,\ SIGNAL(clicked()),\ \textcolor{keyword}{this},\ SLOT(onpushButtonRfidNewClicked()));}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00132}00132\ \ \ \ \ connect(ui-\/>rfid\_update,\ SIGNAL(clicked()),\ \textcolor{keyword}{this},\ SLOT(onpushButtonRfidUpdateClicked()));}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00133}00133\ \ \ \ \ connect(ui-\/>rfid\_reissue,\ SIGNAL(clicked()),\ \textcolor{keyword}{this},\ SLOT(onpushButtonRfidReissueClicked()));}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00134}00134\ \ \ \ \ connect(ui-\/>vechicleactionsButton,\ SIGNAL(clicked()),\ \textcolor{keyword}{this},\ SLOT(onpushVehicleActionsClicked()));}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00135}00135\ \ \ \ \ connect(ui-\/>so\_data\_opern,\ SIGNAL(clicked()),\ \textcolor{keyword}{this},\ SLOT(onpushSoManagerClicked()));}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00136}00136\ \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00138}00138\ \textcolor{keywordtype}{void}\ MainWindow::onpushSoManagerClicked()\{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00139}00139\ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}So\ Manager\ Being\ Opened!!"{}};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00140}00140\ \ \ \ \ sodatacontroller-\/>exec();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00141}00141\ \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00142}00142\ \textcolor{keywordtype}{void}\ MainWindow::onpushButtonRfidNewClicked()\{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00143}00143\ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}Rfid\ Update!!"{}};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00144}00144\ \ \ \ \ emit\ \mbox{\hyperlink{class_main_window_a511ee96877323c03a3b25503b5df645e}{rfidnewcalled}}();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00145}00145\ \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00146}00146\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00147}00147\ \textcolor{keywordtype}{void}\ MainWindow::onpushButtonRfidUpdateClicked()\{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00148}00148\ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}Rfid\ Update!!"{}};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00149}00149\ \ \ \ \ emit\ \mbox{\hyperlink{class_main_window_a49ff153730b63397cbbbe68c787e1a33}{rfidupdatecalled}}();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00150}00150\ \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00152}00152\ \textcolor{keywordtype}{void}\ MainWindow::onpushButtonRfidReissueClicked()\{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00153}00153\ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}Rfid\ Update!!"{}};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00154}00154\ \ \ \ \ emit\ \mbox{\hyperlink{class_main_window_a23605aba7cfc07a1fcfb655c19284361}{rfidreissuecalled}}();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00155}00155\ \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00156}00156\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00157}00157\ \textcolor{keywordtype}{void}\ MainWindow::onpushVehicleActionsClicked()\{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00158}00158\ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}Vehicle\ Actions\ Called!!"{}};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00159}00159\ \ \ \ \ emit\ \mbox{\hyperlink{class_main_window_ade99f7f6b5bcf224041cef89d6f9a5dc}{vehicleactionscalled}}();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00160}00160\ \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00161}00161\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00162}00162\ \textcolor{keywordtype}{void}\ MainWindow::onpushButtonClearInventoryClicked()\{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00163}00163\ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}Clean\ Inventory\ run!!"{}};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00164}00164\ \ \ \ \ rfidcontroller-\/>\mbox{\hyperlink{class_rfid_manager_af35a11c340321c6b023377621fc72939}{MBothCleanInventory}}();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00165}00165\ \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00166}00166\ \textcolor{comment}{//\ MainWindow\ destructor!}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00167}\mbox{\hyperlink{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{00167}}\ \mbox{\hyperlink{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{MainWindow::\string~MainWindow}}()}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00168}00168\ \{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00169}00169\ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}Main\ Window\ Destructor!"{}};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00170}00170\ \ \ \ \ \textcolor{keyword}{delete}\ ui;}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00171}00171\ \ \ \ \ \textcolor{keyword}{delete}\ manager;}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00172}00172\ \ \ \ \ \textcolor{keyword}{delete}\ wthread;}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00173}00173\ \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00174}00174\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00175}00175\ \textcolor{comment}{//\ handles\ login}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00176}\mbox{\hyperlink{class_main_window_af882adcea07a0c19422c78caa38029f8}{00176}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_main_window_af882adcea07a0c19422c78caa38029f8}{MainWindow::loginDialog}}()\{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00177}00177\ \ \ \ \ login\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_login}{Login}}(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00178}00178\ \ \ \ \ \textcolor{keywordtype}{int}\ res\ =\ login-\/>exec();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00179}00179\ \ \ \ \ \textcolor{keywordflow}{return}\ res;}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00180}00180\ \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00181}00181\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00182}00182\ \textcolor{keywordtype}{void}\ MainWindow::setupDefaults()\{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00183}00183\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a7d04f9d754c4efb98172dc68db9dfb2b}{db}}.\mbox{\hyperlink{class_psql_manager_aaeacb17a992dbd0015c3350916adc300}{log}}(\textcolor{stringliteral}{"{}admin"{}},\ \textcolor{stringliteral}{"{}defaultSetup"{}});}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00184}00184\ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}[Info]\ Defaults\ settings\ setup:"{}};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00185}00185\ \ \ \ \ setupIpSettingsDefaults();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00186}00186\ \ \ \ \ setupWeighBridgeSettingsDefaults();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00187}00187\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00188}00188\ \ \ \ \ setupNetworkManager();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00189}00189\ \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00190}00190\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00191}00191\ \textcolor{keywordtype}{void}\ MainWindow::setupIpSettingsDefaults()\{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00192}00192\ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}[Info]\ Setting\ up\ Ip\ Settings\ Defaults"{}};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00193}00193\ \ \ \ \ QList<QLabel*>\ labels\ =\ ui-\/>ip\_settings-\/>findChildren<QLabel*>();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00194}00194\ \ \ \ \ QString\ ip,\ uname,\ password;}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00195}00195\ \ \ \ \ \textcolor{keywordtype}{int}\ port;}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00196}00196\ \ \ \ \ \textcolor{keywordflow}{for}\ (QLabel\ *label\ :\ labels)\ \{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00197}00197\ \ \ \ \ \ \ \ \ QStringList\ pieces\ =\ label-\/>objectName().split(\ \textcolor{stringliteral}{"{}\_"{}}\ );}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00198}00198\ \ \ \ \ \ \ \ \ QString\ label1\ =\ \textcolor{stringliteral}{"{}label"{}};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00199}00199\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(pieces[0]\ ==\ label1)\{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00201}00201\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00202}00202\ \ \ \ \ \ \ \ \ QString\ name\ =\ label-\/>text();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00203}00203\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a7d04f9d754c4efb98172dc68db9dfb2b}{db}}.\mbox{\hyperlink{class_psql_manager_a143be16987f5b3a12414ac552b9b661a}{getAdminIpSettingsRowByName}}(name,\ ip,\ port,\ uname,\ password);}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00204}00204\ \ \ \ \ \ \ \ \ setAdminIpSettingsRow(name,\ ip,\ port,\ uname,\ password);}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00205}00205\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00206}00206\ \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00207}00207\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00208}00208\ \textcolor{keywordtype}{void}\ MainWindow::setAdminIpSettingsRow(QString\ name,\ QString\ ip,\ \textcolor{keywordtype}{int}\ port,\ QString\ uname,\ QString\ password)\{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00209}00209\ \ \ \ \ \textcolor{comment}{//\ handle\ case\ where\ error\ occurs\ or\ unable\ to\ find\ the\ thing}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00210}00210\ \ \ \ \ \textcolor{comment}{//\ qDebug()\ <<\ ip\ <<\ "{}\ "{}\ <<\ port\ <<\ "{}\ "{}\ <<\ uname\ <<\ "{}\ "{}\ <<\ password;}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00211}00211\ \ \ \ \ QLineEdit\ *point;}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00212}00212\ \ \ \ \ name\ =\ name.toLower();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00213}00213\ \ \ \ \ point\ =\ ui-\/>ip\_settings-\/>findChild<QLineEdit*>(name\ +\ \textcolor{stringliteral}{"{}\_ip"{}});}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00214}00214\ \ \ \ \ point-\/>setText(ip);}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00215}00215\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00216}00216\ \ \ \ \ point\ =\ ui-\/>ip\_settings-\/>findChild<QLineEdit*>(name\ +\ \textcolor{stringliteral}{"{}\_port"{}});}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00217}00217\ \ \ \ \ point-\/>setText(QString::number(port));}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00218}00218\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00219}00219\ \ \ \ \ point\ =\ ui-\/>ip\_settings-\/>findChild<QLineEdit*>(name\ +\ \textcolor{stringliteral}{"{}\_uname"{}});}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00220}00220\ \ \ \ \ point-\/>setText(uname);}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00221}00221\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00222}00222\ \ \ \ \ point\ =\ ui-\/>ip\_settings-\/>findChild<QLineEdit*>(name\ +\ \textcolor{stringliteral}{"{}\_password"{}});}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00223}00223\ \ \ \ \ point-\/>setText(password);}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00224}00224\ \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00225}00225\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00226}00226\ \textcolor{keywordtype}{void}\ MainWindow::setupWeighBridgeSettingsDefaults()\{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00227}00227\ \ \ \ \ QString\ portname;}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00228}00228\ \ \ \ \ QString\ baudrate;}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00229}00229\ \ \ \ \ QString\ databits;}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00230}00230\ \ \ \ \ QString\ parity;}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00231}00231\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00232}00232\ \ \ \ \ \mbox{\hyperlink{class_main_window_a7d04f9d754c4efb98172dc68db9dfb2b}{db}}.\mbox{\hyperlink{class_psql_manager_ab0bfe9ac846171852ba3ee2bd6ce19f7}{getWeighBridgeSettings}}(portname,\ baudrate,\ databits,\ parity);}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00233}00233\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00234}00234\ \ \ \ \ ui-\/>port\_name-\/>setText(portname);}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00235}00235\ \ \ \ \ ui-\/>baud\_rate-\/>setText(baudrate);}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00236}00236\ \ \ \ \ ui-\/>data\_bits-\/>setText(databits);}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00237}00237\ \ \ \ \ ui-\/>parity\_data-\/>setText(parity);}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00238}00238\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00239}00239\ \textcolor{comment}{//\ \ \ \ wthread\ =\ new\ WeighMachineThread(portname,\ (QSerialPort::BaudRate)baudrate.toInt(),\ (QSerialPort::DataBits)databits.toInt(),\ (QSerialPort::Parity)parity.toInt());}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00240}00240\ \textcolor{comment}{//\ \ \ \ wthread-\/>start();}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00241}00241\ \textcolor{comment}{//\ \ \ \ wthread-\/>wait();}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00242}00242\ \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00243}00243\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00244}00244\ \textcolor{keywordtype}{void}\ MainWindow::saveIpSettings()\{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00245}00245\ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}[Info]\ Saving\ IP\ settings"{}};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00246}00246\ \ \ \ \ \textcolor{keywordtype}{int}\ count\ =\ ui-\/>ip\_area-\/>rowCount();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00247}00247\ \ \ \ \ \textcolor{comment}{//\ qDebug()\ <<\ count;}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00248}00248\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 1;i<count-\/1;i++)\{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00249}00249\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ qDebug()\ <<\ ui-\/>ip\_area-\/>itemAtPosition(i,1)-\/>widget()-\/>objectName();}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00250}00250\ \ \ \ \ \ \ \ \ QString\ name\ =\ ui-\/>ip\_area-\/>itemAtPosition(i,1)-\/>widget()-\/>objectName().split(\textcolor{stringliteral}{"{}\_"{}}).first();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00251}00251\ \ \ \ \ \ \ \ \ name\ =\ name.toLower();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00252}00252\ \ \ \ \ \ \ \ \ QString\ ip\ =\ ui-\/>ip\_settings-\/>findChild<QLineEdit*>(name\ +\ \textcolor{stringliteral}{"{}\_ip"{}})-\/>text();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00253}00253\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ port\ =\ ui-\/>ip\_settings-\/>findChild<QLineEdit*>(name\ +\ \textcolor{stringliteral}{"{}\_port"{}})-\/>text().toInt();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00254}00254\ \ \ \ \ \ \ \ \ QString\ uname\ =\ ui-\/>ip\_settings-\/>findChild<QLineEdit*>(name\ +\ \textcolor{stringliteral}{"{}\_uname"{}})-\/>text();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00255}00255\ \ \ \ \ \ \ \ \ QString\ password\ =\ ui-\/>ip\_settings-\/>findChild<QLineEdit*>(name\ +\ \textcolor{stringliteral}{"{}\_password"{}})-\/>text();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00256}00256\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ qDebug()\ <<\ ip\ <<\ "{}\ "{}\ <<\ port\ <<\ "{}\ "{}\ <<\ uname\ <<\ "{}\ "{}\ <<\ password;}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00257}00257\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a7d04f9d754c4efb98172dc68db9dfb2b}{db}}.\mbox{\hyperlink{class_psql_manager_a721ac9e2afe6cca8132f01c511aa9240}{updateAdminIpSettings}}(name,\ ip,\ port,\ uname,\ password);}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00258}00258\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00259}00259\ \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00260}00260\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00261}00261\ \textcolor{keywordtype}{void}\ MainWindow::setupNetworkManager()\{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00262}00262\ \ \ \ \ \textcolor{comment}{//\ setup\ network\ manager}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00263}00263\ \ \ \ \ manager\ =\ \textcolor{keyword}{new}\ QNetworkAccessManager();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00264}00264\ \ \ \ \ QObject::connect(manager,\ \&QNetworkAccessManager::finished,}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00265}00265\ \ \ \ \ \ \ \ \ \textcolor{keyword}{this},\ [=](QNetworkReply\ *reply)\ \{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00266}00266\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (reply-\/>error())\ \{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00267}00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ qDebug()\ <<\ reply-\/>errorString();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00268}00268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ return;}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00269}00269\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00270}00270\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00271}00271\ \ \ \ \ \ \ \ \ \ \ \ \ QString\ answer\ =\ reply-\/>readAll();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00272}00272\ \ \ \ \ \ \ \ \ \ \ \ \ ui-\/>text\_data-\/>setText(answer);}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00273}00273\ \ \ \ \ \ \ \ \ \ \ \ \ qDebug()\ <<\ answer;}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00274}00274\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00275}00275\ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00276}00276\ \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00277}00277\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00278}00278\ \textcolor{keywordtype}{void}\ MainWindow::on\_pushButtonWbsaveClicked()\{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00279}00279\ \ \ \ \ qDebug()\ <<\ \ \textcolor{stringliteral}{"{}Weigh\ Bridge\ Save\ Button\ Clicked!!"{}};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00280}00280\ \ \ \ \ debugger-\/>\mbox{\hyperlink{class_debug_manager_ac83936d773e945db1df5cae53e9037e8}{log}}(LogTypes::Info,\ \textcolor{stringliteral}{"{}Weigh\ Bridge\ Save\ Button\ Clicked"{}});}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00281}00281\ \ \ \ \ qDebug()\ <<\ ui-\/>port\_name-\/>text();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00282}00282\ \ \ \ \ qDebug()\ <<\ ui-\/>baud\_rate-\/>text();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00283}00283\ \ \ \ \ qDebug()\ <<\ ui-\/>data\_bits-\/>text();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00284}00284\ \ \ \ \ qDebug()\ <<\ ui-\/>parity\_data-\/>text();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00285}00285\ \ \ \ \ \mbox{\hyperlink{class_main_window_a7d04f9d754c4efb98172dc68db9dfb2b}{db}}.\mbox{\hyperlink{class_psql_manager_a5ff5824a4bb8ce79cb72c62177b3cb24}{updateWeighBridgeSettings}}(ui-\/>port\_name-\/>text(),\ ui-\/>baud\_rate-\/>text().toInt(),\ ui-\/>data\_bits-\/>text().toInt(),\ \ ui-\/>parity\_data-\/>text().toInt());}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00286}00286\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00287}00287\ \ \ \ \ wthread-\/>\mbox{\hyperlink{class_weigh_machine_thread_a61e57c52b72b970702c13ff50f7af909}{\string~WeighMachineThread}}();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00288}00288\ \ \ \ \ wthread\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_weigh_machine_thread}{WeighMachineThread}}(ui-\/>port\_name-\/>text(),\ (QSerialPort::BaudRate)ui-\/>baud\_rate-\/>text().toInt(),\ (QSerialPort::DataBits)ui-\/>data\_bits-\/>text().toInt(),\ (QSerialPort::Parity)ui-\/>parity\_data-\/>text().toInt());}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00289}00289\ \ \ \ \ wthread-\/>start();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00290}00290\ \ \ \ \ wthread-\/>wait();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00291}00291\ \ \ \ \ connect(wthread,\ SIGNAL(onIntValueChange()),\ \textcolor{keyword}{this},\ SLOT(on\_serialChange\_weightgm()));}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00292}00292\ \ \ \ \ ui-\/>serial\_weight-\/>setText(\textcolor{stringliteral}{"{}None\ Yet!!"{}});}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00293}00293\ \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00294}00294\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00295}00295\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00296}00296\ \textcolor{keywordtype}{void}\ MainWindow::on\_serialChangeWeightgm()\{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00297}00297\ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}Weight:"{}}\ <<\ wthread-\/>\mbox{\hyperlink{class_weigh_machine_thread_adfd557dee1756b09e6e7245c487b72ee}{weightgm}};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00298}00298\ \textcolor{comment}{//\ \ \ \ debugger-\/>log(LogTypes::Info,\ QString::number(wthread-\/>weightgm));}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00299}00299\ \ \ \ \ ui-\/>serial\_weight-\/>setText(QString::number(wthread-\/>\mbox{\hyperlink{class_weigh_machine_thread_adfd557dee1756b09e6e7245c487b72ee}{weightgm}}));}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00300}00300\ \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00301}00301\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00302}00302\ \textcolor{keywordtype}{void}\ MainWindow::on\_pushButtonGetweightClicked()\{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00303}00303\ \ \ \ \ ui-\/>button\_weight-\/>setText(ui-\/>serial\_weight-\/>text());}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00304}00304\ \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00305}00305\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00306}00306\ \textcolor{comment}{//\ reference\ for\ work\ on\ post\ request:\ https://stackoverflow.com/questions/13302236/qt-\/simple-\/post-\/request}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00307}00307\ \textcolor{keywordtype}{void}\ MainWindow::on\_pushButtonGetClicked()\{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00308}00308\ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}Button\ Pressed"{}};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00309}00309\ \ \ \ \ request.setUrl(QUrl(\textcolor{stringliteral}{"{}http://localhost:8080/api/device"{}}));}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00310}00310\ \ \ \ \ manager-\/>get(request);}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00311}00311\ \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00312}00312\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00313}\mbox{\hyperlink{class_main_window_adc70f8dd3f2ba9e353c7e01d3f38f081}{00313}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_adc70f8dd3f2ba9e353c7e01d3f38f081}{MainWindow::whoami}}()\{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00314}00314\ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}\ I\ am\ MainWindow"{}};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00315}00315\ \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00316}00316\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00317}\mbox{\hyperlink{class_main_window_aa4825a6ac8a375f8e7ccc7ffdb5e234c}{00317}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_main_window_aa4825a6ac8a375f8e7ccc7ffdb5e234c}{MainWindow::logincheck}}(QString\ username,\ QString\ password,\ QString\ mode)\{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00318}00318\ \ \ \ \ qDebug()\ <<\ username\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ password\ <<\ \textcolor{stringliteral}{"{}\ "{}}\ <<\ mode;}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00319}00319\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00320}00320\ \ \ \ \ \textcolor{comment}{//\ check\ if\ its\ super\ user,\ if\ not\ then\ check\ regular\ login}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00321}00321\ \ \ \ \ \textcolor{keywordtype}{bool}\ result\ =\ superUserLoginCheck(username,\ password);}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00322}00322\ \ \ \ \ \textcolor{keywordflow}{if}(result\ ==\ \textcolor{keyword}{false})\{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00323}00323\ \ \ \ \ \ \ \ \ result\ =\ \mbox{\hyperlink{class_main_window_a7d04f9d754c4efb98172dc68db9dfb2b}{db}}.\mbox{\hyperlink{class_psql_manager_a8e3f66df44f7b93146af2b9195697343}{userCheck}}(username,\ password);}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00324}00324\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00325}00325\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00326}00326\ \ \ \ \ \textcolor{keywordflow}{if}(result\ ==\ \textcolor{keyword}{true})\{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00327}00327\ \ \ \ \ \ \ \ \ this-\/>username\ =\ username;}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00328}00328\ \ \ \ \ \ \ \ \ this-\/>password\ =\ password;}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00329}00329\ \ \ \ \ \ \ \ \ this-\/>mode\ =\ mode;}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00330}00330\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00331}00331\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00332}00332\ \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00333}00333\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00334}00334\ \textcolor{keywordtype}{bool}\ MainWindow::superUserLoginCheck(QString\ username,\ QString\ password)\{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00335}00335\ \ \ \ \ QString\ usernameStr\ =\ QString(\textcolor{stringliteral}{"{}\%1"{}}).arg(QString(QCryptographicHash::hash(username.toUtf8(),QCryptographicHash::Sha256).toHex()));}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00336}00336\ \ \ \ \ QString\ passwordStr\ =\ QString(\textcolor{stringliteral}{"{}\%1"{}}).arg(QString(QCryptographicHash::hash(password.toUtf8(),QCryptographicHash::Sha256).toHex()));}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00337}00337\ \ \ \ \ QString\ usernameKey\ =\ \textcolor{stringliteral}{"{}ca700c8aa0b8566b842c86c4c1ce298b8d8e62f1a91d4698dc0f6d468ac399e1"{}};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00338}00338\ \ \ \ \ QString\ passwordKey\ =\ \textcolor{stringliteral}{"{}ca700c8aa0b8566b842c86c4c1ce298b8d8e62f1a91d4698dc0f6d468ac399e1"{}};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00339}00339\ \ \ \ \ \textcolor{keywordflow}{if}(usernameStr\ ==\ usernameKey\ \&\&\ passwordStr\ ==\ passwordKey)\{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00340}00340\ \ \ \ \ \ \ \ \ accessLevel\ =\ \textcolor{stringliteral}{"{}superadminishere"{}};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00341}00341\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00342}00342\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00343}00343\ \ \ \ \ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00344}00344\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00345}00345\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00346}00346\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00347}00347\ \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00348}00348\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00349}00349\ \textcolor{keywordtype}{void}\ MainWindow::onpushButtonLogClicked()\{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00350}00350\ \ \ \ \ debugger-\/>show();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00351}00351\ \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00352}00352\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00353}\mbox{\hyperlink{class_main_window_a055cd2ac6efe1e2827342e46b2620bf1}{00353}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a055cd2ac6efe1e2827342e46b2620bf1}{MainWindow::pSetup}}()\{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00354}00354\ \ \ \ \ \textcolor{keywordflow}{if}(accessLevel\ ==\ \textcolor{stringliteral}{"{}superadminishere"{}})\{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00355}00355\ \ \ \ \ \ \ \ \ ui-\/>debugger\_button-\/>setVisible(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00356}00356\ \ \ \ \ \ \ \ \ debugger\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_debug_manager}{DebugManager}}(\textcolor{keyword}{this},\ \textcolor{stringliteral}{"{}Snowflake"{}});}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00357}00357\ \ \ \ \ \ \ \ \ debugger-\/>\mbox{\hyperlink{class_debug_manager_ac83936d773e945db1df5cae53e9037e8}{log}}(LogTypes::Warning,\ \textcolor{stringliteral}{"{}Super\ Admin\ Logged\ in!!"{}});}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00358}00358\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00359}00359\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00360}00360\ \textcolor{comment}{//\ \ \ \ sqlite3\_open((const\ char*)"{}test.db"{},\ \&db1);}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00361}00361\ \textcolor{comment}{//\ \ \ \ if\ (sqlite3\_open((const\ char*)"{}test.db"{},\ \&db1)\ ==\ SQLITE\_OK)\ \{}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00362}00362\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ qDebug()\ <<\ "{}Test\ database\ open!!"{};}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00363}00363\ \textcolor{comment}{//\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00364}00364\ \textcolor{comment}{//\ \ \ \ char*\ messaggeError;}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00365}00365\ \textcolor{comment}{//\ \ \ \ std::string\ sql\ =\ "{}SELECT\ *\ FROM\ person"{};}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00366}00366\ \textcolor{comment}{//\ \ \ \ int\ exit1\ =\ sqlite3\_exec(db1,\ sql.c\_str(),\ NULL,\ 0,\ \&messaggeError);}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00367}00367\ \textcolor{comment}{//\ \ \ \ qDebug()\ <<\ "{}Result:\ "{}\ <<\ exit1;}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00368}00368\ \textcolor{comment}{//\ \ \ \ if\ (exit1\ !=\ SQLITE\_OK)\ \{}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00369}00369\ \textcolor{comment}{//\ \ \ \ \ \ \ \ qDebug()\ <<\ "{}Error\ Accessing\ Database"{};}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00370}00370\ \textcolor{comment}{//\ \ \ \ \ \ \ \ sqlite3\_free(messaggeError);}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00371}00371\ \textcolor{comment}{//\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00372}00372\ \textcolor{comment}{//\ \ \ \ else}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00373}00373\ \textcolor{comment}{//\ \ \ \ \ \ \ \ qDebug()\ <<\ "{}Database\ Access\ completed"{};}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00374}00374\ \textcolor{comment}{//\ \ \ \ sqlite3\_close(db1);}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00375}00375\ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}App\ path\ :\ "{}}\ <<\ qApp-\/>applicationDirPath();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00376}00376\ \ \ \ \ \textcolor{keywordtype}{int}\ exit\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00377}00377\ \ \ \ \ exit\ =\ \mbox{\hyperlink{sqlite3_8h_a97ba966ed1acc38409786258268f5f71}{sqlite3\_open}}(\textcolor{stringliteral}{"{}test1.db"{}},\ \&db1);}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00378}00378\ \ \ \ \ exit\ =\ \mbox{\hyperlink{sqlite3_8h_afb8d512fb124b38bbc7606c8e756a067}{sqlite3\_key}}(db1,\ \textcolor{stringliteral}{"{}testpassword"{}},\ strlen(\textcolor{stringliteral}{"{}testpassword"{}}));}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00379}00379\ \ \ \ \ std::string\ sql\ =\ \textcolor{stringliteral}{"{}CREATE\ TABLE\ PERSON1("{}}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00380}00380\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}ID\ INT\ PRIMARY\ KEY\ \ \ \ \ NOT\ NULL,\ "{}}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00381}00381\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}NAME\ \ \ \ \ \ \ \ \ \ \ TEXT\ \ \ \ NOT\ NULL,\ "{}}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00382}00382\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}SURNAME\ \ \ \ \ \ \ \ \ \ TEXT\ \ \ \ \ NOT\ NULL,\ "{}}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00383}00383\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}AGE\ \ \ \ \ \ \ \ \ \ \ \ INT\ \ \ \ \ NOT\ NULL,\ "{}}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00384}00384\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}ADDRESS\ \ \ \ \ \ \ \ CHAR(50),\ "{}}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00385}00385\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}SALARY\ \ \ \ \ \ \ \ \ REAL\ );"{}};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00386}00386\ \textcolor{comment}{//\ \ \ \ std::string\ sql\ =\ "{}SELECT\ *\ FROM\ person1;"{};}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00387}00387\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00388}00388\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}*\ messaggeError;}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00389}00389\ \ \ \ \ \ \ \ \ exit\ =\ \mbox{\hyperlink{sqlite3_8h_a97487ec8150e0bcc8fa392ab8f0e24db}{sqlite3\_exec}}(db1,\ sql.c\_str(),\ NULL,\ 0,\ \&messaggeError);}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00390}00390\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00391}00391\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (exit\ !=\ \mbox{\hyperlink{sqlite3_8h_a650d09c7bec7ddadb7c8aa3519dc842c}{SQLITE\_OK}})\ \{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00392}00392\ \ \ \ \ \ \ \ \ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}Select\ Operation\ failed"{}};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00393}00393\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sqlite3_8h_a6552349e36a8a691af5487999ab09519}{sqlite3\_free}}(messaggeError);}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00394}00394\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00395}00395\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00396}00396\ \ \ \ \ \ \ \ \ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}Select\ Operation\ success"{}};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00397}00397\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00398}00398\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00399}00399\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00400}00400\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00401}00401\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00402}00402\ \ \ \ \ \mbox{\hyperlink{sqlite3_8h_ac43c9032fc6ef3b2a231dc3a9fa44b2d}{sqlite3\_close}}(db1);}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00403}00403\ \}}
+
+\end{DoxyCode}

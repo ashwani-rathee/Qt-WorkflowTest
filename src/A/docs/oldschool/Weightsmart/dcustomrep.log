@@ -1,0 +1,16 @@
+Line 128: Class MSFlexGridLib.MSFlexGrid of control Grid1 was not a loaded control class.
+Line 181: Class MSComCtl2.DTPicker of control DTPicker1 was not a loaded control class.
+Line 202: Class MSComCtl2.DTPicker of control DTPicker2 was not a loaded control class.
+Line 134: The property name _ExtentX in Grid1 is invalid.
+Line 135: The property name _ExtentY in Grid1 is invalid.
+Line 136: The property name _Version in Grid1 is invalid.
+Line 187: The property name _ExtentX in DTPicker1 is invalid.
+Line 188: The property name _ExtentY in DTPicker1 is invalid.
+Line 189: The property name _Version in DTPicker1 is invalid.
+Line 199: The property name Format in DTPicker1 is invalid.
+Line 200: The property name CurrentDate in DTPicker1 is invalid.
+Line 208: The property name _ExtentX in DTPicker2 is invalid.
+Line 209: The property name _ExtentY in DTPicker2 is invalid.
+Line 210: The property name _Version in DTPicker2 is invalid.
+Line 220: The property name Format in DTPicker2 is invalid.
+Line 221: The property name CurrentDate in DTPicker2 is invalid.

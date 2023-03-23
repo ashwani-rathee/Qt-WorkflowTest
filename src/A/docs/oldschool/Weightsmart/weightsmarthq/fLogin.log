@@ -1,0 +1,5 @@
+Line 11: Property Icon in fLogin had an invalid file reference.
+Line 354: Property ItemData in cmbLoginID had an invalid file reference.
+Line 356: Property List in cmbLoginID had an invalid file reference.
+Line 414: Property Picture in Image1 had an invalid file reference.
+Line 463: Property Caption in lblNote must be a quoted string

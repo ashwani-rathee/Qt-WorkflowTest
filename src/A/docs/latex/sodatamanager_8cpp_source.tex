@@ -1,0 +1,98 @@
+\hypertarget{sodatamanager_8cpp_source}{}\doxysection{sodatamanager.\+cpp}
+\label{sodatamanager_8cpp_source}\index{src/modules/MainWindowManager/sodatamanager.cpp@{src/modules/MainWindowManager/sodatamanager.cpp}}
+\mbox{\hyperlink{sodatamanager_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{sodatamanager_8h}{sodatamanager.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}ui\_sodatamanager.h"{}}}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mainwindow_8h}{mainwindow.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00005}\mbox{\hyperlink{class_so_data_manager_ad9c4b0d0a36a88b3e1df510db979642f}{00005}}\ \mbox{\hyperlink{class_so_data_manager_ad9c4b0d0a36a88b3e1df510db979642f}{SoDataManager::SoDataManager}}(\mbox{\hyperlink{class_main_window}{MainWindow}}\ *ancestor)\ :}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00006}00006\ \ \ \ \ ui(new\ \mbox{\hyperlink{namespace_ui}{Ui}}::\mbox{\hyperlink{class_so_data_manager}{SoDataManager}})}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00007}00007\ \{}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00008}00008\ \ \ \ \ this-\/>parent\ =\ ancestor;}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00009}00009\ \ \ \ \ ui-\/>setupUi(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00010}00010\ \ \ \ \ connect(ui-\/>get\_so\_data,\ SIGNAL(clicked()),\ \textcolor{keyword}{this},\ SLOT(onpushSoDataGetClicked()));}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00011}00011\ \ \ \ \ connect(ui-\/>save\_so\_data,\ SIGNAL(clicked()),\ \textcolor{keyword}{this},\ SLOT(onpushSoDataPushClicked()));}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00012}00012\ \ \ \ \ connect(ui-\/>update\_so\_data,\ SIGNAL(clicked()),\ \textcolor{keyword}{this},\ SLOT(onpushSoDataUpdateClicked()));}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00013}00013\ \}}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00015}00015\ \textcolor{keywordtype}{void}\ SoDataManager::onpushSoDataGetClicked()\{}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00016}00016\ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}Fetching\ data"{}};}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00017}00017\ \ \ \ \ QString\ auction\_id\ =\textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00018}00018\ \ \ \ \ QString\ customer\_code\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00019}00019\ \ \ \ \ QString\ customer\_name\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00020}00020\ \ \ \ \ QString\ so\_no\ =\ ui-\/>so\_no\_find-\/>text();}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00021}00021\ \ \ \ \ QString\ so\_date\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00022}00022\ \ \ \ \ QString\ so\_grade\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00023}00023\ \ \ \ \ QString\ so\_coal\_size\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00024}00024\ \ \ \ \ QString\ so\_qty\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00025}00025\ \ \ \ \ QString\ valid\_start\_date\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00026}00026\ \ \ \ \ QString\ valid\_end\_date\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00027}00027\ \ \ \ \ QString\ location\_id\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00028}00028\ \ \ \ \ QString\ location\_desc\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00029}00029\ \ \ \ \ QString\ bal\_qty\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00030}00030\ \ \ \ \ QString\ state\_code\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00031}00031\ \ \ \ \ parent-\/>\mbox{\hyperlink{class_main_window_a7d04f9d754c4efb98172dc68db9dfb2b}{db}}.\mbox{\hyperlink{class_psql_manager_a57ce497ace4fabd56e3362f4fe864b9b}{getSoData}}(auction\_id,\ customer\_code,\ customer\_name,\ so\_no,\ so\_date,\ so\_grade,\ so\_coal\_size,\ so\_qty,\ valid\_start\_date,\ valid\_end\_date,\ location\_id,\ location\_desc,\ bal\_qty,\ state\_code);}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00032}00032\ \ \ \ \ ui-\/>auctionIdLineEdit-\/>setText(auction\_id);}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00033}00033\ \ \ \ \ ui-\/>customerCodeLineEdit-\/>setText(customer\_code);}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00034}00034\ \ \ \ \ ui-\/>customerNameLineEdit-\/>setText(customer\_name);}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00035}00035\ \ \ \ \ ui-\/>soNoLineEdit-\/>setText(so\_no);}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00036}00036\ \ \ \ \ ui-\/>soDateLineEdit-\/>setText(so\_date);}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00037}00037\ \ \ \ \ ui-\/>soGradeLineEdit-\/>setText(so\_grade);}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00038}00038\ \ \ \ \ ui-\/>soCoalSizeLineEdit-\/>setText(so\_coal\_size);}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00039}00039\ \ \ \ \ ui-\/>soQuantityLineEdit-\/>setText(so\_qty);}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00040}00040\ \ \ \ \ ui-\/>validStartDateLineEdit-\/>setText(valid\_start\_date);}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00041}00041\ \ \ \ \ ui-\/>validEndDateLineEdit-\/>setText(valid\_end\_date);}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00042}00042\ \ \ \ \ ui-\/>locationIdLineEdit-\/>setText(location\_id);}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00043}00043\ \ \ \ \ ui-\/>locationDescLineEdit-\/>setText(location\_desc);}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00044}00044\ \ \ \ \ ui-\/>balQtyLineEdit-\/>setText(bal\_qty);}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00045}00045\ \ \ \ \ ui-\/>stateCodeLineEdit-\/>setText(state\_code);}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00046}00046\ \}}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00047}00047\ \textcolor{keywordtype}{void}\ SoDataManager::onpushSoDataPushClicked()\{}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00048}00048\ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}Save\ data"{}};}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00050}00050\ \ \ \ \ QString\ auction\_id\ =ui-\/>auctionIdLineEdit\_2-\/>text();}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00051}00051\ \ \ \ \ QString\ customer\_code\ =\ ui-\/>customerCodeLineEdit\_2-\/>text();}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00052}00052\ \ \ \ \ QString\ customer\_name\ =\ ui-\/>customerNameLineEdit\_2-\/>text();}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00053}00053\ \ \ \ \ QString\ so\_no\ =\ ui-\/>soNoLineEdit\_2-\/>text();}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00054}00054\ \ \ \ \ QString\ so\_date\ =\ ui-\/>soDateLineEdit\_2-\/>text();}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00055}00055\ \ \ \ \ QString\ so\_grade\ =\ ui-\/>soGradeLineEdit\_2-\/>text();}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00056}00056\ \ \ \ \ QString\ so\_coal\_size\ =\ ui-\/>soCoalSizeLineEdit\_2-\/>text();}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00057}00057\ \ \ \ \ QString\ so\_qty\ =\ ui-\/>soQuantityLineEdit\_2-\/>text();}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00058}00058\ \ \ \ \ QString\ valid\_start\_date\ =\ ui-\/>validStartDateLineEdit\_2-\/>text();}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00059}00059\ \ \ \ \ QString\ valid\_end\_date\ =\ \ ui-\/>validEndDateLineEdit\_2-\/>text();}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00060}00060\ \ \ \ \ QString\ location\_id\ =\ ui-\/>locationIdLineEdit\_2-\/>text();}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00061}00061\ \ \ \ \ QString\ location\_desc\ =\ ui-\/>locationDescLineEdit\_2-\/>text();}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00062}00062\ \ \ \ \ QString\ bal\_qty\ =\ ui-\/>balQtyLineEdit\_2-\/>text();}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00063}00063\ \ \ \ \ QString\ state\_code\ =\ ui-\/>stateCodeLineEdit\_2-\/>text();}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00064}00064\ \ \ \ \ parent-\/>\mbox{\hyperlink{class_main_window_a7d04f9d754c4efb98172dc68db9dfb2b}{db}}.\mbox{\hyperlink{class_psql_manager_a063a52090dac169e07db6ff74e47e3aa}{pushSoData}}(auction\_id,\ customer\_code,\ customer\_name,\ so\_no,\ so\_date,\ so\_grade,\ so\_coal\_size,\ so\_qty,\ valid\_start\_date,\ valid\_end\_date,\ location\_id,\ location\_desc,\ bal\_qty,\ state\_code);}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00066}00066\ \}}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00068}00068\ \textcolor{keywordtype}{void}\ SoDataManager::onpushSoDataUpdateClicked()\{}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00069}00069\ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}Update\ SO\ date"{}};}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00071}00071\ \ \ \ \ QString\ auction\_id\ =ui-\/>auctionIdLineEdit-\/>text();}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00072}00072\ \ \ \ \ QString\ customer\_code\ =\ ui-\/>customerCodeLineEdit-\/>text();}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00073}00073\ \ \ \ \ QString\ customer\_name\ =\ ui-\/>customerNameLineEdit-\/>text();}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00074}00074\ \ \ \ \ QString\ so\_no\ =\ ui-\/>soNoLineEdit-\/>text();}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00075}00075\ \ \ \ \ QString\ so\_date\ =\ ui-\/>soDateLineEdit-\/>text();}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00076}00076\ \ \ \ \ QString\ so\_grade\ =\ ui-\/>soGradeLineEdit-\/>text();}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00077}00077\ \ \ \ \ QString\ so\_coal\_size\ =\ ui-\/>soCoalSizeLineEdit-\/>text();}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00078}00078\ \ \ \ \ QString\ so\_qty\ =\ ui-\/>soQuantityLineEdit-\/>text();}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00079}00079\ \ \ \ \ QString\ valid\_start\_date\ =\ ui-\/>validStartDateLineEdit-\/>text();}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00080}00080\ \ \ \ \ QString\ valid\_end\_date\ =\ \ ui-\/>validEndDateLineEdit-\/>text();}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00081}00081\ \ \ \ \ QString\ location\_id\ =\ ui-\/>locationIdLineEdit-\/>text();}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00082}00082\ \ \ \ \ QString\ location\_desc\ =\ ui-\/>locationDescLineEdit-\/>text();}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00083}00083\ \ \ \ \ QString\ bal\_qty\ =\ ui-\/>balQtyLineEdit-\/>text();}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00084}00084\ \ \ \ \ QString\ state\_code\ =\ ui-\/>stateCodeLineEdit-\/>text();}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00085}00085\ \ \ \ \ parent-\/>\mbox{\hyperlink{class_main_window_a7d04f9d754c4efb98172dc68db9dfb2b}{db}}.\mbox{\hyperlink{class_psql_manager_ac084164ec62410d20f2d2ce462d10808}{updateSoData}}(auction\_id,\ customer\_code,\ customer\_name,\ so\_no,\ so\_date,\ so\_grade,\ so\_coal\_size,\ so\_qty,\ valid\_start\_date,\ valid\_end\_date,\ location\_id,\ location\_desc,\ bal\_qty,\ state\_code);}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00087}00087\ \}}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00089}\mbox{\hyperlink{class_so_data_manager_a0726b8e8fb565847245cece81be0f47d}{00089}}\ \mbox{\hyperlink{class_so_data_manager_a0726b8e8fb565847245cece81be0f47d}{SoDataManager::\string~SoDataManager}}()}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00090}00090\ \{}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00091}00091\ \ \ \ \ \textcolor{keyword}{delete}\ ui;}
+\DoxyCodeLine{\Hypertarget{sodatamanager_8cpp_source_l00092}00092\ \}}
+
+\end{DoxyCode}

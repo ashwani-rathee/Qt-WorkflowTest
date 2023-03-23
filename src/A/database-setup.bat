@@ -1,0 +1,1 @@
+".\database\bin\pg_ctl" -D ".\database\pgdata" -l logfile start

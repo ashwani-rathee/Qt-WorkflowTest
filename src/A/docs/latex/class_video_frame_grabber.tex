@@ -1,0 +1,153 @@
+\hypertarget{class_video_frame_grabber}{}\doxysection{Video\+Frame\+Grabber Class Reference}
+\label{class_video_frame_grabber}\index{VideoFrameGrabber@{VideoFrameGrabber}}
+
+
+{\ttfamily \#include $<$videoframegrabber.\+h$>$}
+
+Inheritance diagram for Video\+Frame\+Grabber\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_video_frame_grabber}
+\end{center}
+\end{figure}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_video_frame_grabber_a0e7b7827d8c9f31ef96309c6f696434e}{frame\+Available}} (QImage frame)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_video_frame_grabber_a0f0e3761b30ef42ab25844415343800c}{Video\+Frame\+Grabber}} (QWidget $\ast$widget, QObject $\ast$parent=0)
+\item 
+QList$<$ QVideo\+Frame\+::\+Pixel\+Format $>$ \mbox{\hyperlink{class_video_frame_grabber_a6b016d2c82bbb82361e6e64e820a86ff}{supported\+Pixel\+Formats}} (QAbstract\+Video\+Buffer\+::\+Handle\+Type handle\+Type=QAbstract\+Video\+Buffer\+::\+No\+Handle) const
+\item 
+bool \mbox{\hyperlink{class_video_frame_grabber_ab127a8e814b7e7048ba986423072068c}{is\+Format\+Supported}} (const QVideo\+Surface\+Format \&format) const
+\item 
+bool \mbox{\hyperlink{class_video_frame_grabber_ab6e578e742f951855412a832812dc31d}{start}} (const QVideo\+Surface\+Format \&format)
+\item 
+void \mbox{\hyperlink{class_video_frame_grabber_a4938562796cd30423c17e51cad27bef6}{stop}} ()
+\item 
+bool \mbox{\hyperlink{class_video_frame_grabber_af040a10a6a9a6c75627b0027eb8724eb}{present}} (const QVideo\+Frame \&frame)
+\item 
+QRect \mbox{\hyperlink{class_video_frame_grabber_a50eb6322354eea90d95a270f7d6eda0d}{video\+Rect}} () const
+\item 
+void \mbox{\hyperlink{class_video_frame_grabber_ada70b4efcf14879404955b0f45cca367}{update\+Video\+Rect}} ()
+\item 
+void \mbox{\hyperlink{class_video_frame_grabber_ab80e29a6c173c1a2554d1c842d72241a}{paint}} (QPainter $\ast$painter)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{videoframegrabber_8h_source_l00007}{7}} of file \mbox{\hyperlink{videoframegrabber_8h_source}{videoframegrabber.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_video_frame_grabber_a0f0e3761b30ef42ab25844415343800c}\label{class_video_frame_grabber_a0f0e3761b30ef42ab25844415343800c}} 
+\index{VideoFrameGrabber@{VideoFrameGrabber}!VideoFrameGrabber@{VideoFrameGrabber}}
+\index{VideoFrameGrabber@{VideoFrameGrabber}!VideoFrameGrabber@{VideoFrameGrabber}}
+\doxysubsubsection{\texorpdfstring{VideoFrameGrabber()}{VideoFrameGrabber()}}
+{\footnotesize\ttfamily Video\+Frame\+Grabber\+::\+Video\+Frame\+Grabber (\begin{DoxyParamCaption}\item[{QWidget $\ast$}]{widget,  }\item[{QObject $\ast$}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{videoframegrabber_8cpp_source_l00007}{7}} of file \mbox{\hyperlink{videoframegrabber_8cpp_source}{videoframegrabber.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_video_frame_grabber_a0e7b7827d8c9f31ef96309c6f696434e}\label{class_video_frame_grabber_a0e7b7827d8c9f31ef96309c6f696434e}} 
+\index{VideoFrameGrabber@{VideoFrameGrabber}!frameAvailable@{frameAvailable}}
+\index{frameAvailable@{frameAvailable}!VideoFrameGrabber@{VideoFrameGrabber}}
+\doxysubsubsection{\texorpdfstring{frameAvailable}{frameAvailable}}
+{\footnotesize\ttfamily void Video\+Frame\+Grabber\+::frame\+Available (\begin{DoxyParamCaption}\item[{QImage}]{frame }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_video_frame_grabber_ab127a8e814b7e7048ba986423072068c}\label{class_video_frame_grabber_ab127a8e814b7e7048ba986423072068c}} 
+\index{VideoFrameGrabber@{VideoFrameGrabber}!isFormatSupported@{isFormatSupported}}
+\index{isFormatSupported@{isFormatSupported}!VideoFrameGrabber@{VideoFrameGrabber}}
+\doxysubsubsection{\texorpdfstring{isFormatSupported()}{isFormatSupported()}}
+{\footnotesize\ttfamily bool Video\+Frame\+Grabber\+::is\+Format\+Supported (\begin{DoxyParamCaption}\item[{const QVideo\+Surface\+Format \&}]{format }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{videoframegrabber_8cpp_source_l00052}{52}} of file \mbox{\hyperlink{videoframegrabber_8cpp_source}{videoframegrabber.\+cpp}}.
+
+\mbox{\Hypertarget{class_video_frame_grabber_ab80e29a6c173c1a2554d1c842d72241a}\label{class_video_frame_grabber_ab80e29a6c173c1a2554d1c842d72241a}} 
+\index{VideoFrameGrabber@{VideoFrameGrabber}!paint@{paint}}
+\index{paint@{paint}!VideoFrameGrabber@{VideoFrameGrabber}}
+\doxysubsubsection{\texorpdfstring{paint()}{paint()}}
+{\footnotesize\ttfamily void Video\+Frame\+Grabber\+::paint (\begin{DoxyParamCaption}\item[{QPainter $\ast$}]{painter }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{videoframegrabber_8cpp_source_l00131}{131}} of file \mbox{\hyperlink{videoframegrabber_8cpp_source}{videoframegrabber.\+cpp}}.
+
+\mbox{\Hypertarget{class_video_frame_grabber_af040a10a6a9a6c75627b0027eb8724eb}\label{class_video_frame_grabber_af040a10a6a9a6c75627b0027eb8724eb}} 
+\index{VideoFrameGrabber@{VideoFrameGrabber}!present@{present}}
+\index{present@{present}!VideoFrameGrabber@{VideoFrameGrabber}}
+\doxysubsubsection{\texorpdfstring{present()}{present()}}
+{\footnotesize\ttfamily bool Video\+Frame\+Grabber\+::present (\begin{DoxyParamCaption}\item[{const QVideo\+Frame \&}]{frame }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{videoframegrabber_8cpp_source_l00093}{93}} of file \mbox{\hyperlink{videoframegrabber_8cpp_source}{videoframegrabber.\+cpp}}.
+
+\mbox{\Hypertarget{class_video_frame_grabber_ab6e578e742f951855412a832812dc31d}\label{class_video_frame_grabber_ab6e578e742f951855412a832812dc31d}} 
+\index{VideoFrameGrabber@{VideoFrameGrabber}!start@{start}}
+\index{start@{start}!VideoFrameGrabber@{VideoFrameGrabber}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily bool Video\+Frame\+Grabber\+::start (\begin{DoxyParamCaption}\item[{const QVideo\+Surface\+Format \&}]{format }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{videoframegrabber_8cpp_source_l00062}{62}} of file \mbox{\hyperlink{videoframegrabber_8cpp_source}{videoframegrabber.\+cpp}}.
+
+\mbox{\Hypertarget{class_video_frame_grabber_a4938562796cd30423c17e51cad27bef6}\label{class_video_frame_grabber_a4938562796cd30423c17e51cad27bef6}} 
+\index{VideoFrameGrabber@{VideoFrameGrabber}!stop@{stop}}
+\index{stop@{stop}!VideoFrameGrabber@{VideoFrameGrabber}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void Video\+Frame\+Grabber\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{videoframegrabber_8cpp_source_l00083}{83}} of file \mbox{\hyperlink{videoframegrabber_8cpp_source}{videoframegrabber.\+cpp}}.
+
+\mbox{\Hypertarget{class_video_frame_grabber_a6b016d2c82bbb82361e6e64e820a86ff}\label{class_video_frame_grabber_a6b016d2c82bbb82361e6e64e820a86ff}} 
+\index{VideoFrameGrabber@{VideoFrameGrabber}!supportedPixelFormats@{supportedPixelFormats}}
+\index{supportedPixelFormats@{supportedPixelFormats}!VideoFrameGrabber@{VideoFrameGrabber}}
+\doxysubsubsection{\texorpdfstring{supportedPixelFormats()}{supportedPixelFormats()}}
+{\footnotesize\ttfamily QList$<$ QVideo\+Frame\+::\+Pixel\+Format $>$ Video\+Frame\+Grabber\+::supported\+Pixel\+Formats (\begin{DoxyParamCaption}\item[{QAbstract\+Video\+Buffer\+::\+Handle\+Type}]{handle\+Type = {\ttfamily QAbstractVideoBuffer\+:\+:NoHandle} }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{videoframegrabber_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{videoframegrabber_8cpp_source}{videoframegrabber.\+cpp}}.
+
+\mbox{\Hypertarget{class_video_frame_grabber_ada70b4efcf14879404955b0f45cca367}\label{class_video_frame_grabber_ada70b4efcf14879404955b0f45cca367}} 
+\index{VideoFrameGrabber@{VideoFrameGrabber}!updateVideoRect@{updateVideoRect}}
+\index{updateVideoRect@{updateVideoRect}!VideoFrameGrabber@{VideoFrameGrabber}}
+\doxysubsubsection{\texorpdfstring{updateVideoRect()}{updateVideoRect()}}
+{\footnotesize\ttfamily void Video\+Frame\+Grabber\+::update\+Video\+Rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{videoframegrabber_8cpp_source_l00122}{122}} of file \mbox{\hyperlink{videoframegrabber_8cpp_source}{videoframegrabber.\+cpp}}.
+
+\mbox{\Hypertarget{class_video_frame_grabber_a50eb6322354eea90d95a270f7d6eda0d}\label{class_video_frame_grabber_a50eb6322354eea90d95a270f7d6eda0d}} 
+\index{VideoFrameGrabber@{VideoFrameGrabber}!videoRect@{videoRect}}
+\index{videoRect@{videoRect}!VideoFrameGrabber@{VideoFrameGrabber}}
+\doxysubsubsection{\texorpdfstring{videoRect()}{videoRect()}}
+{\footnotesize\ttfamily QRect Video\+Frame\+Grabber\+::video\+Rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{videoframegrabber_8h_source_l00023}{23}} of file \mbox{\hyperlink{videoframegrabber_8h_source}{videoframegrabber.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/modules/\+Cctv\+Manager/\mbox{\hyperlink{videoframegrabber_8h}{videoframegrabber.\+h}}\item 
+src/modules/\+Cctv\+Manager/\mbox{\hyperlink{videoframegrabber_8cpp}{videoframegrabber.\+cpp}}\end{DoxyCompactItemize}

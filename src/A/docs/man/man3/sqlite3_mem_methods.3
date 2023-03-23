@@ -1,0 +1,79 @@
+.TH "sqlite3_mem_methods" 3 "Tue Mar 7 2023" "Version 0.0.1" "WeighBridgeApplication" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sqlite3_mem_methods
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <sqlite3\&.h>\fP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "void *(* \fBxMalloc\fP )(int)"
+.br
+.ti -1c
+.RI "void(* \fBxFree\fP )(void *)"
+.br
+.ti -1c
+.RI "void *(* \fBxRealloc\fP )(void *, int)"
+.br
+.ti -1c
+.RI "int(* \fBxSize\fP )(void *)"
+.br
+.ti -1c
+.RI "int(* \fBxRoundup\fP )(int)"
+.br
+.ti -1c
+.RI "int(* \fBxInit\fP )(void *)"
+.br
+.ti -1c
+.RI "void(* \fBxShutdown\fP )(void *)"
+.br
+.ti -1c
+.RI "void * \fBpAppData\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB1725\fP of file \fBsqlite3\&.h\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "void* sqlite3_mem_methods::pAppData"
+
+.PP
+Definition at line \fB1733\fP of file \fBsqlite3\&.h\fP\&.
+.SS "void(* sqlite3_mem_methods::xFree) (void *)"
+
+.PP
+Definition at line \fB1727\fP of file \fBsqlite3\&.h\fP\&.
+.SS "int(* sqlite3_mem_methods::xInit) (void *)"
+
+.PP
+Definition at line \fB1731\fP of file \fBsqlite3\&.h\fP\&.
+.SS "void *(* sqlite3_mem_methods::xMalloc) (int)"
+
+.PP
+Definition at line \fB1726\fP of file \fBsqlite3\&.h\fP\&.
+.SS "void *(* sqlite3_mem_methods::xRealloc) (void *, int)"
+
+.PP
+Definition at line \fB1728\fP of file \fBsqlite3\&.h\fP\&.
+.SS "int(* sqlite3_mem_methods::xRoundup) (int)"
+
+.PP
+Definition at line \fB1730\fP of file \fBsqlite3\&.h\fP\&.
+.SS "void(* sqlite3_mem_methods::xShutdown) (void *)"
+
+.PP
+Definition at line \fB1732\fP of file \fBsqlite3\&.h\fP\&.
+.SS "int(* sqlite3_mem_methods::xSize) (void *)"
+
+.PP
+Definition at line \fB1729\fP of file \fBsqlite3\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for WeighBridgeApplication from the source code\&.

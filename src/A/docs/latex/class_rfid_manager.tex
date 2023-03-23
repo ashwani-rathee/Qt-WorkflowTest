@@ -1,0 +1,246 @@
+\hypertarget{class_rfid_manager}{}\doxysection{Rfid\+Manager Class Reference}
+\label{class_rfid_manager}\index{RfidManager@{RfidManager}}
+
+
+{\ttfamily \#include $<$rfidmanager.\+h$>$}
+
+Inheritance diagram for Rfid\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_rfid_manager}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_rfid_manager_aeee4ddd1f6ce7b919842f92793e435ea}{Rfid\+Manager}} (\mbox{\hyperlink{class_main_window}{Main\+Window}} $\ast$parent)
+\item 
+\mbox{\hyperlink{class_rfid_manager_a5a8aae5c3e264df0a60c52ee4b3d2cee}{$\sim$\+Rfid\+Manager}} ()
+\item 
+int \mbox{\hyperlink{class_rfid_manager_a6910daa89a34bec832583471a62e5560}{Connect\+To\+Rfid}} ()
+\item 
+int \mbox{\hyperlink{class_rfid_manager_a38742b8ab0f029f925df0ebbc1a8da9e}{MRFIDClean\+Inventory}} ()
+\item 
+int \mbox{\hyperlink{class_rfid_manager_a6c1c1619ede57affc013155f76109d43}{MRemove\+Tags}} ()
+\item 
+int \mbox{\hyperlink{class_rfid_manager_a083459da7494bd8b3fe7b41eaac6adbb}{MAdd\+Tag}} (int counter, int freqant, int rssi, QString pc, int epclen, QString epcdata)
+\item 
+int \mbox{\hyperlink{class_rfid_manager_a7450e7ce996f97a6854c9f81c1e417dc}{MAdd\+Tag\+Exist\+Aware}} (int counter, int freqant, int rssi, QString pc, int epclen, QString epcdata)
+\item 
+int \mbox{\hyperlink{class_rfid_manager_af53a010ee650351fc53b9c3be6cb1870}{MGet\+Inventory}} ()
+\item 
+int \mbox{\hyperlink{class_rfid_manager_a740a8f700071fe940e4ee17791eba7eb}{MProcess\+Inventory}} ()
+\item 
+void \mbox{\hyperlink{class_rfid_manager_aab035048b810bfd58a70adb957c62d90}{MPrint\+Inventory}} ()
+\item 
+int \mbox{\hyperlink{class_rfid_manager_afacb4058235a242b4fdc81e5d5265549}{MRFIDController\+Clean\+Inventory}} ()
+\item 
+int \mbox{\hyperlink{class_rfid_manager_af35a11c340321c6b023377621fc72939}{MBoth\+Clean\+Inventory}} ()
+\item 
+void \mbox{\hyperlink{class_rfid_manager_afedd2797b8d93f51c93e1f5e27b8a9f4}{run}} ()
+\item 
+void \mbox{\hyperlink{class_rfid_manager_a9c8fb7ca0c61d24ef33e096cf8cb05cb}{read\+\_\+data}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QVector$<$ struct \mbox{\hyperlink{struct_tag}{Tag}} $>$ \mbox{\hyperlink{class_rfid_manager_a16fad11de8c769f0d31e2a471e9324c1}{tags}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_rfid_manager_a6fa49506793544af436832cc41577be1}{Rfid\+New}}
+\item 
+class \mbox{\hyperlink{class_rfid_manager_ad3ba243e3e411352592ae14f55dfc7d9}{Vehicle\+Actions}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{rfidmanager_8h_source_l00031}{31}} of file \mbox{\hyperlink{rfidmanager_8h_source}{rfidmanager.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_rfid_manager_aeee4ddd1f6ce7b919842f92793e435ea}\label{class_rfid_manager_aeee4ddd1f6ce7b919842f92793e435ea}} 
+\index{RfidManager@{RfidManager}!RfidManager@{RfidManager}}
+\index{RfidManager@{RfidManager}!RfidManager@{RfidManager}}
+\doxysubsubsection{\texorpdfstring{RfidManager()}{RfidManager()}}
+{\footnotesize\ttfamily Rfid\+Manager\+::\+Rfid\+Manager (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_main_window}{Main\+Window}} $\ast$}]{parent }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{rfidmanager_8cpp_source_l00007}{7}} of file \mbox{\hyperlink{rfidmanager_8cpp_source}{rfidmanager.\+cpp}}.
+
+\mbox{\Hypertarget{class_rfid_manager_a5a8aae5c3e264df0a60c52ee4b3d2cee}\label{class_rfid_manager_a5a8aae5c3e264df0a60c52ee4b3d2cee}} 
+\index{RfidManager@{RfidManager}!````~RfidManager@{$\sim$RfidManager}}
+\index{````~RfidManager@{$\sim$RfidManager}!RfidManager@{RfidManager}}
+\doxysubsubsection{\texorpdfstring{$\sim$RfidManager()}{~RfidManager()}}
+{\footnotesize\ttfamily Rfid\+Manager\+::$\sim$\+Rfid\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{rfidmanager_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{rfidmanager_8cpp_source}{rfidmanager.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_rfid_manager_a6910daa89a34bec832583471a62e5560}\label{class_rfid_manager_a6910daa89a34bec832583471a62e5560}} 
+\index{RfidManager@{RfidManager}!ConnectToRfid@{ConnectToRfid}}
+\index{ConnectToRfid@{ConnectToRfid}!RfidManager@{RfidManager}}
+\doxysubsubsection{\texorpdfstring{ConnectToRfid()}{ConnectToRfid()}}
+{\footnotesize\ttfamily int Rfid\+Manager\+::\+Connect\+To\+Rfid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{rfidmanager_8cpp_source_l00038}{38}} of file \mbox{\hyperlink{rfidmanager_8cpp_source}{rfidmanager.\+cpp}}.
+
+\mbox{\Hypertarget{class_rfid_manager_a083459da7494bd8b3fe7b41eaac6adbb}\label{class_rfid_manager_a083459da7494bd8b3fe7b41eaac6adbb}} 
+\index{RfidManager@{RfidManager}!MAddTag@{MAddTag}}
+\index{MAddTag@{MAddTag}!RfidManager@{RfidManager}}
+\doxysubsubsection{\texorpdfstring{MAddTag()}{MAddTag()}}
+{\footnotesize\ttfamily int Rfid\+Manager\+::\+MAdd\+Tag (\begin{DoxyParamCaption}\item[{int}]{counter,  }\item[{int}]{freqant,  }\item[{int}]{rssi,  }\item[{QString}]{pc,  }\item[{int}]{epclen,  }\item[{QString}]{epcdata }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{rfidmanager_8cpp_source_l00070}{70}} of file \mbox{\hyperlink{rfidmanager_8cpp_source}{rfidmanager.\+cpp}}.
+
+\mbox{\Hypertarget{class_rfid_manager_a7450e7ce996f97a6854c9f81c1e417dc}\label{class_rfid_manager_a7450e7ce996f97a6854c9f81c1e417dc}} 
+\index{RfidManager@{RfidManager}!MAddTagExistAware@{MAddTagExistAware}}
+\index{MAddTagExistAware@{MAddTagExistAware}!RfidManager@{RfidManager}}
+\doxysubsubsection{\texorpdfstring{MAddTagExistAware()}{MAddTagExistAware()}}
+{\footnotesize\ttfamily int Rfid\+Manager\+::\+MAdd\+Tag\+Exist\+Aware (\begin{DoxyParamCaption}\item[{int}]{counter,  }\item[{int}]{freqant,  }\item[{int}]{rssi,  }\item[{QString}]{pc,  }\item[{int}]{epclen,  }\item[{QString}]{epcdata }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{rfidmanager_8cpp_source_l00076}{76}} of file \mbox{\hyperlink{rfidmanager_8cpp_source}{rfidmanager.\+cpp}}.
+
+\mbox{\Hypertarget{class_rfid_manager_af35a11c340321c6b023377621fc72939}\label{class_rfid_manager_af35a11c340321c6b023377621fc72939}} 
+\index{RfidManager@{RfidManager}!MBothCleanInventory@{MBothCleanInventory}}
+\index{MBothCleanInventory@{MBothCleanInventory}!RfidManager@{RfidManager}}
+\doxysubsubsection{\texorpdfstring{MBothCleanInventory()}{MBothCleanInventory()}}
+{\footnotesize\ttfamily int Rfid\+Manager\+::\+MBoth\+Clean\+Inventory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{rfidmanager_8cpp_source_l00061}{61}} of file \mbox{\hyperlink{rfidmanager_8cpp_source}{rfidmanager.\+cpp}}.
+
+\mbox{\Hypertarget{class_rfid_manager_af53a010ee650351fc53b9c3be6cb1870}\label{class_rfid_manager_af53a010ee650351fc53b9c3be6cb1870}} 
+\index{RfidManager@{RfidManager}!MGetInventory@{MGetInventory}}
+\index{MGetInventory@{MGetInventory}!RfidManager@{RfidManager}}
+\doxysubsubsection{\texorpdfstring{MGetInventory()}{MGetInventory()}}
+{\footnotesize\ttfamily int Rfid\+Manager\+::\+MGet\+Inventory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{rfidmanager_8cpp_source_l00134}{134}} of file \mbox{\hyperlink{rfidmanager_8cpp_source}{rfidmanager.\+cpp}}.
+
+\mbox{\Hypertarget{class_rfid_manager_aab035048b810bfd58a70adb957c62d90}\label{class_rfid_manager_aab035048b810bfd58a70adb957c62d90}} 
+\index{RfidManager@{RfidManager}!MPrintInventory@{MPrintInventory}}
+\index{MPrintInventory@{MPrintInventory}!RfidManager@{RfidManager}}
+\doxysubsubsection{\texorpdfstring{MPrintInventory()}{MPrintInventory()}}
+{\footnotesize\ttfamily void Rfid\+Manager\+::\+MPrint\+Inventory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{rfidmanager_8cpp_source_l00162}{162}} of file \mbox{\hyperlink{rfidmanager_8cpp_source}{rfidmanager.\+cpp}}.
+
+\mbox{\Hypertarget{class_rfid_manager_a740a8f700071fe940e4ee17791eba7eb}\label{class_rfid_manager_a740a8f700071fe940e4ee17791eba7eb}} 
+\index{RfidManager@{RfidManager}!MProcessInventory@{MProcessInventory}}
+\index{MProcessInventory@{MProcessInventory}!RfidManager@{RfidManager}}
+\doxysubsubsection{\texorpdfstring{MProcessInventory()}{MProcessInventory()}}
+{\footnotesize\ttfamily int Rfid\+Manager\+::\+MProcess\+Inventory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{rfidmanager_8cpp_source_l00158}{158}} of file \mbox{\hyperlink{rfidmanager_8cpp_source}{rfidmanager.\+cpp}}.
+
+\mbox{\Hypertarget{class_rfid_manager_a6c1c1619ede57affc013155f76109d43}\label{class_rfid_manager_a6c1c1619ede57affc013155f76109d43}} 
+\index{RfidManager@{RfidManager}!MRemoveTags@{MRemoveTags}}
+\index{MRemoveTags@{MRemoveTags}!RfidManager@{RfidManager}}
+\doxysubsubsection{\texorpdfstring{MRemoveTags()}{MRemoveTags()}}
+{\footnotesize\ttfamily int Rfid\+Manager\+::\+MRemove\+Tags (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_rfid_manager_a38742b8ab0f029f925df0ebbc1a8da9e}\label{class_rfid_manager_a38742b8ab0f029f925df0ebbc1a8da9e}} 
+\index{RfidManager@{RfidManager}!MRFIDCleanInventory@{MRFIDCleanInventory}}
+\index{MRFIDCleanInventory@{MRFIDCleanInventory}!RfidManager@{RfidManager}}
+\doxysubsubsection{\texorpdfstring{MRFIDCleanInventory()}{MRFIDCleanInventory()}}
+{\footnotesize\ttfamily int Rfid\+Manager\+::\+MRFIDClean\+Inventory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{rfidmanager_8cpp_source_l00048}{48}} of file \mbox{\hyperlink{rfidmanager_8cpp_source}{rfidmanager.\+cpp}}.
+
+\mbox{\Hypertarget{class_rfid_manager_afacb4058235a242b4fdc81e5d5265549}\label{class_rfid_manager_afacb4058235a242b4fdc81e5d5265549}} 
+\index{RfidManager@{RfidManager}!MRFIDControllerCleanInventory@{MRFIDControllerCleanInventory}}
+\index{MRFIDControllerCleanInventory@{MRFIDControllerCleanInventory}!RfidManager@{RfidManager}}
+\doxysubsubsection{\texorpdfstring{MRFIDControllerCleanInventory()}{MRFIDControllerCleanInventory()}}
+{\footnotesize\ttfamily int Rfid\+Manager\+::\+MRFIDController\+Clean\+Inventory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{rfidmanager_8cpp_source_l00054}{54}} of file \mbox{\hyperlink{rfidmanager_8cpp_source}{rfidmanager.\+cpp}}.
+
+\mbox{\Hypertarget{class_rfid_manager_a9c8fb7ca0c61d24ef33e096cf8cb05cb}\label{class_rfid_manager_a9c8fb7ca0c61d24ef33e096cf8cb05cb}} 
+\index{RfidManager@{RfidManager}!read\_data@{read\_data}}
+\index{read\_data@{read\_data}!RfidManager@{RfidManager}}
+\doxysubsubsection{\texorpdfstring{read\_data()}{read\_data()}}
+{\footnotesize\ttfamily void Rfid\+Manager\+::read\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{rfidmanager_8cpp_source_l00196}{196}} of file \mbox{\hyperlink{rfidmanager_8cpp_source}{rfidmanager.\+cpp}}.
+
+\mbox{\Hypertarget{class_rfid_manager_afedd2797b8d93f51c93e1f5e27b8a9f4}\label{class_rfid_manager_afedd2797b8d93f51c93e1f5e27b8a9f4}} 
+\index{RfidManager@{RfidManager}!run@{run}}
+\index{run@{run}!RfidManager@{RfidManager}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void Rfid\+Manager\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{rfidmanager_8cpp_source_l00169}{169}} of file \mbox{\hyperlink{rfidmanager_8cpp_source}{rfidmanager.\+cpp}}.
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_rfid_manager_a6fa49506793544af436832cc41577be1}\label{class_rfid_manager_a6fa49506793544af436832cc41577be1}} 
+\index{RfidManager@{RfidManager}!RfidNew@{RfidNew}}
+\index{RfidNew@{RfidNew}!RfidManager@{RfidManager}}
+\doxysubsubsection{\texorpdfstring{RfidNew}{RfidNew}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{class_rfid_new}{Rfid\+New}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \mbox{\hyperlink{rfidmanager_8h_source_l00034}{34}} of file \mbox{\hyperlink{rfidmanager_8h_source}{rfidmanager.\+h}}.
+
+\mbox{\Hypertarget{class_rfid_manager_ad3ba243e3e411352592ae14f55dfc7d9}\label{class_rfid_manager_ad3ba243e3e411352592ae14f55dfc7d9}} 
+\index{RfidManager@{RfidManager}!VehicleActions@{VehicleActions}}
+\index{VehicleActions@{VehicleActions}!RfidManager@{RfidManager}}
+\doxysubsubsection{\texorpdfstring{VehicleActions}{VehicleActions}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{class_vehicle_actions}{Vehicle\+Actions}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \mbox{\hyperlink{rfidmanager_8h_source_l00035}{35}} of file \mbox{\hyperlink{rfidmanager_8h_source}{rfidmanager.\+h}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_rfid_manager_a16fad11de8c769f0d31e2a471e9324c1}\label{class_rfid_manager_a16fad11de8c769f0d31e2a471e9324c1}} 
+\index{RfidManager@{RfidManager}!tags@{tags}}
+\index{tags@{tags}!RfidManager@{RfidManager}}
+\doxysubsubsection{\texorpdfstring{tags}{tags}}
+{\footnotesize\ttfamily QVector$<$struct \mbox{\hyperlink{struct_tag}{Tag}}$>$ Rfid\+Manager\+::tags}
+
+
+
+Definition at line \mbox{\hyperlink{rfidmanager_8h_source_l00051}{51}} of file \mbox{\hyperlink{rfidmanager_8h_source}{rfidmanager.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/modules/\+Rfid\+Manager/\mbox{\hyperlink{rfidmanager_8h}{rfidmanager.\+h}}\item 
+src/modules/\+Rfid\+Manager/\mbox{\hyperlink{rfidmanager_8cpp}{rfidmanager.\+cpp}}\end{DoxyCompactItemize}

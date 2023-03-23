@@ -1,0 +1,127 @@
+.TH "MainWindow" 3 "Tue Mar 7 2023" "Version 0.0.1" "WeighBridgeApplication" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MainWindow
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <mainwindow\&.h>\fP
+.PP
+Inherits QMainWindow\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "bool \fBlogincheck\fP (QString username, QString password, QString mode)"
+.br
+.in -1c
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBrfidupdatecalled\fP ()"
+.br
+.ti -1c
+.RI "void \fBrfidnewcalled\fP ()"
+.br
+.ti -1c
+.RI "void \fBrfidreissuecalled\fP ()"
+.br
+.ti -1c
+.RI "void \fBvehicleactionscalled\fP ()"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMainWindow\fP (QApplication *parent=0, QString \fBappname\fP='test')"
+.br
+.RI "\fBMainWindow::MainWindow\fP\&. "
+.ti -1c
+.RI "\fB~MainWindow\fP ()"
+.br
+.ti -1c
+.RI "void \fBwhoami\fP ()"
+.br
+.ti -1c
+.RI "int \fBloginDialog\fP ()"
+.br
+.ti -1c
+.RI "void \fBpSetup\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBPsqlManager\fP \fBdb\fP"
+.br
+.ti -1c
+.RI "QString \fBappname\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB35\fP of file \fBmainwindow\&.h\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MainWindow::MainWindow (QApplication * parent = \fC0\fP, QString appname = \fC'test'\fP)\fC [explicit]\fP"
+
+.PP
+\fBMainWindow::MainWindow\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIQApplication\fP *parent, QString appname 
+.RE
+.PP
+
+.PP
+Definition at line \fB22\fP of file \fBmainwindow\&.cpp\fP\&.
+.SS "MainWindow::~MainWindow ()"
+
+.PP
+Definition at line \fB167\fP of file \fBmainwindow\&.cpp\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool MainWindow::logincheck (QString username, QString password, QString mode)\fC [slot]\fP"
+
+.PP
+Definition at line \fB317\fP of file \fBmainwindow\&.cpp\fP\&.
+.SS "int MainWindow::loginDialog ()"
+
+.PP
+Definition at line \fB176\fP of file \fBmainwindow\&.cpp\fP\&.
+.SS "void MainWindow::pSetup ()"
+
+.PP
+Definition at line \fB353\fP of file \fBmainwindow\&.cpp\fP\&.
+.SS "void MainWindow::rfidnewcalled ()\fC [signal]\fP"
+
+.SS "void MainWindow::rfidreissuecalled ()\fC [signal]\fP"
+
+.SS "void MainWindow::rfidupdatecalled ()\fC [signal]\fP"
+
+.SS "void MainWindow::vehicleactionscalled ()\fC [signal]\fP"
+
+.SS "void MainWindow::whoami ()"
+
+.PP
+Definition at line \fB313\fP of file \fBmainwindow\&.cpp\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QString MainWindow::appname"
+
+.PP
+Definition at line \fB45\fP of file \fBmainwindow\&.h\fP\&.
+.SS "\fBPsqlManager\fP MainWindow::db"
+
+.PP
+Definition at line \fB43\fP of file \fBmainwindow\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for WeighBridgeApplication from the source code\&.

@@ -1,0 +1,144 @@
+.TH "PsqlManager" 3 "Tue Mar 7 2023" "Version 0.0.1" "WeighBridgeApplication" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PsqlManager
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <psqlmanager\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPsqlManager\fP ()"
+.br
+.ti -1c
+.RI "\fB~PsqlManager\fP ()"
+.br
+.ti -1c
+.RI "bool \fBisOpen\fP () const"
+.br
+.ti -1c
+.RI "bool \fBuserCheck\fP (QString username, QString password)"
+.br
+.ti -1c
+.RI "void \fBlog\fP (QString username, QString activity)"
+.br
+.ti -1c
+.RI "void \fBopenDatabase\fP (QString hostname='localhost', int port=2001, QString databaseName='wbapp', QString userName='postgres', QString password='postgres')"
+.br
+.ti -1c
+.RI "void \fBcloseDatabase\fP ()"
+.br
+.ti -1c
+.RI "void \fBupdateAdminIpSettings\fP (QString name, QString ip, int port, QString uname, QString password)"
+.br
+.ti -1c
+.RI "void \fBinsertAdminIpSettings\fP (QString name, QString ip, int port, QString uname, QString password)"
+.br
+.ti -1c
+.RI "void \fBgetAdminIpSettingsRowByName\fP (QString name, QString &ip, int &port, QString &uname, QString &password)"
+.br
+.ti -1c
+.RI "void \fBupdateWeighBridgeSettings\fP (QString portname, int baudrate, int databits, int parity)"
+.br
+.ti -1c
+.RI "void \fBgetWeighBridgeSettings\fP (QString &portname, QString &baudrate, QString &databits, QString &parity)"
+.br
+.ti -1c
+.RI "void \fBaddNewRfid\fP (QString TAGNO='', QString V_NO='', QDate ISSUE=QDate::currentDate(), QDate EXPIRY=QDate::currentDate(), QString TC_CODE='', QString OWNER='', QString OWNER_ADDRESS='', QString OWNER_EMAIL='', QString OWNER_PHONE='', QString DRIVER='', QString DRIVER_ADDRESS='', QString DRIVER_EMAIL='', QString DRIVER_PHONE='', QString PHOTO='', QString TM_CODE='', qint64 RLW=100, qint64 GVW=100, qint64 MAX_TARE_WT=100, qint64 MIN_TARE_WT=100, QString DO_NO='1', QString COLL_CODE='collc', QString WB_CODE='wbc', QString VALID='0', int TAGTRIPS=1, int TRIPS_DONE=1, QString V_TYPE='1', QString TAG_TYPE='tagtype', QString TSNO='tsno', QString UNIT='unit', QString MODE='mode', QString WMODE='wmode', QString DEST='dest', QString TRIPTIME='triptime')"
+.br
+.ti -1c
+.RI "int \fBgetValidityStatus\fP (int &a, QString vehicleno)"
+.br
+.ti -1c
+.RI "void \fBgetSoData\fP (QString &auction_id, QString &customer_code, QString &customer_name, QString &so_no, QString &so_date, QString &so_grade, QString &so_coal_size, QString &so_qty, QString &valid_start_date, QString &valid_end_date, QString &location_id, QString &location_desc, QString &bal_qty, QString &state_code)"
+.br
+.ti -1c
+.RI "void \fBpushSoData\fP (QString auction_id, QString customer_code, QString customer_name, QString so_no, QString so_date, QString so_grade, QString so_coal_size, QString so_qty, QString valid_start_date, QString valid_end_date, QString location_id, QString location_desc, QString bal_qty, QString state_code)"
+.br
+.ti -1c
+.RI "void \fBupdateSoData\fP (QString auction_id, QString customer_code, QString customer_name, QString so_no, QString so_date, QString so_grade, QString so_coal_size, QString so_qty, QString valid_start_date, QString valid_end_date, QString location_id, QString location_desc, QString bal_qty, QString state_code)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB7\fP of file \fBpsqlmanager\&.h\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "PsqlManager::PsqlManager ()"
+
+.PP
+Definition at line \fB71\fP of file \fBpsqlmanager\&.cpp\fP\&.
+.SS "PsqlManager::~PsqlManager ()"
+
+.PP
+Definition at line \fB76\fP of file \fBpsqlmanager\&.cpp\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void PsqlManager::addNewRfid (QString TAGNO = \fC''\fP, QString V_NO = \fC''\fP, QDate ISSUE = \fCQDate::currentDate()\fP, QDate EXPIRY = \fCQDate::currentDate()\fP, QString TC_CODE = \fC''\fP, QString OWNER = \fC''\fP, QString OWNER_ADDRESS = \fC''\fP, QString OWNER_EMAIL = \fC''\fP, QString OWNER_PHONE = \fC''\fP, QString DRIVER = \fC''\fP, QString DRIVER_ADDRESS = \fC''\fP, QString DRIVER_EMAIL = \fC''\fP, QString DRIVER_PHONE = \fC''\fP, QString PHOTO = \fC''\fP, QString TM_CODE = \fC''\fP, qint64 RLW = \fC100\fP, qint64 GVW = \fC100\fP, qint64 MAX_TARE_WT = \fC100\fP, qint64 MIN_TARE_WT = \fC100\fP, QString DO_NO = \fC'1'\fP, QString COLL_CODE = \fC'collc'\fP, QString WB_CODE = \fC'wbc'\fP, QString VALID = \fC'0'\fP, int TAGTRIPS = \fC1\fP, int TRIPS_DONE = \fC1\fP, QString V_TYPE = \fC'1'\fP, QString TAG_TYPE = \fC'tagtype'\fP, QString TSNO = \fC'tsno'\fP, QString UNIT = \fC'unit'\fP, QString MODE = \fC'mode'\fP, QString WMODE = \fC'wmode'\fP, QString DEST = \fC'dest'\fP, QString TRIPTIME = \fC'triptime'\fP)"
+
+.PP
+Definition at line \fB224\fP of file \fBpsqlmanager\&.cpp\fP\&.
+.SS "void PsqlManager::closeDatabase ()"
+
+.PP
+Definition at line \fB112\fP of file \fBpsqlmanager\&.cpp\fP\&.
+.SS "void PsqlManager::getAdminIpSettingsRowByName (QString name, QString & ip, int & port, QString & uname, QString & password)"
+
+.PP
+Definition at line \fB178\fP of file \fBpsqlmanager\&.cpp\fP\&.
+.SS "void PsqlManager::getSoData (QString & auction_id, QString & customer_code, QString & customer_name, QString & so_no, QString & so_date, QString & so_grade, QString & so_coal_size, QString & so_qty, QString & valid_start_date, QString & valid_end_date, QString & location_id, QString & location_desc, QString & bal_qty, QString & state_code)"
+
+.PP
+Definition at line \fB294\fP of file \fBpsqlmanager\&.cpp\fP\&.
+.SS "int PsqlManager::getValidityStatus (int & a, QString vehicleno)"
+
+.PP
+Definition at line \fB273\fP of file \fBpsqlmanager\&.cpp\fP\&.
+.SS "void PsqlManager::getWeighBridgeSettings (QString & portname, QString & baudrate, QString & databits, QString & parity)"
+
+.PP
+Definition at line \fB211\fP of file \fBpsqlmanager\&.cpp\fP\&.
+.SS "void PsqlManager::insertAdminIpSettings (QString name, QString ip, int port, QString uname, QString password)"
+
+.PP
+Definition at line \fB166\fP of file \fBpsqlmanager\&.cpp\fP\&.
+.SS "bool PsqlManager::isOpen () const"
+
+.PP
+Definition at line \fB84\fP of file \fBpsqlmanager\&.cpp\fP\&.
+.SS "void PsqlManager::log (QString username, QString activity)"
+
+.PP
+Definition at line \fB139\fP of file \fBpsqlmanager\&.cpp\fP\&.
+.SS "void PsqlManager::openDatabase (QString hostname = \fC'localhost'\fP, int port = \fC2001\fP, QString databaseName = \fC'wbapp'\fP, QString userName = \fC'postgres'\fP, QString password = \fC'postgres'\fP)"
+
+.PP
+Definition at line \fB96\fP of file \fBpsqlmanager\&.cpp\fP\&.
+.SS "void PsqlManager::pushSoData (QString auction_id, QString customer_code, QString customer_name, QString so_no, QString so_date, QString so_grade, QString so_coal_size, QString so_qty, QString valid_start_date, QString valid_end_date, QString location_id, QString location_desc, QString bal_qty, QString state_code)"
+
+.PP
+Definition at line \fB323\fP of file \fBpsqlmanager\&.cpp\fP\&.
+.SS "void PsqlManager::updateAdminIpSettings (QString name, QString ip, int port, QString uname, QString password)"
+
+.PP
+Definition at line \fB154\fP of file \fBpsqlmanager\&.cpp\fP\&.
+.SS "void PsqlManager::updateSoData (QString auction_id, QString customer_code, QString customer_name, QString so_no, QString so_date, QString so_grade, QString so_coal_size, QString so_qty, QString valid_start_date, QString valid_end_date, QString location_id, QString location_desc, QString bal_qty, QString state_code)"
+
+.PP
+Definition at line \fB349\fP of file \fBpsqlmanager\&.cpp\fP\&.
+.SS "void PsqlManager::updateWeighBridgeSettings (QString portname, int baudrate, int databits, int parity)"
+
+.PP
+Definition at line \fB197\fP of file \fBpsqlmanager\&.cpp\fP\&.
+.SS "bool PsqlManager::userCheck (QString username, QString password)"
+
+.PP
+Definition at line \fB126\fP of file \fBpsqlmanager\&.cpp\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for WeighBridgeApplication from the source code\&.

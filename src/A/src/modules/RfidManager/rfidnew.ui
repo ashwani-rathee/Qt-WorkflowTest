@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RfidNew</class>
+ <widget class="QDialog" name="RfidNew">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>625</width>
+    <height>566</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QGroupBox" name="rfidnew_main">
+     <property name="title">
+      <string>RFID New</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_5">
+      <item row="0" column="0">
+       <widget class="QPushButton" name="read_inventory">
+        <property name="text">
+         <string>Read Tag</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1" colspan="2">
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>Number: </string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="epc_number">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="1" column="0" rowspan="2" colspan="2">
+       <widget class="QGroupBox" name="groupBox_3">
+        <property name="title">
+         <string>Details</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_4">
+         <item row="0" column="0">
+          <layout class="QFormLayout" name="formLayout_2">
+           <property name="horizontalSpacing">
+            <number>10</number>
+           </property>
+           <item row="0" column="0">
+            <widget class="QLabel" name="tagTripsLabel_2">
+             <property name="text">
+              <string>Tag Trips</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLineEdit" name="tagTripsLineEdit_2">
+             <property name="text">
+              <string>1</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="ExpiryDate_2">
+             <property name="text">
+              <string>Expiry Date</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QDateEdit" name="ExpiryDateEdit_2"/>
+           </item>
+           <item row="2" column="1">
+            <layout class="QHBoxLayout" name="weightment_type_2"/>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="vehicleNoLabel_2">
+             <property name="text">
+              <string>Vehicle No</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QLineEdit" name="vehicleNoLineEdit_2">
+             <property name="text">
+              <string/>
+             </property>
+             <property name="placeholderText">
+              <string>Vehicle Number</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLabel" name="vehicleTypeLabel_2">
+             <property name="text">
+              <string>Vehicle Type</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="QLineEdit" name="vehicleTypeLineEdit_2">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="0">
+            <widget class="QLabel" name="rLWInKgLabel_2">
+             <property name="text">
+              <string>RLW(in kg)</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="1">
+            <widget class="QLineEdit" name="rLWInKgLineEdit_2">
+             <property name="placeholderText">
+              <string>RLW</string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="0">
+            <widget class="QLabel" name="truckOwnerLabel_2">
+             <property name="text">
+              <string>Owner Name</string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="1">
+            <widget class="QLineEdit" name="truckOwnerLineEdit_2">
+             <property name="placeholderText">
+              <string>Owner Name</string>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="0">
+            <widget class="QLabel" name="ownerAddressLabel_2">
+             <property name="text">
+              <string>Owner Address</string>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="1">
+            <widget class="QLineEdit" name="ownerAddressLineEdit_2">
+             <property name="placeholderText">
+              <string>Owner Address</string>
+             </property>
+            </widget>
+           </item>
+           <item row="8" column="0">
+            <widget class="QLabel" name="ownerEmailLabel_2">
+             <property name="text">
+              <string>Owner Email</string>
+             </property>
+            </widget>
+           </item>
+           <item row="8" column="1">
+            <widget class="QLineEdit" name="ownerEmailLineEdit_2">
+             <property name="placeholderText">
+              <string>Owner Email</string>
+             </property>
+            </widget>
+           </item>
+           <item row="9" column="0">
+            <widget class="QLabel" name="ownerPhoneLabel_2">
+             <property name="text">
+              <string>Owner Phone</string>
+             </property>
+            </widget>
+           </item>
+           <item row="9" column="1">
+            <widget class="QLineEdit" name="ownerPhoneLineEdit_2">
+             <property name="placeholderText">
+              <string>Owner Phone</string>
+             </property>
+            </widget>
+           </item>
+           <item row="10" column="0">
+            <widget class="QLabel" name="truckDriverLabel_2">
+             <property name="text">
+              <string>Driver Name</string>
+             </property>
+            </widget>
+           </item>
+           <item row="10" column="1">
+            <widget class="QLineEdit" name="truckDriverLineEdit_2">
+             <property name="placeholderText">
+              <string>Driver Name</string>
+             </property>
+            </widget>
+           </item>
+           <item row="11" column="0">
+            <widget class="QLabel" name="driverAddressLabel_2">
+             <property name="text">
+              <string>Driver Address</string>
+             </property>
+            </widget>
+           </item>
+           <item row="11" column="1">
+            <widget class="QLineEdit" name="driverAddressLineEdit_2">
+             <property name="placeholderText">
+              <string>Driver Address</string>
+             </property>
+            </widget>
+           </item>
+           <item row="13" column="0">
+            <widget class="QLabel" name="driverPhoneLabel_2">
+             <property name="text">
+              <string>Driver Phone</string>
+             </property>
+            </widget>
+           </item>
+           <item row="13" column="1">
+            <widget class="QLineEdit" name="driverPhoneLineEdit_2">
+             <property name="placeholderText">
+              <string>Driver Phone</string>
+             </property>
+            </widget>
+           </item>
+           <item row="14" column="0">
+            <widget class="QLabel" name="wBCodeLabel_2">
+             <property name="text">
+              <string>WB Code</string>
+             </property>
+            </widget>
+           </item>
+           <item row="14" column="1">
+            <widget class="QLineEdit" name="wBCodeLineEdit_2"/>
+           </item>
+           <item row="12" column="0">
+            <widget class="QLabel" name="driverEmailLabel">
+             <property name="text">
+              <string>Driver Email</string>
+             </property>
+            </widget>
+           </item>
+           <item row="12" column="1">
+            <widget class="QLineEdit" name="driverEmailLineEdit">
+             <property name="placeholderText">
+              <string>Driver Email</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="1" column="2" colspan="2">
+       <widget class="QGroupBox" name="groupBox_2">
+        <property name="title">
+         <string>Weightment Type</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_3">
+         <item row="1" column="0">
+          <widget class="QStackedWidget" name="weightment_forms">
+           <property name="currentIndex">
+            <number>0</number>
+           </property>
+           <widget class="QWidget" name="page">
+            <widget class="QWidget" name="formLayoutWidget">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>0</y>
+               <width>251</width>
+               <height>371</height>
+              </rect>
+             </property>
+             <layout class="QFormLayout" name="formLayout">
+              <item row="0" column="0">
+               <widget class="QLabel" name="orderNoLabel">
+                <property name="text">
+                 <string>Order No.</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QLineEdit" name="orderNoLineEdit"/>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLabel" name="partyCodeLabel">
+                <property name="text">
+                 <string>Party Code</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QLineEdit" name="partyCodeLineEdit"/>
+              </item>
+              <item row="2" column="0">
+               <widget class="QLabel" name="nameLabel">
+                <property name="text">
+                 <string>Name</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <widget class="QLineEdit" name="nameLineEdit"/>
+              </item>
+              <item row="3" column="0">
+               <widget class="QLabel" name="destinationLabel">
+                <property name="text">
+                 <string>Destination</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="1">
+               <widget class="QLineEdit" name="destinationLineEdit"/>
+              </item>
+              <item row="4" column="0">
+               <widget class="QLabel" name="startDateLabel">
+                <property name="text">
+                 <string>Start Date</string>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="1">
+               <widget class="QDateEdit" name="startDateDateEdit"/>
+              </item>
+              <item row="5" column="0">
+               <widget class="QLabel" name="endDateLabel">
+                <property name="text">
+                 <string>End Date</string>
+                </property>
+               </widget>
+              </item>
+              <item row="5" column="1">
+               <widget class="QLineEdit" name="endDateLineEdit"/>
+              </item>
+              <item row="6" column="0">
+               <widget class="QLabel" name="materialCodeLabel">
+                <property name="text">
+                 <string>Material Code</string>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="1">
+               <widget class="QLineEdit" name="materialCodeLineEdit"/>
+              </item>
+             </layout>
+            </widget>
+           </widget>
+           <widget class="QWidget" name="page_2">
+            <widget class="QWidget" name="formLayoutWidget_2">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>0</y>
+               <width>251</width>
+               <height>371</height>
+              </rect>
+             </property>
+             <layout class="QFormLayout" name="formLayout_3">
+              <item row="0" column="0">
+               <widget class="QLabel" name="destWbCodeLabel_2">
+                <property name="text">
+                 <string>Dest. Wb Code</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QLineEdit" name="destWbCodeLineEdit_2"/>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLabel" name="tripTimeMinsLabel_2">
+                <property name="text">
+                 <string>Trip Time(Mins)</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QLineEdit" name="tripTimeMinsLineEdit_2"/>
+              </item>
+              <item row="2" column="0">
+               <widget class="QLabel" name="materialCodeLabel_4">
+                <property name="text">
+                 <string>Material Code</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <widget class="QLineEdit" name="materialCodeLineEdit_4"/>
+              </item>
+              <item row="3" column="0">
+               <widget class="QLabel" name="loadingCodeLabel">
+                <property name="text">
+                 <string>Loading Code</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="1">
+               <widget class="QLineEdit" name="loadingCodeLineEdit"/>
+              </item>
+             </layout>
+            </widget>
+           </widget>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <item>
+            <widget class="QRadioButton" name="weight_type_dispatch">
+             <property name="text">
+              <string>Dispatch</string>
+             </property>
+             <attribute name="buttonGroup">
+              <string notr="true">weight_type</string>
+             </attribute>
+            </widget>
+           </item>
+           <item>
+            <widget class="QRadioButton" name="weight_type_internal">
+             <property name="text">
+              <string>Internal</string>
+             </property>
+             <attribute name="buttonGroup">
+              <string notr="true">weight_type</string>
+             </attribute>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="2" column="2" colspan="2">
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <widget class="QPushButton" name="save_form">
+          <property name="text">
+           <string>Save</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="clear_form">
+          <property name="text">
+           <string>Clear</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <layout class="QHBoxLayout" name="statusbar"/>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+ <buttongroups>
+  <buttongroup name="weight_type"/>
+ </buttongroups>
+</ui>

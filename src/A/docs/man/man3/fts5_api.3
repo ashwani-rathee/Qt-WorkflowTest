@@ -1,0 +1,51 @@
+.TH "fts5_api" 3 "Tue Mar 7 2023" "Version 0.0.1" "WeighBridgeApplication" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+fts5_api
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <sqlite3\&.h>\fP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBiVersion\fP"
+.br
+.ti -1c
+.RI "int(* \fBxCreateTokenizer\fP )(\fBfts5_api\fP *pApi, const char *zName, void *pContext, \fBfts5_tokenizer\fP *pTokenizer, void(*xDestroy)(void *))"
+.br
+.ti -1c
+.RI "int(* \fBxFindTokenizer\fP )(\fBfts5_api\fP *pApi, const char *zName, void **ppContext, \fBfts5_tokenizer\fP *pTokenizer)"
+.br
+.ti -1c
+.RI "int(* \fBxCreateFunction\fP )(\fBfts5_api\fP *pApi, const char *zName, void *pContext, \fBfts5_extension_function\fP xFunction, void(*xDestroy)(void *))"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB12857\fP of file \fBsqlite3\&.h\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "int fts5_api::iVersion"
+
+.PP
+Definition at line \fB12858\fP of file \fBsqlite3\&.h\fP\&.
+.SS "int(* fts5_api::xCreateFunction) (\fBfts5_api\fP *pApi, const char *zName, void *pContext, \fBfts5_extension_function\fP xFunction, void(*xDestroy)(void *))"
+
+.PP
+Definition at line \fB12878\fP of file \fBsqlite3\&.h\fP\&.
+.SS "int(* fts5_api::xCreateTokenizer) (\fBfts5_api\fP *pApi, const char *zName, void *pContext, \fBfts5_tokenizer\fP *pTokenizer, void(*xDestroy)(void *))"
+
+.PP
+Definition at line \fB12861\fP of file \fBsqlite3\&.h\fP\&.
+.SS "int(* fts5_api::xFindTokenizer) (\fBfts5_api\fP *pApi, const char *zName, void **ppContext, \fBfts5_tokenizer\fP *pTokenizer)"
+
+.PP
+Definition at line \fB12870\fP of file \fBsqlite3\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for WeighBridgeApplication from the source code\&.

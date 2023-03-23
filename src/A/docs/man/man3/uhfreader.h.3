@@ -1,0 +1,197 @@
+.TH "libs/uhfreader/include/uhfreader.h" 3 "Tue Mar 7 2023" "Version 0.0.1" "WeighBridgeApplication" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+libs/uhfreader/include/uhfreader.h
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int __stdcall \fBOpenCom\fP (__int16 port, long baud)"
+.br
+.ti -1c
+.RI "int __stdcall \fBCloseCom\fP ()"
+.br
+.ti -1c
+.RI "int __stdcall \fBNet_Connect\fP (char *HostIp, int HostPort, char *ReaderIp, int ReaderPort)"
+.br
+.ti -1c
+.RI "int __stdcall \fBRSSIToLog\fP (unsigned char RSSI)"
+.br
+.ti -1c
+.RI "int __stdcall \fBSetWorkAntenna\fP (unsigned char AntennaID)"
+.br
+.ti -1c
+.RI "int __stdcall \fBGetWorkAntenna\fP (unsigned char *AntennaID)"
+.br
+.ti -1c
+.RI "int __stdcall \fBSetDRMStatus\fP (unsigned char Status)"
+.br
+.ti -1c
+.RI "int __stdcall \fBGetDRMStatus\fP (unsigned char *Status)"
+.br
+.ti -1c
+.RI "int __stdcall \fBSetOutPower\fP (unsigned char Value)"
+.br
+.ti -1c
+.RI "int __stdcall \fBGetOutPower\fP (unsigned char *Value)"
+.br
+.ti -1c
+.RI "int __stdcall \fBSetRS485Address\fP (unsigned char Addr)"
+.br
+.ti -1c
+.RI "int __stdcall \fBGetGpioStatus\fP (unsigned char *Gpio1Status, unsigned char *Gpio2Status)"
+.br
+.ti -1c
+.RI "int __stdcall \fBSetGpioStatus\fP (unsigned char ChooseGpio, unsigned char GpioValue)"
+.br
+.ti -1c
+.RI "int __stdcall \fBSetFrequencyRegion\fP (unsigned char Region, int StartFreq, int EndFreq, int FreqSpace, unsigned char FreqQuantity)"
+.br
+.ti -1c
+.RI "int __stdcall \fBGetFrequencyRegion\fP (unsigned char *Region, int *StartFreq, int *EndFreq, int *FreqSpace, unsigned char *FreqQuantity)"
+.br
+.ti -1c
+.RI "int __stdcall \fBSetBeeperMode\fP (unsigned char ModeValue)"
+.br
+.ti -1c
+.RI "int __stdcall \fBSetBeeper\fP (unsigned char Value)"
+.br
+.ti -1c
+.RI "int __stdcall \fBGetReaderTemperature\fP (unsigned char *PlusMinus, unsigned char *TempValue)"
+.br
+.ti -1c
+.RI "int __stdcall \fBSetAntConnectionDetector\fP (unsigned char Sensitivity)"
+.br
+.ti -1c
+.RI "int __stdcall \fBGetAntConnectionDetector\fP (unsigned char *Sensitivity)"
+.br
+.ti -1c
+.RI "int __stdcall \fBGetTidFastStatus\fP (unsigned char *Status)"
+.br
+.ti -1c
+.RI "int __stdcall \fBSetTidFastStatus\fP (unsigned char Status)"
+.br
+.ti -1c
+.RI "int __stdcall \fBGetRfComLinkStatus\fP (unsigned char *Status)"
+.br
+.ti -1c
+.RI "int __stdcall \fBSetRfComLinkStatus\fP (unsigned char Status)"
+.br
+.ti -1c
+.RI "int __stdcall \fBReset\fP ()"
+.br
+.ti -1c
+.RI "int __stdcall \fBSetUartBaudRate\fP (unsigned char BaudRate)"
+.br
+.ti -1c
+.RI "int __stdcall \fBGetFirmwareVersion\fP (unsigned char *Version)"
+.br
+.ti -1c
+.RI "int __stdcall \fBGetRfPortReturnLoss\fP (unsigned char FreqParameter, unsigned char *LossValue)"
+.br
+.ti -1c
+.RI "int __stdcall \fBSetReaderIdentifier\fP (unsigned char *IdValue)"
+.br
+.ti -1c
+.RI "int __stdcall \fBGetReaderIdentifier\fP (unsigned char *IdValue)"
+.br
+.ti -1c
+.RI "int __stdcall \fBReadTag\fP (unsigned char MemBank, unsigned char WordAdd, unsigned char WordCnt, unsigned char *PassWord, unsigned char *TagCount, unsigned char *DataLen, unsigned char *Data, unsigned char *ReadLen, unsigned char *AntID, unsigned char *ReadCount)"
+.br
+.ti -1c
+.RI "int __stdcall \fBWriteTag\fP (unsigned char *PassWord, unsigned char MemBank, unsigned char WordAdd, unsigned char WordCnt, unsigned char *Data)"
+.br
+.ti -1c
+.RI "int __stdcall \fBTestinventory\fP (unsigned char Repeat, unsigned char *TagCount, unsigned char *DataLen)"
+.br
+.ti -1c
+.RI "int __stdcall \fBInventory\fP (unsigned char Repeat, unsigned char *OutData, unsigned char *TagNum)"
+.br
+.ti -1c
+.RI "int __stdcall \fBCleanInventory\fP ()"
+.br
+.ti -1c
+.RI "int __stdcall \fBSetAccessEpcMatch\fP (unsigned char Mode, unsigned char EpcLen, unsigned char *EpcData)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int __stdcall CleanInventory ()"
+
+.SS "int __stdcall CloseCom ()"
+
+.SS "int __stdcall GetAntConnectionDetector (unsigned char * Sensitivity)"
+
+.SS "int __stdcall GetDRMStatus (unsigned char * Status)"
+
+.SS "int __stdcall GetFirmwareVersion (unsigned char * Version)"
+
+.SS "int __stdcall GetFrequencyRegion (unsigned char * Region, int * StartFreq, int * EndFreq, int * FreqSpace, unsigned char * FreqQuantity)"
+
+.SS "int __stdcall GetGpioStatus (unsigned char * Gpio1Status, unsigned char * Gpio2Status)"
+
+.SS "int __stdcall GetOutPower (unsigned char * Value)"
+
+.SS "int __stdcall GetReaderIdentifier (unsigned char * IdValue)"
+
+.SS "int __stdcall GetReaderTemperature (unsigned char * PlusMinus, unsigned char * TempValue)"
+
+.SS "int __stdcall GetRfComLinkStatus (unsigned char * Status)"
+
+.SS "int __stdcall GetRfPortReturnLoss (unsigned char FreqParameter, unsigned char * LossValue)"
+
+.SS "int __stdcall GetTidFastStatus (unsigned char * Status)"
+
+.SS "int __stdcall GetWorkAntenna (unsigned char * AntennaID)"
+
+.SS "int __stdcall Inventory (unsigned char Repeat, unsigned char * OutData, unsigned char * TagNum)"
+
+.SS "int __stdcall Net_Connect (char * HostIp, int HostPort, char * ReaderIp, int ReaderPort)"
+
+.SS "int __stdcall OpenCom (__int16 port, long baud)"
+
+.SS "int __stdcall ReadTag (unsigned char MemBank, unsigned char WordAdd, unsigned char WordCnt, unsigned char * PassWord, unsigned char * TagCount, unsigned char * DataLen, unsigned char * Data, unsigned char * ReadLen, unsigned char * AntID, unsigned char * ReadCount)"
+
+.SS "int __stdcall Reset ()"
+
+.SS "int __stdcall RSSIToLog (unsigned char RSSI)"
+
+.SS "int __stdcall SetAccessEpcMatch (unsigned char Mode, unsigned char EpcLen, unsigned char * EpcData)"
+
+.SS "int __stdcall SetAntConnectionDetector (unsigned char Sensitivity)"
+
+.SS "int __stdcall SetBeeper (unsigned char Value)"
+
+.SS "int __stdcall SetBeeperMode (unsigned char ModeValue)"
+
+.SS "int __stdcall SetDRMStatus (unsigned char Status)"
+
+.SS "int __stdcall SetFrequencyRegion (unsigned char Region, int StartFreq, int EndFreq, int FreqSpace, unsigned char FreqQuantity)"
+
+.SS "int __stdcall SetGpioStatus (unsigned char ChooseGpio, unsigned char GpioValue)"
+
+.SS "int __stdcall SetOutPower (unsigned char Value)"
+
+.SS "int __stdcall SetReaderIdentifier (unsigned char * IdValue)"
+
+.SS "int __stdcall SetRfComLinkStatus (unsigned char Status)"
+
+.SS "int __stdcall SetRS485Address (unsigned char Addr)"
+
+.SS "int __stdcall SetTidFastStatus (unsigned char Status)"
+
+.SS "int __stdcall SetUartBaudRate (unsigned char BaudRate)"
+
+.SS "int __stdcall SetWorkAntenna (unsigned char AntennaID)"
+
+.SS "int __stdcall Testinventory (unsigned char Repeat, unsigned char * TagCount, unsigned char * DataLen)"
+
+.SS "int __stdcall WriteTag (unsigned char * PassWord, unsigned char MemBank, unsigned char WordAdd, unsigned char WordCnt, unsigned char * Data)"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for WeighBridgeApplication from the source code\&.

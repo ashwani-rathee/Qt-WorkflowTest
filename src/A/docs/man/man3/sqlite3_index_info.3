@@ -1,0 +1,121 @@
+.TH "sqlite3_index_info" 3 "Tue Mar 7 2023" "Version 0.0.1" "WeighBridgeApplication" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sqlite3_index_info
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <sqlite3\&.h>\fP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBsqlite3_index_constraint\fP"
+.br
+.ti -1c
+.RI "struct \fBsqlite3_index_constraint_usage\fP"
+.br
+.ti -1c
+.RI "struct \fBsqlite3_index_orderby\fP"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBnConstraint\fP"
+.br
+.ti -1c
+.RI "struct \fBsqlite3_index_info::sqlite3_index_constraint\fP * \fBaConstraint\fP"
+.br
+.ti -1c
+.RI "int \fBnOrderBy\fP"
+.br
+.ti -1c
+.RI "struct \fBsqlite3_index_info::sqlite3_index_orderby\fP * \fBaOrderBy\fP"
+.br
+.ti -1c
+.RI "struct \fBsqlite3_index_info::sqlite3_index_constraint_usage\fP * \fBaConstraintUsage\fP"
+.br
+.ti -1c
+.RI "int \fBidxNum\fP"
+.br
+.ti -1c
+.RI "char * \fBidxStr\fP"
+.br
+.ti -1c
+.RI "int \fBneedToFreeIdxStr\fP"
+.br
+.ti -1c
+.RI "int \fBorderByConsumed\fP"
+.br
+.ti -1c
+.RI "double \fBestimatedCost\fP"
+.br
+.ti -1c
+.RI "\fBsqlite3_int64\fP \fBestimatedRows\fP"
+.br
+.ti -1c
+.RI "int \fBidxFlags\fP"
+.br
+.ti -1c
+.RI "\fBsqlite3_uint64\fP \fBcolUsed\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB7182\fP of file \fBsqlite3\&.h\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "struct \fBsqlite3_index_info::sqlite3_index_constraint\fP * sqlite3_index_info::aConstraint"
+
+.SS "struct \fBsqlite3_index_info::sqlite3_index_constraint_usage\fP * sqlite3_index_info::aConstraintUsage"
+
+.SS "struct \fBsqlite3_index_info::sqlite3_index_orderby\fP * sqlite3_index_info::aOrderBy"
+
+.SS "\fBsqlite3_uint64\fP sqlite3_index_info::colUsed"
+
+.PP
+Definition at line \fB7211\fP of file \fBsqlite3\&.h\fP\&.
+.SS "double sqlite3_index_info::estimatedCost"
+
+.PP
+Definition at line \fB7205\fP of file \fBsqlite3\&.h\fP\&.
+.SS "\fBsqlite3_int64\fP sqlite3_index_info::estimatedRows"
+
+.PP
+Definition at line \fB7207\fP of file \fBsqlite3\&.h\fP\&.
+.SS "int sqlite3_index_info::idxFlags"
+
+.PP
+Definition at line \fB7209\fP of file \fBsqlite3\&.h\fP\&.
+.SS "int sqlite3_index_info::idxNum"
+
+.PP
+Definition at line \fB7201\fP of file \fBsqlite3\&.h\fP\&.
+.SS "char* sqlite3_index_info::idxStr"
+
+.PP
+Definition at line \fB7202\fP of file \fBsqlite3\&.h\fP\&.
+.SS "int sqlite3_index_info::nConstraint"
+
+.PP
+Definition at line \fB7184\fP of file \fBsqlite3\&.h\fP\&.
+.SS "int sqlite3_index_info::needToFreeIdxStr"
+
+.PP
+Definition at line \fB7203\fP of file \fBsqlite3\&.h\fP\&.
+.SS "int sqlite3_index_info::nOrderBy"
+
+.PP
+Definition at line \fB7191\fP of file \fBsqlite3\&.h\fP\&.
+.SS "int sqlite3_index_info::orderByConsumed"
+
+.PP
+Definition at line \fB7204\fP of file \fBsqlite3\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for WeighBridgeApplication from the source code\&.

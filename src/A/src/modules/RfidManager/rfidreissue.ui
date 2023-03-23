@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RfidReissue</class>
+ <widget class="QDialog" name="RfidReissue">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>675</width>
+    <height>539</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QGroupBox" name="RfidReissueBox">
+     <property name="title">
+      <string>RfidReissue</string>
+     </property>
+     <widget class="QLabel" name="vehicle_number_label">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>40</y>
+        <width>131</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Vehicle No.</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="vehicle_number">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>40</y>
+        <width>411</width>
+        <height>25</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QWidget" name="formLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>80</y>
+        <width>371</width>
+        <height>315</height>
+       </rect>
+      </property>
+      <layout class="QFormLayout" name="formLayout">
+       <item row="0" column="0">
+        <widget class="QLabel" name="ownerNameLabel">
+         <property name="text">
+          <string>Owner Name</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="ownerNameLineEdit"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="ownerAddressLabel">
+         <property name="text">
+          <string>Owner Address</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="ownerAddressLineEdit"/>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="ownerEmailLabel">
+         <property name="text">
+          <string>Owner Email</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="ownerEmailLineEdit"/>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="ownerPhoneLabel">
+         <property name="text">
+          <string>Owner Phone</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="ownerPhoneLineEdit"/>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="driverNameLabel">
+         <property name="text">
+          <string>Driver Name</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QLineEdit" name="driverNameLineEdit"/>
+       </item>
+       <item row="5" column="0">
+        <widget class="QLabel" name="driverAddressLabel">
+         <property name="text">
+          <string>Driver Address</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QLineEdit" name="driverAddressLineEdit"/>
+       </item>
+       <item row="6" column="0">
+        <widget class="QLabel" name="driverEmailLabel">
+         <property name="text">
+          <string>Driver Email</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QLineEdit" name="driverEmailLineEdit"/>
+       </item>
+       <item row="7" column="0">
+        <widget class="QLabel" name="driverPhoneLabel">
+         <property name="text">
+          <string>Driver Phone</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="1">
+        <widget class="QLineEdit" name="driverPhoneLineEdit"/>
+       </item>
+       <item row="8" column="0">
+        <widget class="QLabel" name="soNoLabel">
+         <property name="text">
+          <string>So No.</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="1">
+        <widget class="QLineEdit" name="soNoLineEdit"/>
+       </item>
+       <item row="9" column="0">
+        <widget class="QLabel" name="tagTripsLabel">
+         <property name="text">
+          <string>Tag Trips</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="1">
+        <widget class="QLineEdit" name="tagTripsLineEdit"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QPushButton" name="save_form">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>410</y>
+        <width>93</width>
+        <height>29</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>save</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="clear_form">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>410</y>
+        <width>93</width>
+        <height>29</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>clear</string>
+      </property>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

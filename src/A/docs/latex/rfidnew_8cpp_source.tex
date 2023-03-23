@@ -1,0 +1,96 @@
+\hypertarget{rfidnew_8cpp_source}{}\doxysection{rfidnew.\+cpp}
+\label{rfidnew_8cpp_source}\index{src/modules/RfidManager/rfidnew.cpp@{src/modules/RfidManager/rfidnew.cpp}}
+\mbox{\hyperlink{rfidnew_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{rfidnew_8h}{rfidnew.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}qstatusbar.h"{}}}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}ui\_rfidnew.h"{}}}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{rfidmanager_8h}{rfidmanager.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <QDebug>}}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mainwindow_8h}{mainwindow.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00008}\mbox{\hyperlink{class_rfid_new_a5da52603420308a96e8baa194cb2f941}{00008}}\ \mbox{\hyperlink{class_rfid_new_a5da52603420308a96e8baa194cb2f941}{RfidNew::RfidNew}}(\mbox{\hyperlink{class_rfid_manager}{RfidManager}}\ *parent)\ :\ ui(new\ \mbox{\hyperlink{namespace_ui}{Ui}}::\mbox{\hyperlink{class_rfid_new}{RfidNew}})}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00009}00009\ \{}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00010}00010\ \ \ \ \ this-\/>main\ =\ parent;}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00011}00011\ \ \ \ \ ui-\/>setupUi(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00012}00012\ \ \ \ \ bar\ =\ \textcolor{keyword}{new}\ QStatusBar(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00013}00013\ \ \ \ \ ui-\/>statusbar-\/>addWidget(bar);}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00014}00014\ \ \ \ \ ui-\/>weight\_type\_dispatch-\/>setChecked(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00016}00016\ \ \ \ \ ui-\/>tagTripsLineEdit\_2-\/>setValidator(\textcolor{keyword}{new}\ QIntValidator(1,\ 9999,\ \textcolor{keyword}{this})\ );}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00019}00019\ \ \ \ \ connect(ui-\/>read\_inventory,\ SIGNAL(clicked()),\ \textcolor{keyword}{this},\ SLOT(onpushButtonReadTagPushed()));}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00020}00020\ \ \ \ \ connect(ui-\/>clear\_form,\ SIGNAL(clicked()),\ \textcolor{keyword}{this},\ SLOT(ClearLineEdits()));}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00021}00021\ \ \ \ \ connect(ui-\/>save\_form,\ SIGNAL(clicked()),\ \textcolor{keyword}{this},\ SLOT(SaveDataForm()));}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00022}00022\ \ \ \ \ connect(ui-\/>weight\_type,\ SIGNAL(buttonClicked(\textcolor{keywordtype}{int})),\ \textcolor{keyword}{this},\ SLOT(onButtonClickedChangeWeighmentPage(\textcolor{keywordtype}{int})));}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00023}00023\ \}}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00025}00025\ \textcolor{keywordtype}{void}\ RfidNew::onButtonClickedChangeWeighmentPage(\textcolor{keywordtype}{int}\ i)\{}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00026}00026\ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}Pushed\ and\ idx:\ "{}}\ <<\ i;}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00027}00027\ \ \ \ \ qDebug()\ <<\ ui-\/>weight\_type-\/>checkedId();}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00028}00028\ \ \ \ \ ui-\/>weightment\_forms-\/>setCurrentIndex(-\/i-\/2);}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00029}00029\ \}}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00031}00031\ \textcolor{keywordtype}{void}\ RfidNew::onpushButtonReadTagPushed()\{}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00032}00032\ \ \ \ \ this-\/>main-\/>\mbox{\hyperlink{class_rfid_manager_a9c8fb7ca0c61d24ef33e096cf8cb05cb}{read\_data}}();}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00033}00033\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00034}00034\ \ \ \ \ \textcolor{keywordflow}{if}(this-\/>main-\/>\mbox{\hyperlink{class_rfid_manager_a16fad11de8c769f0d31e2a471e9324c1}{tags}}.length()\ >\ 0)\{}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ ui-\/>epc\_number-\/>setText(this-\/>main-\/>\mbox{\hyperlink{class_rfid_manager_a16fad11de8c769f0d31e2a471e9324c1}{tags}}.at(0).epcdata);}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(this-\/>main-\/>\mbox{\hyperlink{class_rfid_manager_a16fad11de8c769f0d31e2a471e9324c1}{tags}}.length()\ >\ 1)\{}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ bar-\/>showMessage(\textcolor{stringliteral}{"{}More\ than\ 1\ RFID\ tag\ has\ been\ detected!"{}});}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ bar-\/>showMessage(\textcolor{stringliteral}{"{}1\ RFID\ tag\ has\ been\ detected!"{}});}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00042}00042\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00043}00043\ \ \ \ \ \textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ ui-\/>epc\_number-\/>setText(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ bar-\/>showMessage(\textcolor{stringliteral}{"{}No\ RFID\ tag\ found,\ click\ Read\ Tag\ again!"{}});}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00046}00046\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00047}00047\ \}}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00050}\mbox{\hyperlink{class_rfid_new_a42664f2e8e346da66b9936a65da28de9}{00050}}\ \mbox{\hyperlink{class_rfid_new_a42664f2e8e346da66b9936a65da28de9}{RfidNew::\string~RfidNew}}()}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00051}00051\ \{}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00052}00052\ \ \ \ \ \textcolor{keyword}{delete}\ ui;}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00053}00053\ \}}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00055}00055\ \textcolor{keywordtype}{void}\ RfidNew::ClearLineEdits()\{}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00056}00056\ \ \ \ \ \textcolor{keywordflow}{foreach}(QLineEdit*\ le,\ ui-\/>rfidnew\_main-\/>findChildren<QLineEdit*>())\ \{}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ le-\/>clear();}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00058}00058\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00059}00059\ \}}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00061}00061\ \textcolor{keywordtype}{void}\ RfidNew::SaveDataForm()\{}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00063}00063\ \textcolor{comment}{//\ \ \ \ QString\ TAGNO\ =\ ui-\/>epc\_number-\/>text();}}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00064}00064\ \ \ \ \ QString\ TAGNO\ =\ ui-\/>tagTripsLineEdit\_2-\/>text();}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00065}00065\ \ \ \ \ \textcolor{keywordflow}{if}(TAGNO\ ==\ \textcolor{stringliteral}{"{}"{}})\{}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00067}00067\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00068}00068\ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}Saving\ Data\ form"{}};}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00069}00069\ \ \ \ \ QString\ V\_NO\ =\ ui-\/>vehicleNoLineEdit\_2-\/>text();}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00070}00070\ \ \ \ \ QDate\ ISSUE\ =\ QDate::currentDate();}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00071}00071\ \ \ \ \ QDate\ EXPIRY\ =\ ui-\/>ExpiryDateEdit\_2-\/>date();}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00072}00072\ \ \ \ \ QString\ TC\_CODE\ =\ \textcolor{stringliteral}{"{}2000-\/01-\/01"{}};}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00073}00073\ \textcolor{comment}{//\ \ \ \ QDate\ TC\_CODE\ =\ ui-\/>ExpiryDateEdit\_2-\/>date();}}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00074}00074\ \ \ \ \ QString\ OWNER\ =\ ui-\/>truckOwnerLineEdit\_2-\/>text();}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00075}00075\ \ \ \ \ QString\ OWNER\_ADDRESS\ =\ ui-\/>ownerAddressLineEdit\_2-\/>text();}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00076}00076\ \ \ \ \ QString\ OWNER\_EMAIL\ =\ ui-\/>ownerEmailLineEdit\_2-\/>text();}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00077}00077\ \ \ \ \ QString\ OWNER\_PHONE\ =\ ui-\/>ownerPhoneLineEdit\_2-\/>text();}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00078}00078\ \ \ \ \ QString\ DRIVER\ =\ ui-\/>truckDriverLineEdit\_2-\/>text();}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00079}00079\ \ \ \ \ QString\ DRIVER\_ADDRESS\ =\ ui-\/>driverAddressLineEdit\_2-\/>text();}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00080}00080\ \ \ \ \ QString\ DRIVER\_EMAIL\ =\ ui-\/>driverEmailLineEdit-\/>text();}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00081}00081\ \ \ \ \ QString\ DRIVER\_PHONE\ =\ \ ui-\/>driverPhoneLineEdit\_2-\/>text();}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00082}00082\ \ \ \ \ QString\ PHOTO\ =\ \ \textcolor{stringliteral}{"{}asdas"{}};}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00083}00083\ \ \ \ \ QString\ TM\_CODE\ =\ \textcolor{stringliteral}{"{}test"{}};}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00084}00084\ \ \ \ \ qint64\ RLW\ =\ ui-\/>rLWInKgLineEdit\_2-\/>text().toInt();}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00085}00085\ \ \ \ \ qint64\ GVW\ =\ 1000;}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00086}00086\ \ \ \ \ qint64\ MAX\_TARE\_WT\ =\ 1000;}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00087}00087\ \ \ \ \ qint64\ MIN\_TARE\_WT\ =\ 1000;}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00089}00089\ \ \ \ \ this-\/>main-\/>main-\/>\mbox{\hyperlink{class_main_window_a7d04f9d754c4efb98172dc68db9dfb2b}{db}}.\mbox{\hyperlink{class_psql_manager_a7a3e910761155c1c286ef42acb6bf3db}{addNewRfid}}(TAGNO,\ V\_NO,\ ISSUE,\ EXPIRY,\ TC\_CODE,\ OWNER,\ OWNER\_ADDRESS,\ OWNER\_EMAIL,\ OWNER\_PHONE,\ DRIVER,\ DRIVER\_ADDRESS,\ DRIVER\_EMAIL,\ DRIVER\_PHONE,\ PHOTO,\ TM\_CODE,\ RLW,\ GVW,\ MAX\_TARE\_WT,\ MIN\_TARE\_WT);}
+\DoxyCodeLine{\Hypertarget{rfidnew_8cpp_source_l00090}00090\ \}}
+
+\end{DoxyCode}

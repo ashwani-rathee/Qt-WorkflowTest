@@ -1,0 +1,296 @@
+\hypertarget{uhfreader_8h}{}\doxysection{lib/include/uhfreader.h File Reference}
+\label{uhfreader_8h}\index{lib/include/uhfreader.h@{lib/include/uhfreader.h}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \+\_\+\+\_\+stdcall \mbox{\hyperlink{uhfreader_8h_ac8d572a4abefc9b53ef01df84ba69273}{Open\+Com}} (\+\_\+\+\_\+int16 port, long baud)
+\item 
+int \+\_\+\+\_\+stdcall \mbox{\hyperlink{uhfreader_8h_aaf0a9e74eb55e8222383535d69a32bfd}{Close\+Com}} ()
+\item 
+int \+\_\+\+\_\+stdcall \mbox{\hyperlink{uhfreader_8h_a09c9d0fd4acf0d74cd045a16fc42f7c2}{Net\+\_\+\+Connect}} (char $\ast$Host\+Ip, int Host\+Port, char $\ast$Reader\+Ip, int Reader\+Port)
+\item 
+int \+\_\+\+\_\+stdcall \mbox{\hyperlink{uhfreader_8h_a723a474d8a9cdd1d992055030871d8df}{RSSITo\+Log}} (unsigned char RSSI)
+\item 
+int \+\_\+\+\_\+stdcall \mbox{\hyperlink{uhfreader_8h_a840965249cb668d618f91de644d25e5b}{Set\+Work\+Antenna}} (unsigned char Antenna\+ID)
+\item 
+int \+\_\+\+\_\+stdcall \mbox{\hyperlink{uhfreader_8h_af9b09f26c9d6f5976fe7444ba9bbb2e1}{Get\+Work\+Antenna}} (unsigned char $\ast$Antenna\+ID)
+\item 
+int \+\_\+\+\_\+stdcall \mbox{\hyperlink{uhfreader_8h_ac3f042406c41a691d941bb7694796a4f}{Set\+DRMStatus}} (unsigned char Status)
+\item 
+int \+\_\+\+\_\+stdcall \mbox{\hyperlink{uhfreader_8h_a43cd86dcd705718b977ff44d5fd655e3}{Get\+DRMStatus}} (unsigned char $\ast$Status)
+\item 
+int \+\_\+\+\_\+stdcall \mbox{\hyperlink{uhfreader_8h_aaf25c4c34afbdbbf920905fcb3314e72}{Set\+Out\+Power}} (unsigned char Value)
+\item 
+int \+\_\+\+\_\+stdcall \mbox{\hyperlink{uhfreader_8h_a5a77d50802d49b50c477c308dbe90c68}{Get\+Out\+Power}} (unsigned char $\ast$Value)
+\item 
+int \+\_\+\+\_\+stdcall \mbox{\hyperlink{uhfreader_8h_a5928a5b42572f627cb5d3c00d155d9e6}{Set\+RS485\+Address}} (unsigned char Addr)
+\item 
+int \+\_\+\+\_\+stdcall \mbox{\hyperlink{uhfreader_8h_a6e4579189eceadc1e0796f25222c7701}{Get\+Gpio\+Status}} (unsigned char $\ast$Gpio1\+Status, unsigned char $\ast$Gpio2\+Status)
+\item 
+int \+\_\+\+\_\+stdcall \mbox{\hyperlink{uhfreader_8h_ad76e7c9316795f59f5482eb527ef95d4}{Set\+Gpio\+Status}} (unsigned char Choose\+Gpio, unsigned char Gpio\+Value)
+\item 
+int \+\_\+\+\_\+stdcall \mbox{\hyperlink{uhfreader_8h_a94da7c6a6e1f4b7a1b5c71059b4250e2}{Set\+Frequency\+Region}} (unsigned char Region, int Start\+Freq, int End\+Freq, int Freq\+Space, unsigned char Freq\+Quantity)
+\item 
+int \+\_\+\+\_\+stdcall \mbox{\hyperlink{uhfreader_8h_ad788104ce2200161002eb56193c43b16}{Get\+Frequency\+Region}} (unsigned char $\ast$Region, int $\ast$Start\+Freq, int $\ast$End\+Freq, int $\ast$Freq\+Space, unsigned char $\ast$Freq\+Quantity)
+\item 
+int \+\_\+\+\_\+stdcall \mbox{\hyperlink{uhfreader_8h_ab5de57c7e9b4564275e63e50ee09ea1d}{Set\+Beeper\+Mode}} (unsigned char Mode\+Value)
+\item 
+int \+\_\+\+\_\+stdcall \mbox{\hyperlink{uhfreader_8h_a869932c067ed843aa62f4c304a48b456}{Set\+Beeper}} (unsigned char Value)
+\item 
+int \+\_\+\+\_\+stdcall \mbox{\hyperlink{uhfreader_8h_a84bb5aac2ae0a0f5a8243d730dccb7f8}{Get\+Reader\+Temperature}} (unsigned char $\ast$Plus\+Minus, unsigned char $\ast$Temp\+Value)
+\item 
+int \+\_\+\+\_\+stdcall \mbox{\hyperlink{uhfreader_8h_a6a4b542bcb60330719bb65b8d5367e02}{Set\+Ant\+Connection\+Detector}} (unsigned char Sensitivity)
+\item 
+int \+\_\+\+\_\+stdcall \mbox{\hyperlink{uhfreader_8h_a75607cfdc067c3a730dfa452005acbb6}{Get\+Ant\+Connection\+Detector}} (unsigned char $\ast$Sensitivity)
+\item 
+int \+\_\+\+\_\+stdcall \mbox{\hyperlink{uhfreader_8h_a16248618f51c73e08db1504e3c2f7954}{Get\+Tid\+Fast\+Status}} (unsigned char $\ast$Status)
+\item 
+int \+\_\+\+\_\+stdcall \mbox{\hyperlink{uhfreader_8h_a2c729203b578254563660754ff41511c}{Set\+Tid\+Fast\+Status}} (unsigned char Status)
+\item 
+int \+\_\+\+\_\+stdcall \mbox{\hyperlink{uhfreader_8h_a82584a0b21a482bc3507f15a1364b346}{Get\+Rf\+Com\+Link\+Status}} (unsigned char $\ast$Status)
+\item 
+int \+\_\+\+\_\+stdcall \mbox{\hyperlink{uhfreader_8h_a3d7715236e2cad8725b741c40a3f7971}{Set\+Rf\+Com\+Link\+Status}} (unsigned char Status)
+\item 
+int \+\_\+\+\_\+stdcall \mbox{\hyperlink{uhfreader_8h_a5333e99186a3af8952a5972591a6c8f8}{Reset}} ()
+\item 
+int \+\_\+\+\_\+stdcall \mbox{\hyperlink{uhfreader_8h_aeea6ba66f1e317c79e83b575cb67f124}{Set\+Uart\+Baud\+Rate}} (unsigned char Baud\+Rate)
+\item 
+int \+\_\+\+\_\+stdcall \mbox{\hyperlink{uhfreader_8h_a1c4fd196bcc1d27a1e7880be44042b8f}{Get\+Firmware\+Version}} (unsigned char $\ast$Version)
+\item 
+int \+\_\+\+\_\+stdcall \mbox{\hyperlink{uhfreader_8h_a86c29b7208af76819ef8c1b0bd723084}{Get\+Rf\+Port\+Return\+Loss}} (unsigned char Freq\+Parameter, unsigned char $\ast$Loss\+Value)
+\item 
+int \+\_\+\+\_\+stdcall \mbox{\hyperlink{uhfreader_8h_af6783bd994afa9bc61dcad6b54f35242}{Set\+Reader\+Identifier}} (unsigned char $\ast$Id\+Value)
+\item 
+int \+\_\+\+\_\+stdcall \mbox{\hyperlink{uhfreader_8h_a29a83adacae6c9dc1f9195cd89d4f039}{Get\+Reader\+Identifier}} (unsigned char $\ast$Id\+Value)
+\item 
+int \+\_\+\+\_\+stdcall \mbox{\hyperlink{uhfreader_8h_a0773a2674f9ff94b918d81b7de67ea08}{Read\+Tag}} (unsigned char Mem\+Bank, unsigned char Word\+Add, unsigned char Word\+Cnt, unsigned char $\ast$Pass\+Word, unsigned char $\ast$Tag\+Count, unsigned char $\ast$Data\+Len, unsigned char $\ast$Data, unsigned char $\ast$Read\+Len, unsigned char $\ast$Ant\+ID, unsigned char $\ast$Read\+Count)
+\item 
+int \+\_\+\+\_\+stdcall \mbox{\hyperlink{uhfreader_8h_afdcb7defa7d9ca5c09feb2ba0d81e179}{Write\+Tag}} (unsigned char $\ast$Pass\+Word, unsigned char Mem\+Bank, unsigned char Word\+Add, unsigned char Word\+Cnt, unsigned char $\ast$Data)
+\item 
+int \+\_\+\+\_\+stdcall \mbox{\hyperlink{uhfreader_8h_a0fd2e3eb0967c0cad4188cd72c8566cd}{Testinventory}} (unsigned char Repeat, unsigned char $\ast$Tag\+Count, unsigned char $\ast$Data\+Len)
+\item 
+int \+\_\+\+\_\+stdcall \mbox{\hyperlink{uhfreader_8h_aabe5a58efb81522adc35c14e64156ca7}{Inventory}} (unsigned char Repeat, unsigned char $\ast$Out\+Data, unsigned char $\ast$Tag\+Num)
+\item 
+int \+\_\+\+\_\+stdcall \mbox{\hyperlink{uhfreader_8h_ae5d9b562a1db25da2c0e3cfc6608e69c}{Clean\+Inventory}} ()
+\item 
+int \+\_\+\+\_\+stdcall \mbox{\hyperlink{uhfreader_8h_a4849abbf62c62272a3da147547fbced8}{Set\+Access\+Epc\+Match}} (unsigned char Mode, unsigned char Epc\+Len, unsigned char $\ast$Epc\+Data)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{uhfreader_8h_ae5d9b562a1db25da2c0e3cfc6608e69c}\label{uhfreader_8h_ae5d9b562a1db25da2c0e3cfc6608e69c}} 
+\index{uhfreader.h@{uhfreader.h}!CleanInventory@{CleanInventory}}
+\index{CleanInventory@{CleanInventory}!uhfreader.h@{uhfreader.h}}
+\doxysubsubsection{\texorpdfstring{CleanInventory()}{CleanInventory()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+stdcall Clean\+Inventory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{uhfreader_8h_aaf0a9e74eb55e8222383535d69a32bfd}\label{uhfreader_8h_aaf0a9e74eb55e8222383535d69a32bfd}} 
+\index{uhfreader.h@{uhfreader.h}!CloseCom@{CloseCom}}
+\index{CloseCom@{CloseCom}!uhfreader.h@{uhfreader.h}}
+\doxysubsubsection{\texorpdfstring{CloseCom()}{CloseCom()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+stdcall Close\+Com (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{uhfreader_8h_a75607cfdc067c3a730dfa452005acbb6}\label{uhfreader_8h_a75607cfdc067c3a730dfa452005acbb6}} 
+\index{uhfreader.h@{uhfreader.h}!GetAntConnectionDetector@{GetAntConnectionDetector}}
+\index{GetAntConnectionDetector@{GetAntConnectionDetector}!uhfreader.h@{uhfreader.h}}
+\doxysubsubsection{\texorpdfstring{GetAntConnectionDetector()}{GetAntConnectionDetector()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+stdcall Get\+Ant\+Connection\+Detector (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{Sensitivity }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{uhfreader_8h_a43cd86dcd705718b977ff44d5fd655e3}\label{uhfreader_8h_a43cd86dcd705718b977ff44d5fd655e3}} 
+\index{uhfreader.h@{uhfreader.h}!GetDRMStatus@{GetDRMStatus}}
+\index{GetDRMStatus@{GetDRMStatus}!uhfreader.h@{uhfreader.h}}
+\doxysubsubsection{\texorpdfstring{GetDRMStatus()}{GetDRMStatus()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+stdcall Get\+DRMStatus (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{Status }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{uhfreader_8h_a1c4fd196bcc1d27a1e7880be44042b8f}\label{uhfreader_8h_a1c4fd196bcc1d27a1e7880be44042b8f}} 
+\index{uhfreader.h@{uhfreader.h}!GetFirmwareVersion@{GetFirmwareVersion}}
+\index{GetFirmwareVersion@{GetFirmwareVersion}!uhfreader.h@{uhfreader.h}}
+\doxysubsubsection{\texorpdfstring{GetFirmwareVersion()}{GetFirmwareVersion()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+stdcall Get\+Firmware\+Version (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{Version }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{uhfreader_8h_ad788104ce2200161002eb56193c43b16}\label{uhfreader_8h_ad788104ce2200161002eb56193c43b16}} 
+\index{uhfreader.h@{uhfreader.h}!GetFrequencyRegion@{GetFrequencyRegion}}
+\index{GetFrequencyRegion@{GetFrequencyRegion}!uhfreader.h@{uhfreader.h}}
+\doxysubsubsection{\texorpdfstring{GetFrequencyRegion()}{GetFrequencyRegion()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+stdcall Get\+Frequency\+Region (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{Region,  }\item[{int $\ast$}]{Start\+Freq,  }\item[{int $\ast$}]{End\+Freq,  }\item[{int $\ast$}]{Freq\+Space,  }\item[{unsigned char $\ast$}]{Freq\+Quantity }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{uhfreader_8h_a6e4579189eceadc1e0796f25222c7701}\label{uhfreader_8h_a6e4579189eceadc1e0796f25222c7701}} 
+\index{uhfreader.h@{uhfreader.h}!GetGpioStatus@{GetGpioStatus}}
+\index{GetGpioStatus@{GetGpioStatus}!uhfreader.h@{uhfreader.h}}
+\doxysubsubsection{\texorpdfstring{GetGpioStatus()}{GetGpioStatus()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+stdcall Get\+Gpio\+Status (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{Gpio1\+Status,  }\item[{unsigned char $\ast$}]{Gpio2\+Status }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{uhfreader_8h_a5a77d50802d49b50c477c308dbe90c68}\label{uhfreader_8h_a5a77d50802d49b50c477c308dbe90c68}} 
+\index{uhfreader.h@{uhfreader.h}!GetOutPower@{GetOutPower}}
+\index{GetOutPower@{GetOutPower}!uhfreader.h@{uhfreader.h}}
+\doxysubsubsection{\texorpdfstring{GetOutPower()}{GetOutPower()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+stdcall Get\+Out\+Power (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{Value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{uhfreader_8h_a29a83adacae6c9dc1f9195cd89d4f039}\label{uhfreader_8h_a29a83adacae6c9dc1f9195cd89d4f039}} 
+\index{uhfreader.h@{uhfreader.h}!GetReaderIdentifier@{GetReaderIdentifier}}
+\index{GetReaderIdentifier@{GetReaderIdentifier}!uhfreader.h@{uhfreader.h}}
+\doxysubsubsection{\texorpdfstring{GetReaderIdentifier()}{GetReaderIdentifier()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+stdcall Get\+Reader\+Identifier (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{Id\+Value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{uhfreader_8h_a84bb5aac2ae0a0f5a8243d730dccb7f8}\label{uhfreader_8h_a84bb5aac2ae0a0f5a8243d730dccb7f8}} 
+\index{uhfreader.h@{uhfreader.h}!GetReaderTemperature@{GetReaderTemperature}}
+\index{GetReaderTemperature@{GetReaderTemperature}!uhfreader.h@{uhfreader.h}}
+\doxysubsubsection{\texorpdfstring{GetReaderTemperature()}{GetReaderTemperature()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+stdcall Get\+Reader\+Temperature (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{Plus\+Minus,  }\item[{unsigned char $\ast$}]{Temp\+Value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{uhfreader_8h_a82584a0b21a482bc3507f15a1364b346}\label{uhfreader_8h_a82584a0b21a482bc3507f15a1364b346}} 
+\index{uhfreader.h@{uhfreader.h}!GetRfComLinkStatus@{GetRfComLinkStatus}}
+\index{GetRfComLinkStatus@{GetRfComLinkStatus}!uhfreader.h@{uhfreader.h}}
+\doxysubsubsection{\texorpdfstring{GetRfComLinkStatus()}{GetRfComLinkStatus()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+stdcall Get\+Rf\+Com\+Link\+Status (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{Status }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{uhfreader_8h_a86c29b7208af76819ef8c1b0bd723084}\label{uhfreader_8h_a86c29b7208af76819ef8c1b0bd723084}} 
+\index{uhfreader.h@{uhfreader.h}!GetRfPortReturnLoss@{GetRfPortReturnLoss}}
+\index{GetRfPortReturnLoss@{GetRfPortReturnLoss}!uhfreader.h@{uhfreader.h}}
+\doxysubsubsection{\texorpdfstring{GetRfPortReturnLoss()}{GetRfPortReturnLoss()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+stdcall Get\+Rf\+Port\+Return\+Loss (\begin{DoxyParamCaption}\item[{unsigned char}]{Freq\+Parameter,  }\item[{unsigned char $\ast$}]{Loss\+Value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{uhfreader_8h_a16248618f51c73e08db1504e3c2f7954}\label{uhfreader_8h_a16248618f51c73e08db1504e3c2f7954}} 
+\index{uhfreader.h@{uhfreader.h}!GetTidFastStatus@{GetTidFastStatus}}
+\index{GetTidFastStatus@{GetTidFastStatus}!uhfreader.h@{uhfreader.h}}
+\doxysubsubsection{\texorpdfstring{GetTidFastStatus()}{GetTidFastStatus()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+stdcall Get\+Tid\+Fast\+Status (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{Status }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{uhfreader_8h_af9b09f26c9d6f5976fe7444ba9bbb2e1}\label{uhfreader_8h_af9b09f26c9d6f5976fe7444ba9bbb2e1}} 
+\index{uhfreader.h@{uhfreader.h}!GetWorkAntenna@{GetWorkAntenna}}
+\index{GetWorkAntenna@{GetWorkAntenna}!uhfreader.h@{uhfreader.h}}
+\doxysubsubsection{\texorpdfstring{GetWorkAntenna()}{GetWorkAntenna()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+stdcall Get\+Work\+Antenna (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{Antenna\+ID }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{uhfreader_8h_aabe5a58efb81522adc35c14e64156ca7}\label{uhfreader_8h_aabe5a58efb81522adc35c14e64156ca7}} 
+\index{uhfreader.h@{uhfreader.h}!Inventory@{Inventory}}
+\index{Inventory@{Inventory}!uhfreader.h@{uhfreader.h}}
+\doxysubsubsection{\texorpdfstring{Inventory()}{Inventory()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+stdcall Inventory (\begin{DoxyParamCaption}\item[{unsigned char}]{Repeat,  }\item[{unsigned char $\ast$}]{Out\+Data,  }\item[{unsigned char $\ast$}]{Tag\+Num }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{uhfreader_8h_a09c9d0fd4acf0d74cd045a16fc42f7c2}\label{uhfreader_8h_a09c9d0fd4acf0d74cd045a16fc42f7c2}} 
+\index{uhfreader.h@{uhfreader.h}!Net\_Connect@{Net\_Connect}}
+\index{Net\_Connect@{Net\_Connect}!uhfreader.h@{uhfreader.h}}
+\doxysubsubsection{\texorpdfstring{Net\_Connect()}{Net\_Connect()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+stdcall Net\+\_\+\+Connect (\begin{DoxyParamCaption}\item[{char $\ast$}]{Host\+Ip,  }\item[{int}]{Host\+Port,  }\item[{char $\ast$}]{Reader\+Ip,  }\item[{int}]{Reader\+Port }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{uhfreader_8h_ac8d572a4abefc9b53ef01df84ba69273}\label{uhfreader_8h_ac8d572a4abefc9b53ef01df84ba69273}} 
+\index{uhfreader.h@{uhfreader.h}!OpenCom@{OpenCom}}
+\index{OpenCom@{OpenCom}!uhfreader.h@{uhfreader.h}}
+\doxysubsubsection{\texorpdfstring{OpenCom()}{OpenCom()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+stdcall Open\+Com (\begin{DoxyParamCaption}\item[{\+\_\+\+\_\+int16}]{port,  }\item[{long}]{baud }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{uhfreader_8h_a0773a2674f9ff94b918d81b7de67ea08}\label{uhfreader_8h_a0773a2674f9ff94b918d81b7de67ea08}} 
+\index{uhfreader.h@{uhfreader.h}!ReadTag@{ReadTag}}
+\index{ReadTag@{ReadTag}!uhfreader.h@{uhfreader.h}}
+\doxysubsubsection{\texorpdfstring{ReadTag()}{ReadTag()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+stdcall Read\+Tag (\begin{DoxyParamCaption}\item[{unsigned char}]{Mem\+Bank,  }\item[{unsigned char}]{Word\+Add,  }\item[{unsigned char}]{Word\+Cnt,  }\item[{unsigned char $\ast$}]{Pass\+Word,  }\item[{unsigned char $\ast$}]{Tag\+Count,  }\item[{unsigned char $\ast$}]{Data\+Len,  }\item[{unsigned char $\ast$}]{Data,  }\item[{unsigned char $\ast$}]{Read\+Len,  }\item[{unsigned char $\ast$}]{Ant\+ID,  }\item[{unsigned char $\ast$}]{Read\+Count }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{uhfreader_8h_a5333e99186a3af8952a5972591a6c8f8}\label{uhfreader_8h_a5333e99186a3af8952a5972591a6c8f8}} 
+\index{uhfreader.h@{uhfreader.h}!Reset@{Reset}}
+\index{Reset@{Reset}!uhfreader.h@{uhfreader.h}}
+\doxysubsubsection{\texorpdfstring{Reset()}{Reset()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+stdcall Reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{uhfreader_8h_a723a474d8a9cdd1d992055030871d8df}\label{uhfreader_8h_a723a474d8a9cdd1d992055030871d8df}} 
+\index{uhfreader.h@{uhfreader.h}!RSSIToLog@{RSSIToLog}}
+\index{RSSIToLog@{RSSIToLog}!uhfreader.h@{uhfreader.h}}
+\doxysubsubsection{\texorpdfstring{RSSIToLog()}{RSSIToLog()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+stdcall RSSITo\+Log (\begin{DoxyParamCaption}\item[{unsigned char}]{RSSI }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{uhfreader_8h_a4849abbf62c62272a3da147547fbced8}\label{uhfreader_8h_a4849abbf62c62272a3da147547fbced8}} 
+\index{uhfreader.h@{uhfreader.h}!SetAccessEpcMatch@{SetAccessEpcMatch}}
+\index{SetAccessEpcMatch@{SetAccessEpcMatch}!uhfreader.h@{uhfreader.h}}
+\doxysubsubsection{\texorpdfstring{SetAccessEpcMatch()}{SetAccessEpcMatch()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+stdcall Set\+Access\+Epc\+Match (\begin{DoxyParamCaption}\item[{unsigned char}]{Mode,  }\item[{unsigned char}]{Epc\+Len,  }\item[{unsigned char $\ast$}]{Epc\+Data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{uhfreader_8h_a6a4b542bcb60330719bb65b8d5367e02}\label{uhfreader_8h_a6a4b542bcb60330719bb65b8d5367e02}} 
+\index{uhfreader.h@{uhfreader.h}!SetAntConnectionDetector@{SetAntConnectionDetector}}
+\index{SetAntConnectionDetector@{SetAntConnectionDetector}!uhfreader.h@{uhfreader.h}}
+\doxysubsubsection{\texorpdfstring{SetAntConnectionDetector()}{SetAntConnectionDetector()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+stdcall Set\+Ant\+Connection\+Detector (\begin{DoxyParamCaption}\item[{unsigned char}]{Sensitivity }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{uhfreader_8h_a869932c067ed843aa62f4c304a48b456}\label{uhfreader_8h_a869932c067ed843aa62f4c304a48b456}} 
+\index{uhfreader.h@{uhfreader.h}!SetBeeper@{SetBeeper}}
+\index{SetBeeper@{SetBeeper}!uhfreader.h@{uhfreader.h}}
+\doxysubsubsection{\texorpdfstring{SetBeeper()}{SetBeeper()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+stdcall Set\+Beeper (\begin{DoxyParamCaption}\item[{unsigned char}]{Value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{uhfreader_8h_ab5de57c7e9b4564275e63e50ee09ea1d}\label{uhfreader_8h_ab5de57c7e9b4564275e63e50ee09ea1d}} 
+\index{uhfreader.h@{uhfreader.h}!SetBeeperMode@{SetBeeperMode}}
+\index{SetBeeperMode@{SetBeeperMode}!uhfreader.h@{uhfreader.h}}
+\doxysubsubsection{\texorpdfstring{SetBeeperMode()}{SetBeeperMode()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+stdcall Set\+Beeper\+Mode (\begin{DoxyParamCaption}\item[{unsigned char}]{Mode\+Value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{uhfreader_8h_ac3f042406c41a691d941bb7694796a4f}\label{uhfreader_8h_ac3f042406c41a691d941bb7694796a4f}} 
+\index{uhfreader.h@{uhfreader.h}!SetDRMStatus@{SetDRMStatus}}
+\index{SetDRMStatus@{SetDRMStatus}!uhfreader.h@{uhfreader.h}}
+\doxysubsubsection{\texorpdfstring{SetDRMStatus()}{SetDRMStatus()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+stdcall Set\+DRMStatus (\begin{DoxyParamCaption}\item[{unsigned char}]{Status }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{uhfreader_8h_a94da7c6a6e1f4b7a1b5c71059b4250e2}\label{uhfreader_8h_a94da7c6a6e1f4b7a1b5c71059b4250e2}} 
+\index{uhfreader.h@{uhfreader.h}!SetFrequencyRegion@{SetFrequencyRegion}}
+\index{SetFrequencyRegion@{SetFrequencyRegion}!uhfreader.h@{uhfreader.h}}
+\doxysubsubsection{\texorpdfstring{SetFrequencyRegion()}{SetFrequencyRegion()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+stdcall Set\+Frequency\+Region (\begin{DoxyParamCaption}\item[{unsigned char}]{Region,  }\item[{int}]{Start\+Freq,  }\item[{int}]{End\+Freq,  }\item[{int}]{Freq\+Space,  }\item[{unsigned char}]{Freq\+Quantity }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{uhfreader_8h_ad76e7c9316795f59f5482eb527ef95d4}\label{uhfreader_8h_ad76e7c9316795f59f5482eb527ef95d4}} 
+\index{uhfreader.h@{uhfreader.h}!SetGpioStatus@{SetGpioStatus}}
+\index{SetGpioStatus@{SetGpioStatus}!uhfreader.h@{uhfreader.h}}
+\doxysubsubsection{\texorpdfstring{SetGpioStatus()}{SetGpioStatus()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+stdcall Set\+Gpio\+Status (\begin{DoxyParamCaption}\item[{unsigned char}]{Choose\+Gpio,  }\item[{unsigned char}]{Gpio\+Value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{uhfreader_8h_aaf25c4c34afbdbbf920905fcb3314e72}\label{uhfreader_8h_aaf25c4c34afbdbbf920905fcb3314e72}} 
+\index{uhfreader.h@{uhfreader.h}!SetOutPower@{SetOutPower}}
+\index{SetOutPower@{SetOutPower}!uhfreader.h@{uhfreader.h}}
+\doxysubsubsection{\texorpdfstring{SetOutPower()}{SetOutPower()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+stdcall Set\+Out\+Power (\begin{DoxyParamCaption}\item[{unsigned char}]{Value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{uhfreader_8h_af6783bd994afa9bc61dcad6b54f35242}\label{uhfreader_8h_af6783bd994afa9bc61dcad6b54f35242}} 
+\index{uhfreader.h@{uhfreader.h}!SetReaderIdentifier@{SetReaderIdentifier}}
+\index{SetReaderIdentifier@{SetReaderIdentifier}!uhfreader.h@{uhfreader.h}}
+\doxysubsubsection{\texorpdfstring{SetReaderIdentifier()}{SetReaderIdentifier()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+stdcall Set\+Reader\+Identifier (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{Id\+Value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{uhfreader_8h_a3d7715236e2cad8725b741c40a3f7971}\label{uhfreader_8h_a3d7715236e2cad8725b741c40a3f7971}} 
+\index{uhfreader.h@{uhfreader.h}!SetRfComLinkStatus@{SetRfComLinkStatus}}
+\index{SetRfComLinkStatus@{SetRfComLinkStatus}!uhfreader.h@{uhfreader.h}}
+\doxysubsubsection{\texorpdfstring{SetRfComLinkStatus()}{SetRfComLinkStatus()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+stdcall Set\+Rf\+Com\+Link\+Status (\begin{DoxyParamCaption}\item[{unsigned char}]{Status }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{uhfreader_8h_a5928a5b42572f627cb5d3c00d155d9e6}\label{uhfreader_8h_a5928a5b42572f627cb5d3c00d155d9e6}} 
+\index{uhfreader.h@{uhfreader.h}!SetRS485Address@{SetRS485Address}}
+\index{SetRS485Address@{SetRS485Address}!uhfreader.h@{uhfreader.h}}
+\doxysubsubsection{\texorpdfstring{SetRS485Address()}{SetRS485Address()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+stdcall Set\+RS485\+Address (\begin{DoxyParamCaption}\item[{unsigned char}]{Addr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{uhfreader_8h_a2c729203b578254563660754ff41511c}\label{uhfreader_8h_a2c729203b578254563660754ff41511c}} 
+\index{uhfreader.h@{uhfreader.h}!SetTidFastStatus@{SetTidFastStatus}}
+\index{SetTidFastStatus@{SetTidFastStatus}!uhfreader.h@{uhfreader.h}}
+\doxysubsubsection{\texorpdfstring{SetTidFastStatus()}{SetTidFastStatus()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+stdcall Set\+Tid\+Fast\+Status (\begin{DoxyParamCaption}\item[{unsigned char}]{Status }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{uhfreader_8h_aeea6ba66f1e317c79e83b575cb67f124}\label{uhfreader_8h_aeea6ba66f1e317c79e83b575cb67f124}} 
+\index{uhfreader.h@{uhfreader.h}!SetUartBaudRate@{SetUartBaudRate}}
+\index{SetUartBaudRate@{SetUartBaudRate}!uhfreader.h@{uhfreader.h}}
+\doxysubsubsection{\texorpdfstring{SetUartBaudRate()}{SetUartBaudRate()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+stdcall Set\+Uart\+Baud\+Rate (\begin{DoxyParamCaption}\item[{unsigned char}]{Baud\+Rate }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{uhfreader_8h_a840965249cb668d618f91de644d25e5b}\label{uhfreader_8h_a840965249cb668d618f91de644d25e5b}} 
+\index{uhfreader.h@{uhfreader.h}!SetWorkAntenna@{SetWorkAntenna}}
+\index{SetWorkAntenna@{SetWorkAntenna}!uhfreader.h@{uhfreader.h}}
+\doxysubsubsection{\texorpdfstring{SetWorkAntenna()}{SetWorkAntenna()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+stdcall Set\+Work\+Antenna (\begin{DoxyParamCaption}\item[{unsigned char}]{Antenna\+ID }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{uhfreader_8h_a0fd2e3eb0967c0cad4188cd72c8566cd}\label{uhfreader_8h_a0fd2e3eb0967c0cad4188cd72c8566cd}} 
+\index{uhfreader.h@{uhfreader.h}!Testinventory@{Testinventory}}
+\index{Testinventory@{Testinventory}!uhfreader.h@{uhfreader.h}}
+\doxysubsubsection{\texorpdfstring{Testinventory()}{Testinventory()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+stdcall Testinventory (\begin{DoxyParamCaption}\item[{unsigned char}]{Repeat,  }\item[{unsigned char $\ast$}]{Tag\+Count,  }\item[{unsigned char $\ast$}]{Data\+Len }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{uhfreader_8h_afdcb7defa7d9ca5c09feb2ba0d81e179}\label{uhfreader_8h_afdcb7defa7d9ca5c09feb2ba0d81e179}} 
+\index{uhfreader.h@{uhfreader.h}!WriteTag@{WriteTag}}
+\index{WriteTag@{WriteTag}!uhfreader.h@{uhfreader.h}}
+\doxysubsubsection{\texorpdfstring{WriteTag()}{WriteTag()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+stdcall Write\+Tag (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{Pass\+Word,  }\item[{unsigned char}]{Mem\+Bank,  }\item[{unsigned char}]{Word\+Add,  }\item[{unsigned char}]{Word\+Cnt,  }\item[{unsigned char $\ast$}]{Data }\end{DoxyParamCaption})}
+

@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/base">
+        <file>weight.png</file>
+        <file>eyeOff.png</file>
+        <file>eyeOn.png</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,56 @@
+\hypertarget{rfusbhid_8h}{}\doxysection{docs/oldschool/\+Weightsmart/rfusbhid.h File Reference}
+\label{rfusbhid_8h}\index{docs/oldschool/Weightsmart/rfusbhid.h@{docs/oldschool/Weightsmart/rfusbhid.h}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \+\_\+\+\_\+stdcall \mbox{\hyperlink{rfusbhid_8h_a477112c3f90ecc214b21b123d363e29d}{rdy\+\_\+read}} (unsigned char Mem\+Bank, unsigned char Word\+Add, unsigned char Word\+Cnt, unsigned char $\ast$Pass\+Word, unsigned char $\ast$Tag\+Count, unsigned char $\ast$Data\+Len, unsigned char $\ast$Data, unsigned char $\ast$Read\+Len, unsigned char $\ast$Ant\+ID, unsigned char $\ast$Read\+Count)
+\item 
+int \+\_\+\+\_\+stdcall \mbox{\hyperlink{rfusbhid_8h_a862897bffc49c049c8d84cc0e87159e9}{rdy\+\_\+write}} (unsigned char $\ast$Pass\+Word, unsigned char Mem\+Bank, unsigned char Word\+Add, unsigned char Word\+Cnt, unsigned char $\ast$Data)
+\item 
+int \+\_\+\+\_\+stdcall \mbox{\hyperlink{rfusbhid_8h_a0e72fca35d2ed4f8cf1fbababe54d455}{rdy\+\_\+set\+\_\+access\+\_\+epc\+\_\+match}} (unsigned char Mode, unsigned char Epc\+Len, unsigned char $\ast$Epc)
+\item 
+int \+\_\+\+\_\+stdcall \mbox{\hyperlink{rfusbhid_8h_a293d57c325bc8009cfa16911241e895d}{get\+\_\+firmware\+\_\+version}} (unsigned char $\ast$Version)
+\item 
+int \+\_\+\+\_\+stdcall \mbox{\hyperlink{rfusbhid_8h_aaf25c4c34afbdbbf920905fcb3314e72}{Set\+Out\+Power}} (unsigned char Value)
+\item 
+int \+\_\+\+\_\+stdcall \mbox{\hyperlink{rfusbhid_8h_a5a77d50802d49b50c477c308dbe90c68}{Get\+Out\+Power}} (unsigned char $\ast$Value)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{rfusbhid_8h_a293d57c325bc8009cfa16911241e895d}\label{rfusbhid_8h_a293d57c325bc8009cfa16911241e895d}} 
+\index{rfusbhid.h@{rfusbhid.h}!get\_firmware\_version@{get\_firmware\_version}}
+\index{get\_firmware\_version@{get\_firmware\_version}!rfusbhid.h@{rfusbhid.h}}
+\doxysubsubsection{\texorpdfstring{get\_firmware\_version()}{get\_firmware\_version()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+stdcall get\+\_\+firmware\+\_\+version (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{Version }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{rfusbhid_8h_a5a77d50802d49b50c477c308dbe90c68}\label{rfusbhid_8h_a5a77d50802d49b50c477c308dbe90c68}} 
+\index{rfusbhid.h@{rfusbhid.h}!GetOutPower@{GetOutPower}}
+\index{GetOutPower@{GetOutPower}!rfusbhid.h@{rfusbhid.h}}
+\doxysubsubsection{\texorpdfstring{GetOutPower()}{GetOutPower()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+stdcall Get\+Out\+Power (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{Value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{rfusbhid_8h_a477112c3f90ecc214b21b123d363e29d}\label{rfusbhid_8h_a477112c3f90ecc214b21b123d363e29d}} 
+\index{rfusbhid.h@{rfusbhid.h}!rdy\_read@{rdy\_read}}
+\index{rdy\_read@{rdy\_read}!rfusbhid.h@{rfusbhid.h}}
+\doxysubsubsection{\texorpdfstring{rdy\_read()}{rdy\_read()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+stdcall rdy\+\_\+read (\begin{DoxyParamCaption}\item[{unsigned char}]{Mem\+Bank,  }\item[{unsigned char}]{Word\+Add,  }\item[{unsigned char}]{Word\+Cnt,  }\item[{unsigned char $\ast$}]{Pass\+Word,  }\item[{unsigned char $\ast$}]{Tag\+Count,  }\item[{unsigned char $\ast$}]{Data\+Len,  }\item[{unsigned char $\ast$}]{Data,  }\item[{unsigned char $\ast$}]{Read\+Len,  }\item[{unsigned char $\ast$}]{Ant\+ID,  }\item[{unsigned char $\ast$}]{Read\+Count }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{rfusbhid_8h_a0e72fca35d2ed4f8cf1fbababe54d455}\label{rfusbhid_8h_a0e72fca35d2ed4f8cf1fbababe54d455}} 
+\index{rfusbhid.h@{rfusbhid.h}!rdy\_set\_access\_epc\_match@{rdy\_set\_access\_epc\_match}}
+\index{rdy\_set\_access\_epc\_match@{rdy\_set\_access\_epc\_match}!rfusbhid.h@{rfusbhid.h}}
+\doxysubsubsection{\texorpdfstring{rdy\_set\_access\_epc\_match()}{rdy\_set\_access\_epc\_match()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+stdcall rdy\+\_\+set\+\_\+access\+\_\+epc\+\_\+match (\begin{DoxyParamCaption}\item[{unsigned char}]{Mode,  }\item[{unsigned char}]{Epc\+Len,  }\item[{unsigned char $\ast$}]{Epc }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{rfusbhid_8h_a862897bffc49c049c8d84cc0e87159e9}\label{rfusbhid_8h_a862897bffc49c049c8d84cc0e87159e9}} 
+\index{rfusbhid.h@{rfusbhid.h}!rdy\_write@{rdy\_write}}
+\index{rdy\_write@{rdy\_write}!rfusbhid.h@{rfusbhid.h}}
+\doxysubsubsection{\texorpdfstring{rdy\_write()}{rdy\_write()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+stdcall rdy\+\_\+write (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{Pass\+Word,  }\item[{unsigned char}]{Mem\+Bank,  }\item[{unsigned char}]{Word\+Add,  }\item[{unsigned char}]{Word\+Cnt,  }\item[{unsigned char $\ast$}]{Data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{rfusbhid_8h_aaf25c4c34afbdbbf920905fcb3314e72}\label{rfusbhid_8h_aaf25c4c34afbdbbf920905fcb3314e72}} 
+\index{rfusbhid.h@{rfusbhid.h}!SetOutPower@{SetOutPower}}
+\index{SetOutPower@{SetOutPower}!rfusbhid.h@{rfusbhid.h}}
+\doxysubsubsection{\texorpdfstring{SetOutPower()}{SetOutPower()}}
+{\footnotesize\ttfamily int \+\_\+\+\_\+stdcall Set\+Out\+Power (\begin{DoxyParamCaption}\item[{unsigned char}]{Value }\end{DoxyParamCaption})}
+

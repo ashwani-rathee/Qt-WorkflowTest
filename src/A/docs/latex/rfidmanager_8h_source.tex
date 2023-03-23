@@ -1,0 +1,73 @@
+\hypertarget{rfidmanager_8h_source}{}\doxysection{rfidmanager.\+h}
+\label{rfidmanager_8h_source}\index{src/modules/RfidManager/rfidmanager.h@{src/modules/RfidManager/rfidmanager.h}}
+\mbox{\hyperlink{rfidmanager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ RFIDMANAGER\_H}}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ RFIDMANAGER\_H}}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}qobject.h"{}}}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}qthread.h"{}}}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{rfidupdate_8h}{rfidupdate.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{rfidnew_8h}{rfidnew.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vehicleactions_8h}{vehicleactions.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vehicleactions_8h}{src/modules/RfidManager/vehicleactions.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <QVector>}}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00013}\mbox{\hyperlink{struct_tag}{00013}}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_tag}{Tag}}\ \{}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00014}\mbox{\hyperlink{struct_tag_aeb6160e4710d886f6d1dcead7361e572}{00014}}\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_tag_aeb6160e4710d886f6d1dcead7361e572}{counter}};}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00015}\mbox{\hyperlink{struct_tag_a4705892a9528f8dd4df6d13dcc7ecf1c}{00015}}\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_tag_a4705892a9528f8dd4df6d13dcc7ecf1c}{freqant}};}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00016}\mbox{\hyperlink{struct_tag_abb4ac1883f96476d15c0214ce0d8f81c}{00016}}\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_tag_abb4ac1883f96476d15c0214ce0d8f81c}{rssi}};}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00017}\mbox{\hyperlink{struct_tag_a14b8fafb8b5f1286f9685016859ba4ee}{00017}}\ \ \ QString\ \mbox{\hyperlink{struct_tag_a14b8fafb8b5f1286f9685016859ba4ee}{pc}};}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00018}\mbox{\hyperlink{struct_tag_a84be79092c91a443cfd83de7369d0f6a}{00018}}\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_tag_a84be79092c91a443cfd83de7369d0f6a}{epclen}};}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00019}\mbox{\hyperlink{struct_tag_a66e13e2d54b56eebcbfbacd369679ced}{00019}}\ \ \ QString\ \mbox{\hyperlink{struct_tag_a66e13e2d54b56eebcbfbacd369679ced}{epcdata}};}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00021}\mbox{\hyperlink{struct_tag_a4a68fdb626522fb351aec70b59db9e4a}{00021}}\ \ \ \mbox{\hyperlink{struct_tag_a4a68fdb626522fb351aec70b59db9e4a}{Tag}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_tag_aeb6160e4710d886f6d1dcead7361e572}{counter}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_tag_a4705892a9528f8dd4df6d13dcc7ecf1c}{freqant}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_tag_abb4ac1883f96476d15c0214ce0d8f81c}{rssi}},\ QString\ \mbox{\hyperlink{struct_tag_a14b8fafb8b5f1286f9685016859ba4ee}{pc}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_tag_a84be79092c91a443cfd83de7369d0f6a}{epclen}},\ QString\ \mbox{\hyperlink{struct_tag_a66e13e2d54b56eebcbfbacd369679ced}{epcdata}})\{}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00022}00022\ \ \ \ \ this-\/>counter\ =\ \mbox{\hyperlink{struct_tag_aeb6160e4710d886f6d1dcead7361e572}{counter}};}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00023}00023\ \ \ \ \ this-\/>freqant\ =\ \mbox{\hyperlink{struct_tag_a4705892a9528f8dd4df6d13dcc7ecf1c}{freqant}};}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00024}00024\ \ \ \ \ this-\/>rssi\ =\ \mbox{\hyperlink{struct_tag_abb4ac1883f96476d15c0214ce0d8f81c}{rssi}};}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00025}00025\ \ \ \ \ this-\/>pc\ =\ \mbox{\hyperlink{struct_tag_a14b8fafb8b5f1286f9685016859ba4ee}{pc}};}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00026}00026\ \ \ \ \ this-\/>epclen\ =\ \mbox{\hyperlink{struct_tag_a84be79092c91a443cfd83de7369d0f6a}{epclen}};}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00027}00027\ \ \ \ \ this-\/>epcdata\ =\ \mbox{\hyperlink{struct_tag_a66e13e2d54b56eebcbfbacd369679ced}{epcdata}};}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00028}00028\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00029}00029\ \};}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00030}00030\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_main_window}{MainWindow}};}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00031}\mbox{\hyperlink{class_rfid_manager}{00031}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_rfid_manager}{RfidManager}}:\ \textcolor{keyword}{public}\ QThread}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00032}00032\ \{}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00033}00033\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00034}\mbox{\hyperlink{class_rfid_manager_a6fa49506793544af436832cc41577be1}{00034}}\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_rfid_new}{RfidNew}};}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00035}\mbox{\hyperlink{class_rfid_manager_ad3ba243e3e411352592ae14f55dfc7d9}{00035}}\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_vehicle_actions}{VehicleActions}};}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00036}00036\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00037}00037\ \ \ \ \ \mbox{\hyperlink{class_rfid_manager}{RfidManager}}(\mbox{\hyperlink{class_main_window}{MainWindow}}\ *parent);}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00038}00038\ \ \ \ \ \mbox{\hyperlink{class_rfid_manager_a5a8aae5c3e264df0a60c52ee4b3d2cee}{\string~RfidManager}}();}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00039}00039\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_rfid_manager_a6910daa89a34bec832583471a62e5560}{ConnectToRfid}}();}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00040}00040\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_rfid_manager_a38742b8ab0f029f925df0ebbc1a8da9e}{MRFIDCleanInventory}}();}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00041}\mbox{\hyperlink{class_rfid_manager_a6c1c1619ede57affc013155f76109d43}{00041}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_rfid_manager_a6c1c1619ede57affc013155f76109d43}{MRemoveTags}}();}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00042}00042\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_rfid_manager_a083459da7494bd8b3fe7b41eaac6adbb}{MAddTag}}(\textcolor{keywordtype}{int}\ counter,\ \textcolor{keywordtype}{int}\ freqant,\ \textcolor{keywordtype}{int}\ rssi,\ QString\ pc,\ \textcolor{keywordtype}{int}\ epclen,\ QString\ epcdata);}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00043}00043\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_rfid_manager_a7450e7ce996f97a6854c9f81c1e417dc}{MAddTagExistAware}}(\textcolor{keywordtype}{int}\ counter,\ \textcolor{keywordtype}{int}\ freqant,\ \textcolor{keywordtype}{int}\ rssi,\ QString\ pc,\ \textcolor{keywordtype}{int}\ epclen,\ QString\ epcdata);}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00044}00044\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_rfid_manager_af53a010ee650351fc53b9c3be6cb1870}{MGetInventory}}();}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00045}00045\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_rfid_manager_a740a8f700071fe940e4ee17791eba7eb}{MProcessInventory}}();}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00046}00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_rfid_manager_aab035048b810bfd58a70adb957c62d90}{MPrintInventory}}();}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00047}00047\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_rfid_manager_afacb4058235a242b4fdc81e5d5265549}{MRFIDControllerCleanInventory}}();}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00048}00048\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_rfid_manager_af35a11c340321c6b023377621fc72939}{MBothCleanInventory}}();}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00049}00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_rfid_manager_afedd2797b8d93f51c93e1f5e27b8a9f4}{run}}();}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00050}00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_rfid_manager_a9c8fb7ca0c61d24ef33e096cf8cb05cb}{read\_data}}();}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00051}\mbox{\hyperlink{class_rfid_manager_a16fad11de8c769f0d31e2a471e9324c1}{00051}}\ \ \ \ \ QVector<struct\ Tag>\ \mbox{\hyperlink{class_rfid_manager_a16fad11de8c769f0d31e2a471e9324c1}{tags}};}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00053}00053\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00054}00054\ \ \ \ \ \textcolor{keywordtype}{void}\ onpushbuttonRfidUpdateClicked();}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00055}00055\ \ \ \ \ \textcolor{keywordtype}{void}\ onpushbuttonRfidNewClicked();}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00056}00056\ \ \ \ \ \textcolor{keywordtype}{void}\ onpushbuttonVehicleActionsClicked();}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00059}00059\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00060}00060\ \ \ \ \ \mbox{\hyperlink{class_main_window}{MainWindow}}\ *\mbox{\hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}};}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00061}00061\ \ \ \ \ \mbox{\hyperlink{class_rfid_update}{RfidUpdate}}\ *updateform;}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00062}00062\ \ \ \ \ \mbox{\hyperlink{class_rfid_new}{RfidNew}}\ *newform;}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00063}00063\ \ \ \ \ \mbox{\hyperlink{class_vehicle_actions}{VehicleActions}}\ *vehmanager;}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00065}00065\ \};}
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{rfidmanager_8h_source_l00067}00067\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ RFIDMANAGER\_H}}
+
+\end{DoxyCode}

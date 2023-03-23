@@ -1,0 +1,99 @@
+.TH "VideoFrameGrabber" 3 "Tue Mar 7 2023" "Version 0.0.1" "WeighBridgeApplication" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+VideoFrameGrabber
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <videoframegrabber\&.h>\fP
+.PP
+Inherits QAbstractVideoSurface\&.
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBframeAvailable\fP (QImage frame)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBVideoFrameGrabber\fP (QWidget *widget, QObject *parent=0)"
+.br
+.ti -1c
+.RI "QList< QVideoFrame::PixelFormat > \fBsupportedPixelFormats\fP (QAbstractVideoBuffer::HandleType handleType=QAbstractVideoBuffer::NoHandle) const"
+.br
+.ti -1c
+.RI "bool \fBisFormatSupported\fP (const QVideoSurfaceFormat &format) const"
+.br
+.ti -1c
+.RI "bool \fBstart\fP (const QVideoSurfaceFormat &format)"
+.br
+.ti -1c
+.RI "void \fBstop\fP ()"
+.br
+.ti -1c
+.RI "bool \fBpresent\fP (const QVideoFrame &frame)"
+.br
+.ti -1c
+.RI "QRect \fBvideoRect\fP () const"
+.br
+.ti -1c
+.RI "void \fBupdateVideoRect\fP ()"
+.br
+.ti -1c
+.RI "void \fBpaint\fP (QPainter *painter)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB7\fP of file \fBvideoframegrabber\&.h\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "VideoFrameGrabber::VideoFrameGrabber (QWidget * widget, QObject * parent = \fC0\fP)"
+
+.PP
+Definition at line \fB7\fP of file \fBvideoframegrabber\&.cpp\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void VideoFrameGrabber::frameAvailable (QImage frame)\fC [signal]\fP"
+
+.SS "bool VideoFrameGrabber::isFormatSupported (const QVideoSurfaceFormat & format) const"
+
+.PP
+Definition at line \fB52\fP of file \fBvideoframegrabber\&.cpp\fP\&.
+.SS "void VideoFrameGrabber::paint (QPainter * painter)"
+
+.PP
+Definition at line \fB131\fP of file \fBvideoframegrabber\&.cpp\fP\&.
+.SS "bool VideoFrameGrabber::present (const QVideoFrame & frame)"
+
+.PP
+Definition at line \fB93\fP of file \fBvideoframegrabber\&.cpp\fP\&.
+.SS "bool VideoFrameGrabber::start (const QVideoSurfaceFormat & format)"
+
+.PP
+Definition at line \fB62\fP of file \fBvideoframegrabber\&.cpp\fP\&.
+.SS "void VideoFrameGrabber::stop ()"
+
+.PP
+Definition at line \fB83\fP of file \fBvideoframegrabber\&.cpp\fP\&.
+.SS "QList< QVideoFrame::PixelFormat > VideoFrameGrabber::supportedPixelFormats (QAbstractVideoBuffer::HandleType handleType = \fCQAbstractVideoBuffer::NoHandle\fP) const"
+
+.PP
+Definition at line \fB14\fP of file \fBvideoframegrabber\&.cpp\fP\&.
+.SS "void VideoFrameGrabber::updateVideoRect ()"
+
+.PP
+Definition at line \fB122\fP of file \fBvideoframegrabber\&.cpp\fP\&.
+.SS "QRect VideoFrameGrabber::videoRect () const\fC [inline]\fP"
+
+.PP
+Definition at line \fB23\fP of file \fBvideoframegrabber\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for WeighBridgeApplication from the source code\&.

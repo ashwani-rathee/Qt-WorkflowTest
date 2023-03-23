@@ -1,0 +1,70 @@
+.TH "WeighMachineThread" 3 "Tue Mar 7 2023" "Version 0.0.1" "WeighBridgeApplication" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+WeighMachineThread
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <weighmachinethread\&.h>\fP
+.PP
+Inherits QThread\&.
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBonIntValueChange\fP ()"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBWeighMachineThread\fP (QString portname='COM5', QSerialPort::BaudRate baudrate=QSerialPort::Baud2400, QSerialPort::DataBits databits=QSerialPort::Data8, QSerialPort::Parity parity=QSerialPort::NoParity)"
+.br
+.ti -1c
+.RI "void \fBsetProperties\fP (QString portname, QSerialPort::BaudRate baudrate, QSerialPort::DataBits databits, QSerialPort::Parity parity)"
+.br
+.ti -1c
+.RI "\fB~WeighMachineThread\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBweightgm\fP = 0"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB8\fP of file \fBweighmachinethread\&.h\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "WeighMachineThread::WeighMachineThread (QString portname = \fC'COM5'\fP, QSerialPort::BaudRate baudrate = \fCQSerialPort::Baud2400\fP, QSerialPort::DataBits databits = \fCQSerialPort::Data8\fP, QSerialPort::Parity parity = \fCQSerialPort::NoParity\fP)"
+
+.PP
+Definition at line \fB8\fP of file \fBweighmachinethread\&.cpp\fP\&.
+.SS "WeighMachineThread::~WeighMachineThread ()"
+
+.PP
+Definition at line \fB46\fP of file \fBweighmachinethread\&.cpp\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void WeighMachineThread::onIntValueChange ()\fC [signal]\fP"
+
+.SS "void WeighMachineThread::setProperties (QString portname, QSerialPort::BaudRate baudrate, QSerialPort::DataBits databits, QSerialPort::Parity parity)"
+
+.PP
+Definition at line \fB58\fP of file \fBweighmachinethread\&.cpp\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "int WeighMachineThread::weightgm = 0"
+
+.PP
+Definition at line \fB14\fP of file \fBweighmachinethread\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for WeighBridgeApplication from the source code\&.

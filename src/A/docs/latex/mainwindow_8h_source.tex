@@ -1,0 +1,119 @@
+\hypertarget{mainwindow_8h_source}{}\doxysection{mainwindow.\+h}
+\label{mainwindow_8h_source}\index{src/modules/MainWindowManager/mainwindow.h@{src/modules/MainWindowManager/mainwindow.h}}
+\mbox{\hyperlink{mainwindow_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{sodatamanager_8h}{sodatamanager.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{rfidmanager_8h}{src/modules/RfidManager/rfidmanager.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00004}00004\ \textcolor{preprocessor}{\#ifndef\ MAINWINDOW\_H}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00005}\mbox{\hyperlink{mainwindow_8h_a1017d02fcd3da5cdbcd8c1df49e08650}{00005}}\ \textcolor{preprocessor}{\#define\ MAINWINDOW\_H}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <QMainWindow>}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <QDialog>}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <QSqlDatabase>}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <QNetworkAccessManager>}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <QDebug>}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{psqlmanager_8h}{psqlmanager.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{login_8h}{login.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00014}00014\ \textcolor{preprocessor}{\#include\ <QLibrary>}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00015}00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{weighmachinethread_8h}{weighmachinethread.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00017}00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_debug_manager_8h}{DebugManager.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00019}00019\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ui}{Ui}}\ \{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_main_window}{MainWindow}};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00021}00021\ \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00023}00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{sqlite3_8h}{sqlite3.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00025}00025\ \textcolor{comment}{/***}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00026}00026\ \textcolor{comment}{\ *\ \ TODOS}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00027}00027\ \textcolor{comment}{\ *\ -\/\ Main\ Window\ should\ know\ who\ the\ user\ is}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00028}00028\ \textcolor{comment}{\ *\ -\/\ Let\ the\ PSQL\ manager\ know\ who\ the\ user\ is}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00029}00029\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00030}00030\ \textcolor{comment}{\ ***/}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00032}00032\ \textcolor{keyword}{class\ }QApplication;}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00033}00033\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_debug_manager}{DebugManager}};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00035}\mbox{\hyperlink{class_main_window}{00035}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_main_window}{MainWindow}}\ :\ \textcolor{keyword}{public}\ QMainWindow}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00036}00036\ \{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00037}00037\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00039}00039\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_main_window}{MainWindow}}(QApplication\ *parent\ =\ 0,QString\ \mbox{\hyperlink{class_main_window_a6ce608f9d15fc451b6495ee23c95d36e}{appname}}\ =\ \textcolor{stringliteral}{"{}test"{}});}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00041}00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{\string~MainWindow}}();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_adc70f8dd3f2ba9e353c7e01d3f38f081}{whoami}}();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00043}\mbox{\hyperlink{class_main_window_a7d04f9d754c4efb98172dc68db9dfb2b}{00043}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_psql_manager}{PsqlManager}}\ \mbox{\hyperlink{class_main_window_a7d04f9d754c4efb98172dc68db9dfb2b}{db}};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_main_window_af882adcea07a0c19422c78caa38029f8}{loginDialog}}();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00045}\mbox{\hyperlink{class_main_window_a6ce608f9d15fc451b6495ee23c95d36e}{00045}}\ \ \ \ \ \ \ \ \ QString\ \mbox{\hyperlink{class_main_window_a6ce608f9d15fc451b6495ee23c95d36e}{appname}};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a055cd2ac6efe1e2827342e46b2620bf1}{pSetup}}();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00049}00049\ \ \ \ \ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_main_window_aa4825a6ac8a375f8e7ccc7ffdb5e234c}{logincheck}}(QString\ username,\ QString\ password,\ QString\ mode);}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00052}00052\ \ \ \ \ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ saveIpSettings();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButtonGetClicked();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButtonWbsaveClicked();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00056}00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButtonGetweightClicked();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButtonPlayClicked();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ on\_serialChangeWeightgm();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ onpushButtonLogClicked();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ processFrame(QImage\ test);}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ onpushButtonGetInventoryClicked();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ onpushButtonClearInventoryClicked();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ onpushButtonRfidUpdateClicked();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ onpushButtonRfidNewClicked();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ onpushButtonRfidReissueClicked();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ onActionLogoutTriggered();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ onpushVehicleActionsClicked();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ onpushSoManagerClicked();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00071}00071\ \ \ \ \ signals:}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00072}\mbox{\hyperlink{class_main_window_a49ff153730b63397cbbbe68c787e1a33}{00072}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a49ff153730b63397cbbbe68c787e1a33}{rfidupdatecalled}}();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00073}\mbox{\hyperlink{class_main_window_a511ee96877323c03a3b25503b5df645e}{00073}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a511ee96877323c03a3b25503b5df645e}{rfidnewcalled}}();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00074}\mbox{\hyperlink{class_main_window_a23605aba7cfc07a1fcfb655c19284361}{00074}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a23605aba7cfc07a1fcfb655c19284361}{rfidreissuecalled}}();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00075}\mbox{\hyperlink{class_main_window_ade99f7f6b5bcf224041cef89d6f9a5dc}{00075}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_ade99f7f6b5bcf224041cef89d6f9a5dc}{vehicleactionscalled}}();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00077}00077\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00078}00078\ \ \ \ \ \ \ \ \ QString\ username;}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00079}00079\ \ \ \ \ \ \ \ \ QString\ password;}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00080}00080\ \ \ \ \ \ \ \ \ QString\ mode;}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00081}00081\ \ \ \ \ \ \ \ \ QString\ accessLevel;}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00082}00082\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_debug_manager}{DebugManager}}\ *debugger;}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00083}00083\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_weigh_machine_thread}{WeighMachineThread}}\ *wthread;}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00084}00084\ \ \ \ \ \ \ \ \ QNetworkAccessManager\ *manager;}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00085}00085\ \ \ \ \ \ \ \ \ QNetworkRequest\ request;}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00086}00086\ \ \ \ \ \ \ \ \ Ui::MainWindow\ *ui;}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00087}00087\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_login}{Login}}\ *login;}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00088}00088\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sqlite3_8h_a0ef6f2646262c8a9b24368d8ac140f69}{sqlite3}}*\ db1;}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00089}00089\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_rfid_manager}{RfidManager}}\ *rfidcontroller;}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00090}00090\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_so_data_manager}{SoDataManager}}\ *sodatacontroller;}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00094}00094\ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00095}00095\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setupDefaults();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00096}00096\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setupWeighMachine();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00097}00097\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setupDatabase();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00098}00098\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setupSignals();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00099}00099\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setupIpSettingsDefaults();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00100}00100\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setAdminIpSettingsRow(QString\ name,\ QString\ ip,\ \textcolor{keywordtype}{int}\ port,\ QString\ uname,\ QString\ password);}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00101}00101\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setupNetworkManager();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00102}00102\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setupWeighBridgeSettingsDefaults();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00103}00103\ \textcolor{comment}{//\ \ \ \ \ \ \ \ void\ closeEvent\ (QCloseEvent\ *event);}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00104}00104\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ closeEvent();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00106}00106\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ MainWindow::superUserLoginCheck(QString\ username,\ QString\ password);}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00109}00109\ \};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{mainwindow_8h_source_l00113}00113\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MAINWINDOW\_H}}
+
+\end{DoxyCode}

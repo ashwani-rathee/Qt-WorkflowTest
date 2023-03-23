@@ -1,0 +1,183 @@
+\hypertarget{class_main_window}{}\doxysection{Main\+Window Class Reference}
+\label{class_main_window}\index{MainWindow@{MainWindow}}
+
+
+{\ttfamily \#include $<$mainwindow.\+h$>$}
+
+Inheritance diagram for Main\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_main_window}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_main_window_aa4825a6ac8a375f8e7ccc7ffdb5e234c}{logincheck}} (QString username, QString password, QString mode)
+\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_main_window_a49ff153730b63397cbbbe68c787e1a33}{rfidupdatecalled}} ()
+\item 
+void \mbox{\hyperlink{class_main_window_a511ee96877323c03a3b25503b5df645e}{rfidnewcalled}} ()
+\item 
+void \mbox{\hyperlink{class_main_window_a23605aba7cfc07a1fcfb655c19284361}{rfidreissuecalled}} ()
+\item 
+void \mbox{\hyperlink{class_main_window_ade99f7f6b5bcf224041cef89d6f9a5dc}{vehicleactionscalled}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_main_window_ad08c5e26cb967ed82bd633553b9d8261}{Main\+Window}} (QApplication $\ast$parent=0, QString \mbox{\hyperlink{class_main_window_a6ce608f9d15fc451b6495ee23c95d36e}{appname}}=\char`\"{}test\char`\"{})
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_main_window_ad08c5e26cb967ed82bd633553b9d8261}{Main\+Window\+::\+Main\+Window}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{$\sim$\+Main\+Window}} ()
+\item 
+void \mbox{\hyperlink{class_main_window_adc70f8dd3f2ba9e353c7e01d3f38f081}{whoami}} ()
+\item 
+int \mbox{\hyperlink{class_main_window_af882adcea07a0c19422c78caa38029f8}{login\+Dialog}} ()
+\item 
+void \mbox{\hyperlink{class_main_window_a055cd2ac6efe1e2827342e46b2620bf1}{p\+Setup}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_psql_manager}{Psql\+Manager}} \mbox{\hyperlink{class_main_window_a7d04f9d754c4efb98172dc68db9dfb2b}{db}}
+\item 
+QString \mbox{\hyperlink{class_main_window_a6ce608f9d15fc451b6495ee23c95d36e}{appname}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{mainwindow_8h_source_l00035}{35}} of file \mbox{\hyperlink{mainwindow_8h_source}{mainwindow.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_main_window_ad08c5e26cb967ed82bd633553b9d8261}\label{class_main_window_ad08c5e26cb967ed82bd633553b9d8261}} 
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{MainWindow()}{MainWindow()}}
+{\footnotesize\ttfamily Main\+Window\+::\+Main\+Window (\begin{DoxyParamCaption}\item[{QApplication $\ast$}]{parent = {\ttfamily 0},  }\item[{QString}]{appname = {\ttfamily \char`\"{}test\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\mbox{\hyperlink{class_main_window_ad08c5e26cb967ed82bd633553b9d8261}{Main\+Window\+::\+Main\+Window}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em QApplication} & $\ast$parent, QString appname \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{mainwindow_8cpp_source_l00022}{22}} of file \mbox{\hyperlink{mainwindow_8cpp_source}{mainwindow.\+cpp}}.
+
+\mbox{\Hypertarget{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}\label{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}} 
+\index{MainWindow@{MainWindow}!````~MainWindow@{$\sim$MainWindow}}
+\index{````~MainWindow@{$\sim$MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{$\sim$MainWindow()}{~MainWindow()}}
+{\footnotesize\ttfamily Main\+Window\+::$\sim$\+Main\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{mainwindow_8cpp_source_l00167}{167}} of file \mbox{\hyperlink{mainwindow_8cpp_source}{mainwindow.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_main_window_aa4825a6ac8a375f8e7ccc7ffdb5e234c}\label{class_main_window_aa4825a6ac8a375f8e7ccc7ffdb5e234c}} 
+\index{MainWindow@{MainWindow}!logincheck@{logincheck}}
+\index{logincheck@{logincheck}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{logincheck}{logincheck}}
+{\footnotesize\ttfamily bool Main\+Window\+::logincheck (\begin{DoxyParamCaption}\item[{QString}]{username,  }\item[{QString}]{password,  }\item[{QString}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Definition at line \mbox{\hyperlink{mainwindow_8cpp_source_l00317}{317}} of file \mbox{\hyperlink{mainwindow_8cpp_source}{mainwindow.\+cpp}}.
+
+\mbox{\Hypertarget{class_main_window_af882adcea07a0c19422c78caa38029f8}\label{class_main_window_af882adcea07a0c19422c78caa38029f8}} 
+\index{MainWindow@{MainWindow}!loginDialog@{loginDialog}}
+\index{loginDialog@{loginDialog}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{loginDialog()}{loginDialog()}}
+{\footnotesize\ttfamily int Main\+Window\+::login\+Dialog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{mainwindow_8cpp_source_l00176}{176}} of file \mbox{\hyperlink{mainwindow_8cpp_source}{mainwindow.\+cpp}}.
+
+\mbox{\Hypertarget{class_main_window_a055cd2ac6efe1e2827342e46b2620bf1}\label{class_main_window_a055cd2ac6efe1e2827342e46b2620bf1}} 
+\index{MainWindow@{MainWindow}!pSetup@{pSetup}}
+\index{pSetup@{pSetup}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{pSetup()}{pSetup()}}
+{\footnotesize\ttfamily void Main\+Window\+::p\+Setup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{mainwindow_8cpp_source_l00353}{353}} of file \mbox{\hyperlink{mainwindow_8cpp_source}{mainwindow.\+cpp}}.
+
+\mbox{\Hypertarget{class_main_window_a511ee96877323c03a3b25503b5df645e}\label{class_main_window_a511ee96877323c03a3b25503b5df645e}} 
+\index{MainWindow@{MainWindow}!rfidnewcalled@{rfidnewcalled}}
+\index{rfidnewcalled@{rfidnewcalled}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{rfidnewcalled}{rfidnewcalled}}
+{\footnotesize\ttfamily void Main\+Window\+::rfidnewcalled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_main_window_a23605aba7cfc07a1fcfb655c19284361}\label{class_main_window_a23605aba7cfc07a1fcfb655c19284361}} 
+\index{MainWindow@{MainWindow}!rfidreissuecalled@{rfidreissuecalled}}
+\index{rfidreissuecalled@{rfidreissuecalled}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{rfidreissuecalled}{rfidreissuecalled}}
+{\footnotesize\ttfamily void Main\+Window\+::rfidreissuecalled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_main_window_a49ff153730b63397cbbbe68c787e1a33}\label{class_main_window_a49ff153730b63397cbbbe68c787e1a33}} 
+\index{MainWindow@{MainWindow}!rfidupdatecalled@{rfidupdatecalled}}
+\index{rfidupdatecalled@{rfidupdatecalled}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{rfidupdatecalled}{rfidupdatecalled}}
+{\footnotesize\ttfamily void Main\+Window\+::rfidupdatecalled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_main_window_ade99f7f6b5bcf224041cef89d6f9a5dc}\label{class_main_window_ade99f7f6b5bcf224041cef89d6f9a5dc}} 
+\index{MainWindow@{MainWindow}!vehicleactionscalled@{vehicleactionscalled}}
+\index{vehicleactionscalled@{vehicleactionscalled}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{vehicleactionscalled}{vehicleactionscalled}}
+{\footnotesize\ttfamily void Main\+Window\+::vehicleactionscalled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_main_window_adc70f8dd3f2ba9e353c7e01d3f38f081}\label{class_main_window_adc70f8dd3f2ba9e353c7e01d3f38f081}} 
+\index{MainWindow@{MainWindow}!whoami@{whoami}}
+\index{whoami@{whoami}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{whoami()}{whoami()}}
+{\footnotesize\ttfamily void Main\+Window\+::whoami (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{mainwindow_8cpp_source_l00313}{313}} of file \mbox{\hyperlink{mainwindow_8cpp_source}{mainwindow.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_main_window_a6ce608f9d15fc451b6495ee23c95d36e}\label{class_main_window_a6ce608f9d15fc451b6495ee23c95d36e}} 
+\index{MainWindow@{MainWindow}!appname@{appname}}
+\index{appname@{appname}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{appname}{appname}}
+{\footnotesize\ttfamily QString Main\+Window\+::appname}
+
+
+
+Definition at line \mbox{\hyperlink{mainwindow_8h_source_l00045}{45}} of file \mbox{\hyperlink{mainwindow_8h_source}{mainwindow.\+h}}.
+
+\mbox{\Hypertarget{class_main_window_a7d04f9d754c4efb98172dc68db9dfb2b}\label{class_main_window_a7d04f9d754c4efb98172dc68db9dfb2b}} 
+\index{MainWindow@{MainWindow}!db@{db}}
+\index{db@{db}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{db}{db}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_psql_manager}{Psql\+Manager}} Main\+Window\+::db}
+
+
+
+Definition at line \mbox{\hyperlink{mainwindow_8h_source_l00043}{43}} of file \mbox{\hyperlink{mainwindow_8h_source}{mainwindow.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/modules/\+Main\+Window\+Manager/\mbox{\hyperlink{mainwindow_8h}{mainwindow.\+h}}\item 
+src/modules/\+Main\+Window\+Manager/\mbox{\hyperlink{mainwindow_8cpp}{mainwindow.\+cpp}}\end{DoxyCompactItemize}

@@ -77,7 +77,8 @@ jobs:
               cd release
               ${{ env.SOURCE_DIR }}/utils/windeployqt.exe A.exe --pdb --release --compiler-runtime
               ls .
-              xcopy /s ${{ runner.temp }}\build\release\* ${{ env.SOURCE_DIR }}\packages\A\data\
+              xcopy /s ${{ runner.temp }}\build\release\* ${{ env.SOURCE_DIR }}\src\A\
+              xcopy ${{ env.SOURCE_DIR }}\src\A\lib\* ${{ env.SOURCE_DIR }}\src\A\
 
       - name: Build Online Installer
         run: |

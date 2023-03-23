@@ -1,0 +1,75 @@
+.TH "DebugManager" 3 "Tue Mar 7 2023" "Version 0.0.1" "WeighBridgeApplication" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DebugManager
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DebugManager\&.h>\fP
+.PP
+Inherits QDialog\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDebugManager\fP (\fBMainWindow\fP *parent=0, QString \fBname\fP='SnowFlake')"
+.br
+.ti -1c
+.RI "\fB~DebugManager\fP ()"
+.br
+.ti -1c
+.RI "void \fBlog\fP (\fBLogTypes\fP a, QString data)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "QMap< \fBLogTypes\fP, Qt::GlobalColor > \fBmap\fP"
+.br
+.ti -1c
+.RI "QMap< \fBLogTypes\fP, QString > \fBmapStr\fP"
+.br
+.ti -1c
+.RI "QString \fBname\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB22\fP of file \fBDebugManager\&.h\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "DebugManager::DebugManager (\fBMainWindow\fP * parent = \fC0\fP, QString name = \fC'SnowFlake'\fP)\fC [explicit]\fP"
+
+.PP
+Definition at line \fB12\fP of file \fBDebugManager\&.cpp\fP\&.
+.SS "DebugManager::~DebugManager ()"
+
+.PP
+Definition at line \fB27\fP of file \fBDebugManager\&.cpp\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void DebugManager::log (\fBLogTypes\fP a, QString data)"
+
+.PP
+Definition at line \fB32\fP of file \fBDebugManager\&.cpp\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QMap<\fBLogTypes\fP, Qt::GlobalColor> DebugManager::map"
+
+.PP
+Definition at line \fB29\fP of file \fBDebugManager\&.h\fP\&.
+.SS "QMap<\fBLogTypes\fP, QString> DebugManager::mapStr"
+
+.PP
+Definition at line \fB30\fP of file \fBDebugManager\&.h\fP\&.
+.SS "QString DebugManager::name"
+
+.PP
+Definition at line \fB31\fP of file \fBDebugManager\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for WeighBridgeApplication from the source code\&.

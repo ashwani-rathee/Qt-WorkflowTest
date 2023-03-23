@@ -1,0 +1,156 @@
+.TH "RfidManager" 3 "Tue Mar 7 2023" "Version 0.0.1" "WeighBridgeApplication" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RfidManager
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <rfidmanager\&.h>\fP
+.PP
+Inherits QThread\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBRfidManager\fP (\fBMainWindow\fP *parent)"
+.br
+.ti -1c
+.RI "\fB~RfidManager\fP ()"
+.br
+.ti -1c
+.RI "int \fBConnectToRfid\fP ()"
+.br
+.ti -1c
+.RI "int \fBMRFIDCleanInventory\fP ()"
+.br
+.ti -1c
+.RI "int \fBMRemoveTags\fP ()"
+.br
+.ti -1c
+.RI "int \fBMAddTag\fP (int counter, int freqant, int rssi, QString pc, int epclen, QString epcdata)"
+.br
+.ti -1c
+.RI "int \fBMAddTagExistAware\fP (int counter, int freqant, int rssi, QString pc, int epclen, QString epcdata)"
+.br
+.ti -1c
+.RI "int \fBMGetInventory\fP ()"
+.br
+.ti -1c
+.RI "int \fBMProcessInventory\fP ()"
+.br
+.ti -1c
+.RI "void \fBMPrintInventory\fP ()"
+.br
+.ti -1c
+.RI "int \fBMRFIDControllerCleanInventory\fP ()"
+.br
+.ti -1c
+.RI "int \fBMBothCleanInventory\fP ()"
+.br
+.ti -1c
+.RI "void \fBrun\fP ()"
+.br
+.ti -1c
+.RI "void \fBread_data\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "QVector< struct \fBTag\fP > \fBtags\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBRfidNew\fP"
+.br
+.ti -1c
+.RI "class \fBVehicleActions\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB31\fP of file \fBrfidmanager\&.h\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RfidManager::RfidManager (\fBMainWindow\fP * parent)"
+
+.PP
+Definition at line \fB7\fP of file \fBrfidmanager\&.cpp\fP\&.
+.SS "RfidManager::~RfidManager ()"
+
+.PP
+Definition at line \fB18\fP of file \fBrfidmanager\&.cpp\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "int RfidManager::ConnectToRfid ()"
+
+.PP
+Definition at line \fB38\fP of file \fBrfidmanager\&.cpp\fP\&.
+.SS "int RfidManager::MAddTag (int counter, int freqant, int rssi, QString pc, int epclen, QString epcdata)"
+
+.PP
+Definition at line \fB70\fP of file \fBrfidmanager\&.cpp\fP\&.
+.SS "int RfidManager::MAddTagExistAware (int counter, int freqant, int rssi, QString pc, int epclen, QString epcdata)"
+
+.PP
+Definition at line \fB76\fP of file \fBrfidmanager\&.cpp\fP\&.
+.SS "int RfidManager::MBothCleanInventory ()"
+
+.PP
+Definition at line \fB61\fP of file \fBrfidmanager\&.cpp\fP\&.
+.SS "int RfidManager::MGetInventory ()"
+
+.PP
+Definition at line \fB134\fP of file \fBrfidmanager\&.cpp\fP\&.
+.SS "void RfidManager::MPrintInventory ()"
+
+.PP
+Definition at line \fB162\fP of file \fBrfidmanager\&.cpp\fP\&.
+.SS "int RfidManager::MProcessInventory ()"
+
+.PP
+Definition at line \fB158\fP of file \fBrfidmanager\&.cpp\fP\&.
+.SS "int RfidManager::MRemoveTags ()"
+
+.SS "int RfidManager::MRFIDCleanInventory ()"
+
+.PP
+Definition at line \fB48\fP of file \fBrfidmanager\&.cpp\fP\&.
+.SS "int RfidManager::MRFIDControllerCleanInventory ()"
+
+.PP
+Definition at line \fB54\fP of file \fBrfidmanager\&.cpp\fP\&.
+.SS "void RfidManager::read_data ()"
+
+.PP
+Definition at line \fB196\fP of file \fBrfidmanager\&.cpp\fP\&.
+.SS "void RfidManager::run ()"
+
+.PP
+Definition at line \fB169\fP of file \fBrfidmanager\&.cpp\fP\&.
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "friend class \fBRfidNew\fP\fC [friend]\fP"
+
+.PP
+Definition at line \fB34\fP of file \fBrfidmanager\&.h\fP\&.
+.SS "friend class \fBVehicleActions\fP\fC [friend]\fP"
+
+.PP
+Definition at line \fB35\fP of file \fBrfidmanager\&.h\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QVector<struct \fBTag\fP> RfidManager::tags"
+
+.PP
+Definition at line \fB51\fP of file \fBrfidmanager\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for WeighBridgeApplication from the source code\&.

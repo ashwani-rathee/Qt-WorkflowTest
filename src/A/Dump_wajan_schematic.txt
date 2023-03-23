@@ -1,0 +1,491 @@
+C:\Users\erpar\Desktop\jet-tool-0.5-2017.02.01>Jet.exe dump  -f wajan.mdb
+/* Access SQL export data follows. Auto-generated. */
+
+/* Tables */
+DROP TABLE [allotment] /**WEAK**/;
+CREATE TABLE [allotment] (
+[do_no] TEXT(50),
+[w_date] DATETIME,
+[allotment] INTEGER DEFAULT 0
+);
+
+DROP TABLE [billdata] /**WEAK**/;
+CREATE TABLE [billdata] (
+[season] TEXT(9),
+[billno] INTEGER DEFAULT 0,
+[sl_no] TEXT(50)
+);
+
+DROP TABLE [cadata] /**WEAK**/;
+CREATE TABLE [cadata] (
+[unit] TEXT(4),
+[purchaser] TEXT(40),
+[destination] TEXT(40),
+[state_code] TEXT(2),
+[grade] TEXT(4),
+[do_no] TEXT(11),
+[do_date] TEXT(8),
+[appl_no] TEXT(8),
+[appl_date] TEXT(8),
+[do_qty] TEXT(9),
+[draft_no1] TEXT(12),
+[draft_dt1] TEXT(8),
+[draft_amt1] TEXT(11),
+[bank1] TEXT(10),
+[draft_no2] TEXT(12),
+[draft_dt2] TEXT(8),
+[draft_amt2] TEXT(11),
+[bank2] TEXT(10),
+[draft_no3] TEXT(12),
+[draft_dt3] TEXT(8),
+[draft_amt3] TEXT(11),
+[bank3] TEXT(10),
+[qtybalance] TEXT(11),
+[taxtype] TEXT(1),
+[tax_percent] TEXT(5),
+[custcd] TEXT(10),
+[exc_reg_no] TEXT(20),
+[range] TEXT(15),
+[division] TEXT(15),
+[commissionerate] TEXT(15),
+[vat_tin_no] TEXT(15),
+[cst_no] TEXT(15),
+[basic_rate] TEXT(8),
+[royalty] TEXT(7),
+[sed] TEXT(6),
+[clean_engy_cess] TEXT(6),
+[weighment_chg] TEXT(6),
+[slc] TEXT(6),
+[wrc] TEXT(6),
+[bazar_fee] TEXT(6),
+[PAN] TEXT(10),
+[cent_exc_rate] TEXT(7),
+[edu_cess_rate] TEXT(7),
+[high_edu_rate] TEXT(7),
+[do_start_date] TEXT(8),
+[do_end_date] TEXT(8),
+[road_cess] TEXT(8),
+[ambh_cess] TEXT(8),
+[other_charges] TEXT(50),
+[tcs] TEXT(50)
+);
+CREATE INDEX [state_code] ON [cadata] (state_code ASC);
+
+DROP TABLE [challan] /**WEAK**/;
+CREATE TABLE [challan] (
+[doc_lot_no] TEXT(20),
+[colliery] TEXT(20),
+[so_no] TEXT(12),
+[consignee_code] INTEGER,
+[challan_no] TEXT(20),
+[challan_date] DATETIME,
+[truck_no] TEXT(20),
+[gross_weight] FLOAT,
+[tare_weight] FLOAT,
+[net_weight] FLOAT,
+[remarks] TEXT(25),
+[new_col] TEXT(6),
+[grade] TEXT(6),
+[wb_code] TEXT(12),
+[tag] TEXT(1),
+[delete_flag] TEXT(1),
+[creation_date] DATETIME,
+[created_by] TEXT(8),
+[modifiction_date] DATETIME,
+[modify_by] TEXT(8)
+);
+CREATE INDEX [consignee_code] ON [challan] (consignee_code ASC);
+CREATE INDEX [location_id] ON [challan] (new_col ASC);
+CREATE INDEX [wb_code] ON [challan] (wb_code ASC);
+
+DROP TABLE [colliery] /**WEAK**/;
+CREATE TABLE [colliery] (
+[coll_code] TEXT(10),
+[coll_desc] TEXT(255)
+);
+
+DROP TABLE [consignee] /**WEAK**/;
+CREATE TABLE [consignee] (
+[c_code] TEXT(50),
+[c_name] TEXT(255)
+);
+
+DROP TABLE [CUST] /**WEAK**/;
+CREATE TABLE [CUST] (
+[C_ORDERNO] TEXT(11),
+[C_CODE] TEXT(50),
+[C_NAME] TEXT(25),
+[C_ADDRESS] TEXT(25),
+[O_DATE] DATETIME,
+[O_QUANTITY] FLOAT,
+[P_BALANCE] FLOAT,
+[FROM_DO] TEXT(11),
+[O_BALANCE] FLOAT
+);
+CREATE INDEX [C_CODE] ON [CUST] (C_CODE ASC);
+
+DROP TABLE [Cust1] /**WEAK**/;
+CREATE TABLE [Cust1] (
+[C_CODE] TEXT(50),
+[C_NAME] TEXT(250),
+[C_ADDRESS] TEXT(250),
+[C_ORDERNO] TEXT(11),
+[O_DATE] DATETIME,
+[O_QUANTITY] FLOAT,
+[P_BALANCE] FLOAT,
+[FROM_DO] TEXT(11),
+[O_BALANCE] FLOAT
+);
+CREATE INDEX [C_CODE] ON [Cust1] (C_CODE ASC);
+
+DROP TABLE [DO_Master] /**WEAK**/;
+CREATE TABLE [DO_Master] (
+[DO_NO] TEXT(11),
+[C_CODE] TEXT(50),
+[LOCATION] TEXT(25),
+[S_DATE] DATETIME,
+[END_DATE] DATETIME,
+[O_QUANTITY] FLOAT,
+[P_BALANCE] FLOAT,
+[O_BALANCE] FLOAT,
+[RECORD_TYPE] TEXT(50),
+[M_CODE] TEXT(10)
+);
+CREATE UNIQUE INDEX [PrimaryKey] ON [DO_Master] (DO_NO ASC) WITH PRIMARY DISALLOW NULL;
+CREATE INDEX [C_CODE] ON [DO_Master] (C_CODE ASC);
+CREATE INDEX [M_CODE] ON [DO_Master] (M_CODE ASC);
+
+DROP TABLE [erplogs] /**WEAK**/;
+CREATE TABLE [erplogs] (
+[srno] COUNTER NOT NULL,
+[sl_no] TEXT(20),
+[DOC_LOT_NO] TEXT(20),
+[COLLIERY] TEXT(30),
+[SO_NO] TEXT(15),
+[CONSIGNEE_CODE] TEXT(15),
+[CHALLAN_NO] TEXT(20),
+[CHALLAN_DATE] DATETIME,
+[TRUCK_NO] TEXT(20),
+[GROSS_WEIGHT] FLOAT,
+[TARE_WEIGHT] FLOAT,
+[NET_WEIGHT] FLOAT,
+[NEW_COL] TEXT(255),
+[GRADE] TEXT(10),
+[WB_CODE] TEXT(10),
+[ERP_ACK_CODE] TEXT(15),
+[ERP_ACK_DATE] DATETIME,
+[ERP_ACK_TIME] TEXT(10)
+);
+
+DROP TABLE [excisedata] /**WEAK**/;
+CREATE TABLE [excisedata] (
+[u_excno] TEXT(50),
+[u_range] TEXT(50),
+[u_division] TEXT(50),
+[u_commissionrate] TEXT(50),
+[u_tinno] TEXT(50),
+[u_cstno] TEXT(50),
+[u_panno] TEXT(50)
+);
+
+DROP TABLE [featur] /**WEAK**/;
+CREATE TABLE [featur] (
+[permis] TEXT(50),
+[smpwtr] FLOAT DEFAULT 0,
+[spcwtr] FLOAT DEFAULT 0,
+[MUNIT] TEXT(50),
+[DES] TEXT(100),
+[AUTH] TEXT(50)
+);
+
+DROP TABLE [logs] /**WEAK**/;
+CREATE TABLE [logs] (
+[LOGID] COUNTER NOT NULL,
+[USER] TEXT(255),
+[LOGTYPE] TEXT(255),
+[LOGIN] DATETIME,
+[LOGOUT] DATETIME,
+[REMARKS] TEXT(255)
+);
+
+DROP TABLE [MACH] /**WEAK**/;
+CREATE TABLE [MACH] (
+[MACH] TEXT(10)
+);
+
+DROP TABLE [mater] /**WEAK**/;
+CREATE TABLE [mater] (
+[m_code] TEXT(10),
+[m_name] TEXT(255)
+);
+
+DROP TABLE [MATER1] /**WEAK**/;
+CREATE TABLE [MATER1] (
+[M_CODE] TEXT(8),
+[M_NAME] TEXT(15)
+);
+CREATE INDEX [M_CODE] ON [MATER1] (M_CODE ASC);
+
+DROP TABLE [MATERold] /**WEAK**/;
+CREATE TABLE [MATERold] (
+[M_CODE] TEXT(8),
+[M_NAME] TEXT(15)
+);
+CREATE INDEX [M_CODE] ON [MATERold] (M_CODE ASC);
+
+DROP TABLE [OPER] /**WEAK**/;
+CREATE TABLE [OPER] (
+[ONAME] TEXT(20),
+[UNAME] TEXT(10),
+[PWORD] TEXT(10)
+);
+
+DROP TABLE [PARTY] /**WEAK**/;
+CREATE TABLE [PARTY] (
+[AREACODE] TEXT(10),
+[WBCODE] TEXT(10),
+[PNAME] TEXT(50),
+[PINF] TEXT(50),
+[PADD] TEXT(50)
+);
+CREATE INDEX [AREACODE] ON [PARTY] (AREACODE ASC);
+CREATE INDEX [WBCODE] ON [PARTY] (WBCODE ASC);
+
+DROP TABLE [paths] /**WEAK**/;
+CREATE TABLE [paths] (
+[id] TEXT(50) NOT NULL,
+[ipaddress] TEXT(50),
+[path] TEXT(255),
+[username] TEXT(50),
+[password] TEXT(50)
+);
+CREATE UNIQUE INDEX [PrimaryKey] ON [paths] (id ASC) WITH PRIMARY DISALLOW NULL;
+CREATE INDEX [id] ON [paths] (id ASC);
+
+DROP TABLE [reptab] /**WEAK**/;
+CREATE TABLE [reptab] (
+[fld1] TEXT(255),
+[fld2] TEXT(255),
+[fld3] TEXT(255),
+[fld4] TEXT(255),
+[fld5] TEXT(255),
+[fld6] TEXT(255),
+[fld7] TEXT(255),
+[fld8] TEXT(255),
+[fld9] TEXT(255),
+[fld10] TEXT(255),
+[fld11] TEXT(255),
+[fld12] TEXT(255),
+[fld13] TEXT(255),
+[fld14] TEXT(255),
+[fld15] TEXT(255),
+[fld16] TEXT(255)
+);
+
+DROP TABLE [shift] /**WEAK**/;
+CREATE TABLE [shift] (
+[shift_code] COUNTER NOT NULL,
+[shiftstart] DATETIME,
+[shiftend] DATETIME,
+[shiftname] TEXT(50)
+);
+CREATE UNIQUE INDEX [PrimaryKey] ON [shift] (shift_code ASC) WITH PRIMARY DISALLOW NULL;
+CREATE INDEX [shift_code] ON [shift] (shift_code ASC);
+
+DROP TABLE [SIMPLE] /**WEAK**/;
+CREATE TABLE [SIMPLE] (
+[SEASON] TEXT(9),
+[D_SERIAL] TEXT(50),
+[C_NAME] TEXT(250),
+[C_ADDRESS] TEXT(250),
+[CHALLAN_SO] TEXT(25),
+[MATERIAL] TEXT(15),
+[V_NO] TEXT(15),
+[O_NAME] TEXT(20),
+[O2_NAME] TEXT(20),
+[DATE_IN] DATETIME,
+[DATE_OUT] DATETIME,
+[TIME_IN] TEXT(8),
+[TIME_OUT] TEXT(8),
+[FIRST_WT] FLOAT,
+[SECOND_WT] FLOAT,
+[TM_CODE] TEXT(50),
+[TC_CODE] TEXT(50),
+[RLW] FLOAT DEFAULT 0,
+[TAG] TEXT(30)
+);
+CREATE INDEX [TC_CODE] ON [SIMPLE] (TC_CODE ASC);
+CREATE INDEX [TM_CODE] ON [SIMPLE] (TM_CODE ASC);
+
+DROP TABLE [sodata] /**WEAK**/;
+CREATE TABLE [sodata] (
+[auction_id] TEXT(10),
+[customer_code] TEXT(15),
+[customer_name] TEXT(255),
+[so_no] TEXT(12),
+[so_date] DATETIME,
+[so_grade] TEXT(6),
+[so_coal_size] TEXT(20),
+[so_qty] FLOAT,
+[valid_start_date] DATETIME,
+[valid_end_date] DATETIME,
+[location_id] TEXT(20),
+[location_desc] TEXT(100),
+[bal_qty] FLOAT,
+[state_code] TEXT(10)
+);
+CREATE INDEX [auction_id] ON [sodata] (auction_id ASC);
+CREATE INDEX [customer_code] ON [sodata] (customer_code ASC);
+CREATE INDEX [location_id] ON [sodata] (location_id ASC);
+CREATE INDEX [state_code] ON [sodata] (state_code ASC);
+
+DROP TABLE [SPECIAL] /**WEAK**/;
+CREATE TABLE [SPECIAL] (
+[SEASON] TEXT(9),
+[SNO] COUNTER NOT NULL,
+[SL_NO] TEXT(50),
+[DO_LOT_NO] TEXT(20),
+[DATE_IN] DATETIME,
+[DATE_OUT] DATETIME,
+[TIME_IN] TEXT(8),
+[TIME_OUT] TEXT(8),
+[TC_CODE] TEXT(50),
+[TC_NAME] TEXT(255),
+[V_NO] TEXT(15),
+[O_NAME] TEXT(20),
+[O2_NAME] TEXT(20),
+[TM_CODE] TEXT(8),
+[TM_NAME] TEXT(50),
+[FIRST_WT] FLOAT,
+[SECOND_WT] FLOAT DEFAULT 0,
+[RLW] FLOAT DEFAULT 0,
+[DO_NO] TEXT(50),
+[COLL_CODE] TEXT(50),
+[ORDER_QTY] INTEGER DEFAULT 0,
+[BALANCE_QTY] INTEGER DEFAULT 0,
+[CHALLAN_NO] TEXT(50),
+[CHALLAN_DATE] TEXT(50),
+[DEST] TEXT(15),
+[SHIFT_IN] TEXT(1),
+[SHIFT_OUT] TEXT(1),
+[TAG] TEXT(30),
+[WB_CODE] TEXT(10),
+[W_TYPE] TEXT(10),
+[FW_RECALL] TEXT(5),
+[FW_RECALL_ID] TEXT(50),
+[SENT] TEXT(1),
+[TRIPTIME] INTEGER,
+[TP_CODE] TEXT(50),
+[TP_NAME] TEXT(255),
+[STOCK] TEXT(25),
+[LOADED] TEXT(25)
+);
+CREATE INDEX [FW_RECALL_ID] ON [SPECIAL] (FW_RECALL_ID ASC);
+CREATE INDEX [TP_CODE] ON [SPECIAL] (TP_CODE ASC);
+CREATE INDEX [WB_CODE] ON [SPECIAL] (WB_CODE ASC);
+
+DROP TABLE [state] /**WEAK**/;
+CREATE TABLE [state] (
+[state_code] TEXT(10) DEFAULT 0,
+[state_name] TEXT(255)
+);
+
+DROP TABLE [tagexceptions] /**WEAK**/;
+CREATE TABLE [tagexceptions] (
+[sno] COUNTER NOT NULL,
+[edate] DATETIME,
+[etime] TEXT(15),
+[tagno] TEXT(30),
+[v_no] TEXT(15),
+[ccode] TEXT(15),
+[sl_no] TEXT(30),
+[type] TEXT(25),
+[description] TEXT(255),
+[o_name] TEXT(15),
+[area] TEXT(15),
+[wb] TEXT(15),
+[expected] TEXT(30),
+[recorded] TEXT(30),
+[comments] TEXT(255),
+[sent] TEXT(1) DEFAULT 0
+);
+CREATE UNIQUE INDEX [PrimaryKey] ON [tagexceptions] (sno ASC) WITH PRIMARY DISALLOW NULL;
+CREATE INDEX [ccode] ON [tagexceptions] (ccode ASC);
+
+DROP TABLE [tags] /**WEAK**/;
+CREATE TABLE [tags] (
+[SNO] COUNTER NOT NULL,
+[TAGNO] TEXT(30),
+[V_NO] TEXT(15),
+[ISSUE] DATETIME,
+[EXPIRY] DATETIME,
+[TC_CODE] TEXT(20),
+[OWNER] TEXT(50),
+[OWNER_ADDRESS] TEXT(100),
+[OWNER_EMAIL] TEXT(50),
+[OWNER_PHONE] TEXT(20),
+[DRIVER] TEXT(50),
+[DRIVER_ADDRESS] TEXT(100),
+[DRIVER_EMAIL] TEXT(50),
+[DRIVER_PHONE] TEXT(20),
+[PHOTO] TEXT(200),
+[TM_CODE] TEXT(8),
+[RLW] INTEGER,
+[GVW] INTEGER,
+[MAX_TARE_WT] INTEGER,
+[MIN_TARE_WT] INTEGER,
+[DO_NO] TEXT(50),
+[COLL_CODE] TEXT(20),
+[WB_CODE] TEXT(20),
+[VALID] TEXT(5),
+[TAGTRIPS] SMALLINT,
+[TRIPS_DONE] SMALLINT,
+[V_TYPE] TEXT(15),
+[TAG_TYPE] TEXT(15),
+[TSNO] TEXT(50),
+[UNIT] TEXT(15),
+[MODE] TEXT(15),
+[WMODE] TEXT(50),
+[DEST] TEXT(15),
+[TRIPTIME] TEXT(15),
+[SENT] TEXT(1) DEFAULT 0
+);
+CREATE UNIQUE INDEX [PrimaryKey] ON [tags] (SNO ASC);
+CREATE UNIQUE INDEX [PrimaryKey1] ON [tags] (SNO ASC) WITH PRIMARY DISALLOW NULL;
+CREATE INDEX [COLL_CODE] ON [tags] (COLL_CODE ASC);
+CREATE INDEX [TM_CODE] ON [tags] (TM_CODE ASC);
+CREATE INDEX [valid] ON [tags] (DRIVER ASC);
+CREATE INDEX [VALID1] ON [tags] (VALID ASC);
+CREATE INDEX [WB_CODE] ON [tags] (WB_CODE ASC);
+
+DROP TABLE [users] /**WEAK**/;
+CREATE TABLE [users] (
+[userid] TEXT(50),
+[username] TEXT(50),
+[password] TEXT(50),
+[UTYPE] TEXT(50),
+[privilages] TEXT(50)
+);
+CREATE UNIQUE INDEX [PrimaryKey] ON [users] (userid ASC) WITH PRIMARY DISALLOW NULL;
+
+DROP TABLE [wbcode] /**WEAK**/;
+CREATE TABLE [wbcode] (
+[wbcode] TEXT(10),
+[wbname] TEXT(150)
+);
+
+/* Relations */
+/* Views */
+DROP PROCEDURE [smdtwtrep] /**WEAK**/;
+CREATE PROCEDURE [smdtwtrep] AS
+SELECT SIMPLE.SEASON, SIMPLE.D_SERIAL, SIMPLE.V_NO, SIMPLE.RLW, SIMPLE.O_NAME, SIMPLE.O2_NAME, SIMPLE.DATE_IN, SIMPLE.DATE_OUT, SIMPLE.TIME_IN, SIMPLE.TIME_OUT, SIMPLE.SECOND_WT, SIMPLE.TM_CODE, SIMPLE.TC_CODE, SIMPLE.FIRST_WT, val(SIMPLE.SECOND_WT-SIMPLE.FIRST_Wt) AS netwt, MATER1.M_NAME, Cust1.C_NAME, Cust1.C_ADDRESS, Cust1.C_ORDERNO, SIMPLE.CHALLAN_SO
+FROM (SIMPLE INNER JOIN MATER1 ON SIMPLE.TM_CODE=MATER1.M_CODE) INNER JOIN Cust1 ON SIMPLE.TC_CODE=Cust1.C_CODE;
+
+DROP PROCEDURE [spdtwtrep] /**WEAK**/;
+CREATE PROCEDURE [spdtwtrep] AS
+SELECT special.*, sodata.*, colliery.*
+FROM special, sodata, colliery
+WHERE (((special.do_no)=[sodata].[so_no]) AND ((special.coll_code)=[colliery].[coll_code]));
+
+/* Procedures */
+/* Access SQL export data end. */

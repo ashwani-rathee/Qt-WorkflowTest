@@ -1,0 +1,86 @@
+.TH "sqlite3_mutex_methods" 3 "Tue Mar 7 2023" "Version 0.0.1" "WeighBridgeApplication" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sqlite3_mutex_methods
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <sqlite3\&.h>\fP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int(* \fBxMutexInit\fP )(void)"
+.br
+.ti -1c
+.RI "int(* \fBxMutexEnd\fP )(void)"
+.br
+.ti -1c
+.RI "\fBsqlite3_mutex\fP *(* \fBxMutexAlloc\fP )(int)"
+.br
+.ti -1c
+.RI "void(* \fBxMutexFree\fP )(\fBsqlite3_mutex\fP *)"
+.br
+.ti -1c
+.RI "void(* \fBxMutexEnter\fP )(\fBsqlite3_mutex\fP *)"
+.br
+.ti -1c
+.RI "int(* \fBxMutexTry\fP )(\fBsqlite3_mutex\fP *)"
+.br
+.ti -1c
+.RI "void(* \fBxMutexLeave\fP )(\fBsqlite3_mutex\fP *)"
+.br
+.ti -1c
+.RI "int(* \fBxMutexHeld\fP )(\fBsqlite3_mutex\fP *)"
+.br
+.ti -1c
+.RI "int(* \fBxMutexNotheld\fP )(\fBsqlite3_mutex\fP *)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB7889\fP of file \fBsqlite3\&.h\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBsqlite3_mutex\fP *(* sqlite3_mutex_methods::xMutexAlloc) (int)"
+
+.PP
+Definition at line \fB7892\fP of file \fBsqlite3\&.h\fP\&.
+.SS "int(* sqlite3_mutex_methods::xMutexEnd) (void)"
+
+.PP
+Definition at line \fB7891\fP of file \fBsqlite3\&.h\fP\&.
+.SS "void(* sqlite3_mutex_methods::xMutexEnter) (\fBsqlite3_mutex\fP *)"
+
+.PP
+Definition at line \fB7894\fP of file \fBsqlite3\&.h\fP\&.
+.SS "void(* sqlite3_mutex_methods::xMutexFree) (\fBsqlite3_mutex\fP *)"
+
+.PP
+Definition at line \fB7893\fP of file \fBsqlite3\&.h\fP\&.
+.SS "int(* sqlite3_mutex_methods::xMutexHeld) (\fBsqlite3_mutex\fP *)"
+
+.PP
+Definition at line \fB7897\fP of file \fBsqlite3\&.h\fP\&.
+.SS "int(* sqlite3_mutex_methods::xMutexInit) (void)"
+
+.PP
+Definition at line \fB7890\fP of file \fBsqlite3\&.h\fP\&.
+.SS "void(* sqlite3_mutex_methods::xMutexLeave) (\fBsqlite3_mutex\fP *)"
+
+.PP
+Definition at line \fB7896\fP of file \fBsqlite3\&.h\fP\&.
+.SS "int(* sqlite3_mutex_methods::xMutexNotheld) (\fBsqlite3_mutex\fP *)"
+
+.PP
+Definition at line \fB7898\fP of file \fBsqlite3\&.h\fP\&.
+.SS "int(* sqlite3_mutex_methods::xMutexTry) (\fBsqlite3_mutex\fP *)"
+
+.PP
+Definition at line \fB7895\fP of file \fBsqlite3\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for WeighBridgeApplication from the source code\&.

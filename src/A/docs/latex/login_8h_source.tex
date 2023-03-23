@@ -1,0 +1,42 @@
+\hypertarget{login_8h_source}{}\doxysection{login.\+h}
+\label{login_8h_source}\index{src/modules/LoginManager/login.h@{src/modules/LoginManager/login.h}}
+\mbox{\hyperlink{login_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{login_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{login_8h_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}qlineedit.h"{}}}
+\DoxyCodeLine{\Hypertarget{login_8h_source_l00003}00003\ \textcolor{preprocessor}{\#ifndef\ LOGIN\_H}}
+\DoxyCodeLine{\Hypertarget{login_8h_source_l00004}\mbox{\hyperlink{login_8h_a3bb375ed52f716f5c27592c518bd13fe}{00004}}\ \textcolor{preprocessor}{\#define\ LOGIN\_H}}
+\DoxyCodeLine{\Hypertarget{login_8h_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{login_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <QDialog>}}
+\DoxyCodeLine{\Hypertarget{login_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <QSqlDatabase>}}
+\DoxyCodeLine{\Hypertarget{login_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <QDebug>}}
+\DoxyCodeLine{\Hypertarget{login_8h_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{login_8h_source_l00010}00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ui}{Ui}}\{}
+\DoxyCodeLine{\Hypertarget{login_8h_source_l00011}00011\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_login}{Login}};}
+\DoxyCodeLine{\Hypertarget{login_8h_source_l00012}00012\ \}}
+\DoxyCodeLine{\Hypertarget{login_8h_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{login_8h_source_l00014}00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_main_window}{MainWindow}};}
+\DoxyCodeLine{\Hypertarget{login_8h_source_l00015}\mbox{\hyperlink{class_login}{00015}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_login}{Login}}\ :\ \textcolor{keyword}{public}\ QDialog}
+\DoxyCodeLine{\Hypertarget{login_8h_source_l00016}00016\ \{}
+\DoxyCodeLine{\Hypertarget{login_8h_source_l00017}00017\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{\Hypertarget{login_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{login_8h_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{login_8h_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_login}{Login}}(\mbox{\hyperlink{class_main_window}{MainWindow}}\ *parent\ =\ 0);}
+\DoxyCodeLine{\Hypertarget{login_8h_source_l00021}00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_login_a659bc7233ec12c79b9fa523c1734fbbc}{\string~Login}}();}
+\DoxyCodeLine{\Hypertarget{login_8h_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_login_a5b85c115a42170f9cf3e8636d4df09b0}{GetData}}(QString\ \&username,\ QString\ \&password,\ QString\ \&mode);}
+\DoxyCodeLine{\Hypertarget{login_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{login_8h_source_l00024}00024\ \ \ \ \ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{\Hypertarget{login_8h_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ on\_pushButtonLoginClicked();}
+\DoxyCodeLine{\Hypertarget{login_8h_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ closeEvent(QCloseEvent\ *event);}
+\DoxyCodeLine{\Hypertarget{login_8h_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ onPressed();}
+\DoxyCodeLine{\Hypertarget{login_8h_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ onReleased();}
+\DoxyCodeLine{\Hypertarget{login_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{login_8h_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{login_8h_source_l00031}00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window}{MainWindow}}\ *main;}
+\DoxyCodeLine{\Hypertarget{login_8h_source_l00032}00032\ \ \ \ \ \ \ \ \ Ui::Login\ *ui;}
+\DoxyCodeLine{\Hypertarget{login_8h_source_l00033}00033\ \ \ \ \ \ \ \ \ QToolButton\ *button;}
+\DoxyCodeLine{\Hypertarget{login_8h_source_l00034}00034\ \};}
+\DoxyCodeLine{\Hypertarget{login_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{login_8h_source_l00036}00036\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ LOGIN\_H}}
+
+\end{DoxyCode}

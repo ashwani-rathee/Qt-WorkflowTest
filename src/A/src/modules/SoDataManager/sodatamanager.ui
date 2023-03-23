@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SoDataManager</class>
+ <widget class="QDialog" name="SoDataManager">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>635</width>
+    <height>592</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tab">
+      <attribute name="title">
+       <string>Fetch</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0">
+        <widget class="QGroupBox" name="get_groupbox">
+         <property name="title">
+          <string>Get So Data By Id</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_4">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>So_No</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="3">
+           <layout class="QFormLayout" name="formLayout">
+            <item row="0" column="0">
+             <widget class="QLabel" name="auctionIdLabel">
+              <property name="text">
+               <string>Auction Id</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLineEdit" name="auctionIdLineEdit">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="customerCodeLabel">
+              <property name="text">
+               <string>Customer Code</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLineEdit" name="customerCodeLineEdit"/>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="customerNameLabel">
+              <property name="text">
+               <string>Customer Name</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QLineEdit" name="customerNameLineEdit"/>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="soNoLabel">
+              <property name="text">
+               <string>So No</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QLineEdit" name="soNoLineEdit">
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0">
+             <widget class="QLabel" name="soDateLabel">
+              <property name="text">
+               <string>So Date</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="1">
+             <widget class="QLineEdit" name="soDateLineEdit"/>
+            </item>
+            <item row="5" column="0">
+             <widget class="QLabel" name="soGradeLabel">
+              <property name="text">
+               <string>So Grade</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="1">
+             <widget class="QLineEdit" name="soGradeLineEdit"/>
+            </item>
+            <item row="6" column="0">
+             <widget class="QLabel" name="soCoalSizeLabel">
+              <property name="text">
+               <string>So Coal Size</string>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="1">
+             <widget class="QLineEdit" name="soCoalSizeLineEdit"/>
+            </item>
+            <item row="7" column="0">
+             <widget class="QLabel" name="soQuantityLabel">
+              <property name="text">
+               <string>So Quantity</string>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="1">
+             <widget class="QLineEdit" name="soQuantityLineEdit"/>
+            </item>
+            <item row="8" column="0">
+             <widget class="QLabel" name="validStartDateLabel">
+              <property name="text">
+               <string>Valid Start Date</string>
+              </property>
+             </widget>
+            </item>
+            <item row="8" column="1">
+             <widget class="QLineEdit" name="validStartDateLineEdit"/>
+            </item>
+            <item row="9" column="0">
+             <widget class="QLabel" name="validEndDateLabel">
+              <property name="text">
+               <string>Valid End Date</string>
+              </property>
+             </widget>
+            </item>
+            <item row="9" column="1">
+             <widget class="QLineEdit" name="validEndDateLineEdit"/>
+            </item>
+            <item row="10" column="0">
+             <widget class="QLabel" name="locationIdLabel">
+              <property name="text">
+               <string>Location Id</string>
+              </property>
+             </widget>
+            </item>
+            <item row="10" column="1">
+             <widget class="QLineEdit" name="locationIdLineEdit"/>
+            </item>
+            <item row="11" column="0">
+             <widget class="QLabel" name="locationDescLabel">
+              <property name="text">
+               <string>Location Desc</string>
+              </property>
+             </widget>
+            </item>
+            <item row="11" column="1">
+             <widget class="QLineEdit" name="locationDescLineEdit"/>
+            </item>
+            <item row="12" column="0">
+             <widget class="QLabel" name="balQtyLabel">
+              <property name="text">
+               <string>Bal Qty</string>
+              </property>
+             </widget>
+            </item>
+            <item row="12" column="1">
+             <widget class="QLineEdit" name="balQtyLineEdit"/>
+            </item>
+            <item row="13" column="0">
+             <widget class="QLabel" name="stateCodeLabel">
+              <property name="text">
+               <string>State Code</string>
+              </property>
+             </widget>
+            </item>
+            <item row="13" column="1">
+             <widget class="QLineEdit" name="stateCodeLineEdit"/>
+            </item>
+           </layout>
+          </item>
+          <item row="0" column="2">
+           <widget class="QPushButton" name="get_so_data">
+            <property name="text">
+             <string>Get</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="so_no_find">
+            <property name="text">
+             <string>100</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QPushButton" name="update_so_data">
+            <property name="text">
+             <string>Update</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_2">
+      <attribute name="title">
+       <string>Push</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="0" column="0">
+        <widget class="QGroupBox" name="get_groupbox_2">
+         <property name="title">
+          <string>Push</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_5">
+          <item row="0" column="0">
+           <layout class="QFormLayout" name="formLayout_2">
+            <item row="0" column="0">
+             <widget class="QLabel" name="auctionIdLabel_2">
+              <property name="text">
+               <string>Auction Id</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLineEdit" name="auctionIdLineEdit_2">
+              <property name="text">
+               <string>1</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="customerCodeLabel_2">
+              <property name="text">
+               <string>Customer Code</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLineEdit" name="customerCodeLineEdit_2">
+              <property name="text">
+               <string>1</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="customerNameLabel_2">
+              <property name="text">
+               <string>Customer Name</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QLineEdit" name="customerNameLineEdit_2">
+              <property name="text">
+               <string>Ash</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="soNoLabel_2">
+              <property name="text">
+               <string>So No</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QLineEdit" name="soNoLineEdit_2"/>
+            </item>
+            <item row="4" column="0">
+             <widget class="QLabel" name="soDateLabel_2">
+              <property name="text">
+               <string>So Date</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="0">
+             <widget class="QLabel" name="soGradeLabel_2">
+              <property name="text">
+               <string>So Grade</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="1">
+             <widget class="QLineEdit" name="soGradeLineEdit_2">
+              <property name="text">
+               <string>G4</string>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="0">
+             <widget class="QLabel" name="soCoalSizeLabel_2">
+              <property name="text">
+               <string>So Coal Size</string>
+              </property>
+             </widget>
+            </item>
+            <item row="6" column="1">
+             <widget class="QLineEdit" name="soCoalSizeLineEdit_2">
+              <property name="text">
+               <string>10</string>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="0">
+             <widget class="QLabel" name="soQuantityLabel_2">
+              <property name="text">
+               <string>So Quantity</string>
+              </property>
+             </widget>
+            </item>
+            <item row="7" column="1">
+             <widget class="QLineEdit" name="soQuantityLineEdit_2">
+              <property name="text">
+               <string>10</string>
+              </property>
+             </widget>
+            </item>
+            <item row="8" column="0">
+             <widget class="QLabel" name="validStartDateLabel_2">
+              <property name="text">
+               <string>Valid Start Date</string>
+              </property>
+             </widget>
+            </item>
+            <item row="9" column="0">
+             <widget class="QLabel" name="validEndDateLabel_2">
+              <property name="text">
+               <string>Valid End Date</string>
+              </property>
+             </widget>
+            </item>
+            <item row="10" column="0">
+             <widget class="QLabel" name="locationIdLabel_2">
+              <property name="text">
+               <string>Location Id</string>
+              </property>
+             </widget>
+            </item>
+            <item row="10" column="1">
+             <widget class="QLineEdit" name="locationIdLineEdit_2">
+              <property name="text">
+               <string>101</string>
+              </property>
+             </widget>
+            </item>
+            <item row="11" column="0">
+             <widget class="QLabel" name="locationDescLabel_2">
+              <property name="text">
+               <string>Location Desc</string>
+              </property>
+             </widget>
+            </item>
+            <item row="11" column="1">
+             <widget class="QLineEdit" name="locationDescLineEdit_2">
+              <property name="text">
+               <string>Chandigarh</string>
+              </property>
+             </widget>
+            </item>
+            <item row="12" column="0">
+             <widget class="QLabel" name="balQtyLabel_2">
+              <property name="text">
+               <string>Bal Qty</string>
+              </property>
+             </widget>
+            </item>
+            <item row="12" column="1">
+             <widget class="QLineEdit" name="balQtyLineEdit_2">
+              <property name="text">
+               <string>20</string>
+              </property>
+             </widget>
+            </item>
+            <item row="13" column="0">
+             <widget class="QLabel" name="stateCodeLabel_2">
+              <property name="text">
+               <string>State Code</string>
+              </property>
+             </widget>
+            </item>
+            <item row="13" column="1">
+             <widget class="QLineEdit" name="stateCodeLineEdit_2">
+              <property name="text">
+               <string>WB1</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="1">
+             <widget class="QDateTimeEdit" name="soDateLineEdit_2"/>
+            </item>
+            <item row="8" column="1">
+             <widget class="QDateTimeEdit" name="validStartDateLineEdit_2"/>
+            </item>
+            <item row="9" column="1">
+             <widget class="QDateTimeEdit" name="validEndDateLineEdit_2"/>
+            </item>
+           </layout>
+          </item>
+          <item row="1" column="0">
+           <widget class="QPushButton" name="save_so_data">
+            <property name="text">
+             <string>Save</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

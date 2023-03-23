@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PartyCodeManager</class>
+ <widget class="QDialog" name="PartyCodeManager">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QTabWidget" name="tabWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>381</width>
+     <height>281</height>
+    </rect>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <widget class="QWidget" name="get">
+    <attribute name="title">
+     <string>Get</string>
+    </attribute>
+    <widget class="QWidget" name="formLayoutWidget_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>0</y>
+       <width>361</width>
+       <height>231</height>
+      </rect>
+     </property>
+     <layout class="QFormLayout" name="formLayout_2">
+      <item row="0" column="0">
+       <widget class="QLabel" name="areaCodeLabel_2">
+        <property name="text">
+         <string>Area Code</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="areaCodeLineEdit_2"/>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="wBCodeLabel_2">
+        <property name="text">
+         <string>WB Code</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLineEdit" name="wBCodeLineEdit_2"/>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="pNameLabel_2">
+        <property name="text">
+         <string>PName</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QLineEdit" name="pNameLineEdit_2"/>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="pInfLabel_2">
+        <property name="text">
+         <string>PInf</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QLineEdit" name="pInfLineEdit_2"/>
+      </item>
+      <item row="5" column="0">
+       <widget class="QLabel" name="paddLabel_2">
+        <property name="text">
+         <string>Padd</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1">
+       <widget class="QLineEdit" name="paddLineEdit_2"/>
+      </item>
+      <item row="1" column="1">
+       <widget class="QPushButton" name="get_button">
+        <property name="text">
+         <string>Get</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="1">
+       <widget class="QPushButton" name="update_button">
+        <property name="text">
+         <string>Update</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="insert">
+    <attribute name="title">
+     <string>Insert</string>
+    </attribute>
+    <widget class="QWidget" name="formLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>361</width>
+       <height>231</height>
+      </rect>
+     </property>
+     <layout class="QFormLayout" name="formLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="areaCodeLabel">
+        <property name="text">
+         <string>Area Code</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="areaCodeLineEdit"/>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="wBCodeLabel">
+        <property name="text">
+         <string>WB Code</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="wBCodeLineEdit"/>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="pNameLabel">
+        <property name="text">
+         <string>PName</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLineEdit" name="pNameLineEdit"/>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="pInfLabel">
+        <property name="text">
+         <string>PInf</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QLineEdit" name="pInfLineEdit"/>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="paddLabel">
+        <property name="text">
+         <string>Padd</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QLineEdit" name="paddLineEdit"/>
+      </item>
+      <item row="5" column="1">
+       <widget class="QPushButton" name="insert_button">
+        <property name="text">
+         <string>Insert</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

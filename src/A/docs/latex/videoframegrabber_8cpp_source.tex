@@ -1,0 +1,160 @@
+\hypertarget{videoframegrabber_8cpp_source}{}\doxysection{videoframegrabber.\+cpp}
+\label{videoframegrabber_8cpp_source}\index{src/modules/CctvManager/videoframegrabber.cpp@{src/modules/CctvManager/videoframegrabber.cpp}}
+\mbox{\hyperlink{videoframegrabber_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{videoframegrabber_8h}{VideoFrameGrabber.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <QtWidgets>}}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <qabstractvideosurface.h>}}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <qvideosurfaceformat.h>}}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00007}\mbox{\hyperlink{class_video_frame_grabber_a0f0e3761b30ef42ab25844415343800c}{00007}}\ \mbox{\hyperlink{class_video_frame_grabber_a0f0e3761b30ef42ab25844415343800c}{VideoFrameGrabber::VideoFrameGrabber}}(QWidget\ *widget,\ QObject\ *parent)}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00008}00008\ \ \ \ \ :\ QAbstractVideoSurface(parent)}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00009}00009\ \ \ \ \ ,\ widget(widget)}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00010}00010\ \ \ \ \ ,\ imageFormat(QImage::Format\_Invalid)}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00012}00012\ \}}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00014}\mbox{\hyperlink{class_video_frame_grabber_a6b016d2c82bbb82361e6e64e820a86ff}{00014}}\ QList<QVideoFrame::PixelFormat>\ \mbox{\hyperlink{class_video_frame_grabber_a6b016d2c82bbb82361e6e64e820a86ff}{VideoFrameGrabber::supportedPixelFormats}}(QAbstractVideoBuffer::HandleType\ handleType)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00015}00015\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00016}00016\ \ \ \ \ Q\_UNUSED(handleType);}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00017}00017\ \ \ \ \ \textcolor{keywordflow}{return}\ QList<QVideoFrame::PixelFormat>()}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ <<\ QVideoFrame::Format\_ARGB32}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ <<\ QVideoFrame::Format\_ARGB32\_Premultiplied}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ <<\ QVideoFrame::Format\_RGB32}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ <<\ QVideoFrame::Format\_RGB24}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ <<\ QVideoFrame::Format\_RGB565}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ <<\ QVideoFrame::Format\_RGB555}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ <<\ QVideoFrame::Format\_ARGB8565\_Premultiplied}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ <<\ QVideoFrame::Format\_BGRA32}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ <<\ QVideoFrame::Format\_BGRA32\_Premultiplied}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ <<\ QVideoFrame::Format\_BGR32}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ <<\ QVideoFrame::Format\_BGR24}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ <<\ QVideoFrame::Format\_BGR565}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ <<\ QVideoFrame::Format\_BGR555}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ <<\ QVideoFrame::Format\_BGRA5658\_Premultiplied}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ <<\ QVideoFrame::Format\_AYUV444}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ <<\ QVideoFrame::Format\_AYUV444\_Premultiplied}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ <<\ QVideoFrame::Format\_YUV444}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ <<\ QVideoFrame::Format\_YUV420P}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ <<\ QVideoFrame::Format\_YV12}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ <<\ QVideoFrame::Format\_UYVY}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ <<\ QVideoFrame::Format\_YUYV}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ <<\ QVideoFrame::Format\_NV12}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ <<\ QVideoFrame::Format\_NV21}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ <<\ QVideoFrame::Format\_IMC1}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ <<\ QVideoFrame::Format\_IMC2}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ <<\ QVideoFrame::Format\_IMC3}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ <<\ QVideoFrame::Format\_IMC4}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ <<\ QVideoFrame::Format\_Y8}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ <<\ QVideoFrame::Format\_Y16}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ <<\ QVideoFrame::Format\_Jpeg}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ <<\ QVideoFrame::Format\_CameraRaw}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ <<\ QVideoFrame::Format\_AdobeDng;}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00050}00050\ \}}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00052}\mbox{\hyperlink{class_video_frame_grabber_ab127a8e814b7e7048ba986423072068c}{00052}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_video_frame_grabber_ab127a8e814b7e7048ba986423072068c}{VideoFrameGrabber::isFormatSupported}}(\textcolor{keyword}{const}\ QVideoSurfaceFormat\ \&format)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00053}00053\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00054}00054\ \ \ \ \ \textcolor{keyword}{const}\ QImage::Format\ imageFormat\ =\ QVideoFrame::imageFormatFromPixelFormat(format.pixelFormat());}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00055}00055\ \ \ \ \ \textcolor{keyword}{const}\ QSize\ size\ =\ format.frameSize();}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00057}00057\ \ \ \ \ \textcolor{keywordflow}{return}\ imageFormat\ !=\ QImage::Format\_Invalid}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \&\&\ !size.isEmpty()}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \&\&\ format.handleType()\ ==\ QAbstractVideoBuffer::NoHandle;}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00060}00060\ \}}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00062}\mbox{\hyperlink{class_video_frame_grabber_ab6e578e742f951855412a832812dc31d}{00062}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_video_frame_grabber_ab6e578e742f951855412a832812dc31d}{VideoFrameGrabber::start}}(\textcolor{keyword}{const}\ QVideoSurfaceFormat\ \&format)}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00063}00063\ \{}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00064}00064\ \ \ \ \ \textcolor{keyword}{const}\ QImage::Format\ imageFormat\ =\ QVideoFrame::imageFormatFromPixelFormat(format.pixelFormat());}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00065}00065\ \ \ \ \ \textcolor{keyword}{const}\ QSize\ size\ =\ format.frameSize();}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00067}00067\ \ \ \ \ \textcolor{keywordflow}{if}\ (imageFormat\ !=\ QImage::Format\_Invalid\ \&\&\ !size.isEmpty())\ \{}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ this-\/>imageFormat\ =\ imageFormat;}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ imageSize\ =\ size;}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ sourceRect\ =\ format.viewport();}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ QAbstractVideoSurface::start(format);}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ widget-\/>updateGeometry();}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_video_frame_grabber_ada70b4efcf14879404955b0f45cca367}{updateVideoRect}}();}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00078}00078\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00080}00080\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00081}00081\ \}}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00083}\mbox{\hyperlink{class_video_frame_grabber_a4938562796cd30423c17e51cad27bef6}{00083}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_video_frame_grabber_a4938562796cd30423c17e51cad27bef6}{VideoFrameGrabber::stop}}()}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00084}00084\ \{}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00085}00085\ \ \ \ \ currentFrame\ =\ QVideoFrame();}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00086}00086\ \ \ \ \ targetRect\ =\ QRect();}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00088}00088\ \ \ \ \ QAbstractVideoSurface::stop();}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00090}00090\ \ \ \ \ widget-\/>update();}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00091}00091\ \}}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00093}\mbox{\hyperlink{class_video_frame_grabber_af040a10a6a9a6c75627b0027eb8724eb}{00093}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_video_frame_grabber_af040a10a6a9a6c75627b0027eb8724eb}{VideoFrameGrabber::present}}(\textcolor{keyword}{const}\ QVideoFrame\ \&frame)}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00094}00094\ \{}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00095}00095\ \ \ \ \ \textcolor{keywordflow}{if}\ (frame.isValid())}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00096}00096\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ QVideoFrame\ cloneFrame(frame);}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ cloneFrame.map(QAbstractVideoBuffer::ReadOnly);}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QImage\ image(cloneFrame.bits(),}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cloneFrame.width(),}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cloneFrame.height(),}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ QVideoFrame::imageFormatFromPixelFormat(cloneFrame\ .pixelFormat()));}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ emit\ \mbox{\hyperlink{class_video_frame_grabber_a0e7b7827d8c9f31ef96309c6f696434e}{frameAvailable}}(image);\ \textcolor{comment}{//\ this\ is\ very\ important}}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ cloneFrame.unmap();}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00105}00105\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00107}00107\ \ \ \ \ \textcolor{keywordflow}{if}\ (surfaceFormat().pixelFormat()\ !=\ frame.pixelFormat()}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ ||\ surfaceFormat().frameSize()\ !=\ frame.size())\ \{}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ setError(IncorrectFormatError);}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_video_frame_grabber_a4938562796cd30423c17e51cad27bef6}{stop}}();}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00113}00113\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ currentFrame\ =\ frame;}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ widget-\/>repaint(targetRect);}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00119}00119\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00120}00120\ \}}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00122}\mbox{\hyperlink{class_video_frame_grabber_ada70b4efcf14879404955b0f45cca367}{00122}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_video_frame_grabber_ada70b4efcf14879404955b0f45cca367}{VideoFrameGrabber::updateVideoRect}}()}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00123}00123\ \{}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00124}00124\ \ \ \ \ QSize\ size\ =\ surfaceFormat().sizeHint();}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00125}00125\ \ \ \ \ size.scale(widget-\/>size().boundedTo(size),\ Qt::KeepAspectRatio);}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00127}00127\ \ \ \ \ targetRect\ =\ QRect(QPoint(0,\ 0),\ size);}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00128}00128\ \ \ \ \ targetRect.moveCenter(widget-\/>rect().center());}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00129}00129\ \}}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00131}\mbox{\hyperlink{class_video_frame_grabber_ab80e29a6c173c1a2554d1c842d72241a}{00131}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_video_frame_grabber_ab80e29a6c173c1a2554d1c842d72241a}{VideoFrameGrabber::paint}}(QPainter\ *painter)}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00132}00132\ \{}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00133}00133\ \ \ \ \ \textcolor{keywordflow}{if}\ (currentFrame.map(QAbstractVideoBuffer::ReadOnly))\ \{}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QTransform\ oldTransform\ =\ painter-\/>transform();}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00135}00135\ }
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (surfaceFormat().scanLineDirection()\ ==\ QVideoSurfaceFormat::BottomToTop)\ \{}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ painter-\/>scale(1,\ -\/1);}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ painter-\/>translate(0,\ -\/widget-\/>height());}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00140}00140\ }
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ QImage\ image(}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentFrame.bits(),}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentFrame.width(),}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentFrame.height(),}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentFrame.bytesPerLine(),}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ imageFormat);}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ painter-\/>drawImage(targetRect,\ image,\ sourceRect);}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00149}00149\ }
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ painter-\/>setTransform(oldTransform);}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ currentFrame.unmap();}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00153}00153\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{videoframegrabber_8cpp_source_l00154}00154\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,68 @@
+\hypertarget{vehicleactions_8cpp_source}{}\doxysection{vehicleactions.\+cpp}
+\label{vehicleactions_8cpp_source}\index{src/modules/RfidManager/vehicleactions.cpp@{src/modules/RfidManager/vehicleactions.cpp}}
+\mbox{\hyperlink{vehicleactions_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vehicleactions_8h}{vehicleactions.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}ui\_vehicleactions.h"{}}}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{rfidmanager_8h}{rfidmanager.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mainwindow_8h}{mainwindow.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{rfidnew_8h}{rfidnew.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}ui\_rfidnew.h"{}}}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{rfidupdate_8h}{rfidupdate.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}ui\_rfidupdate.h"{}}}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00010}\mbox{\hyperlink{class_vehicle_actions_a950cbdef68e29d8ccc05c02cc99a6175}{00010}}\ \mbox{\hyperlink{class_vehicle_actions_a950cbdef68e29d8ccc05c02cc99a6175}{VehicleActions::VehicleActions}}(\mbox{\hyperlink{class_rfid_manager}{RfidManager}}\ *ancestor)\ :}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00011}00011\ \ \ \ \ ui(new\ \mbox{\hyperlink{namespace_ui}{Ui}}::\mbox{\hyperlink{class_vehicle_actions}{VehicleActions}})}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00012}00012\ \{}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00013}00013\ \ \ \ \ this-\/>parent\ =\ ancestor;}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00014}00014\ \ \ \ \ ui-\/>setupUi(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00015}00015\ \ \ \ \ ui-\/>issuenewRfid-\/>setVisible(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00016}00016\ \ \ \ \ ui-\/>changeRfid-\/>setVisible(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00017}00017\ \ \ \ \ ui-\/>resissueRfid-\/>setVisible(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00018}00018\ \ \ \ \ connect(ui-\/>get\_actions,\ SIGNAL(clicked()),\ \textcolor{keyword}{this},\ SLOT(onpushGetActionsClicked()));}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00019}00019\ \ \ \ \ connect(ui-\/>issuenewRfid,\ SIGNAL(clicked()),\ \textcolor{keyword}{this},\ SLOT(onpushIssueNewClicked()));}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00020}00020\ \ \ \ \ connect(ui-\/>changeRfid,\ SIGNAL(clicked()),\ \textcolor{keyword}{this},\ SLOT(onpushChangeRfidClicked()));}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00021}00021\ \ \ \ \ connect(ui-\/>resissueRfid,\ SIGNAL(clicked()),\ \textcolor{keyword}{this},\ SLOT(onpushReissueRfidClicked()));}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00023}00023\ \}}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00025}00025\ \textcolor{keywordtype}{void}\ VehicleActions::onpushIssueNewClicked()\{}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00026}00026\ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}Issue\ New\ Clicked()!!"{}};}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00027}00027\ \ \ \ \ parent-\/>newform-\/>ClearLineEdits();}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00028}00028\ \ \ \ \ parent-\/>newform-\/>ui-\/>vehicleNoLineEdit\_2-\/>setText(ui-\/>vehicleNumberLineEdit-\/>text());}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00029}00029\ \ \ \ \ parent-\/>newform-\/>exec();}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00030}00030\ \}}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00032}00032\ \textcolor{keywordtype}{void}\ VehicleActions::onpushChangeRfidClicked()\{}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00033}00033\ \ \ \ \ qDebug()\ <<\ \ \textcolor{stringliteral}{"{}Change\ Rfid\ Clicked()"{}};}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00034}00034\ \ \ \ \ parent-\/>updateform-\/>\mbox{\hyperlink{class_rfid_update_a63bf937f05cda222edbe11b7384245fb}{ClearLineEdits}}();}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00035}00035\ \ \ \ \ parent-\/>updateform-\/>ui-\/>vehicleNoLineEdit\_2-\/>setText(ui-\/>vehicleNumberLineEdit-\/>text());}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00036}00036\ \ \ \ \ parent-\/>updateform-\/>exec();}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00037}00037\ \}}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00039}00039\ \textcolor{keywordtype}{void}\ VehicleActions::onpushReissueRfidClicked()\{}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00040}00040\ \ \ \ \ qDebug()<<\textcolor{stringliteral}{"{}\ Reissue\ Rfid\ Clicked()"{}};}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00042}00042\ \}}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00044}\mbox{\hyperlink{class_vehicle_actions_abe2f7fd81c722351f7aa6543f6d8ff92}{00044}}\ \mbox{\hyperlink{class_vehicle_actions_abe2f7fd81c722351f7aa6543f6d8ff92}{VehicleActions::\string~VehicleActions}}()}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00045}00045\ \{}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00046}00046\ \ \ \ \ \textcolor{keyword}{delete}\ ui;}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00047}00047\ \}}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00049}00049\ \textcolor{keywordtype}{void}\ VehicleActions::onpushGetActionsClicked()\{}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00050}00050\ \ \ \ \ qDebug()\ <<\ \textcolor{stringliteral}{"{}Get\ button\ clicked!!\ WITH"{}}\ <<\ ui-\/>vehicleNumberLineEdit-\/>text();}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00051}00051\ \ \ \ \ \textcolor{keywordtype}{int}\ a1\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00052}00052\ \ \ \ \ a1\ =\ parent-\/>main-\/>\mbox{\hyperlink{class_main_window_a7d04f9d754c4efb98172dc68db9dfb2b}{db}}.\mbox{\hyperlink{class_psql_manager_ad764d1dc1da255abca489920f40499a8}{getValidityStatus}}(a1,\ ui-\/>vehicleNumberLineEdit-\/>text());}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00053}00053\ \ \ \ \ \textcolor{keywordflow}{if}(a1\ ==\ -\/1)\{}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ ui-\/>issuenewRfid-\/>setVisible(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00055}00055\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(a1\ ==\ 0)\{}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ ui-\/>changeRfid-\/>setVisible(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ ui-\/>resissueRfid-\/>setVisible(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00058}00058\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00059}00059\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(a1\ >\ 0)\{}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ ui-\/>changeRfid-\/>setVisible(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00061}00061\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{vehicleactions_8cpp_source_l00062}00062\ \}}
+
+\end{DoxyCode}
