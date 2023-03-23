@@ -97,6 +97,10 @@ jobs:
         with:
           ref: repository
 
+      - name: test
+        run: |
+          ls .
+
       - name: Download new folder artifact
         uses: actions/download-artifact@v2
         with:
