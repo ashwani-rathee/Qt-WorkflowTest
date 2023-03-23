@@ -78,7 +78,23 @@ jobs:
               ${{ env.SOURCE_DIR }}/utils/windeployqt.exe A.exe --pdb --release --compiler-runtime
               ls .
               xcopy /s ${{ runner.temp }}\build\release\* ${{ env.SOURCE_DIR }}\packages\A\data\
-      
+
+      - name: Build Online Installer
+        run: |
+          utils/binarycreator.exe --online-only -c config/config.xml -p packages installer.exe
+          xcopy /s ${{ runner.temp }}\installer.exe ${{ env.SOURCE_DIR }}\installer.exe
+
+      - name: Zip build
+        working-directory: ${{ runner.temp }}
+        run:  |
+              7z a WeighPro-OnlineInstaller.zip ${{ env.SOURCE_DIR }}\installer.exe -r
+
+      - name: Save Online Installer
+        uses: actions/upload-artifact@master
+        with:
+          name: ${{ env.INSTALLER }}
+          path: ${{ runner.temp }}\${{ env.INSTALLER }}
+          
       - name: Print commit message
         run: | 
           echo "The commit message is: ${{ github.event.head_commit.message }}"
@@ -119,30 +135,5 @@ jobs:
             git commit -m "Add Code"
             git push origin repository
 
-      # - name: Commit changes of repository
-      #   run: |
-      #     git config --global user.email "actions@github.com"
-      #     git config --global user.name "GitHub Actions"
-      #     ls .
-      #     git add ${{ env.SOURCE_DIR }}\repository\
-      #     git commit -m "Updating Repository"
 
-      # - name: Push changes to repository branchs
-      #   run: |
-      #     git subtree push --prefix ${{ env.SOURCE_DIR }}\repository\ origin repository
 
-      - name: Build Online Installer
-        run: |
-          utils/binarycreator.exe --online-only -c config/config.xml -p packages installer.exe
-          xcopy /s ${{ runner.temp }}\installer.exe ${{ env.SOURCE_DIR }}\installer.exe
-
-      - name: Zip build
-        working-directory: ${{ runner.temp }}
-        run:  |
-              7z a WeighPro-OnlineInstaller.zip ${{ env.SOURCE_DIR }}\installer.exe -r
-
-      - name: Save Online Installer
-        uses: actions/upload-artifact@master
-        with:
-          name: ${{ env.INSTALLER }}
-          path: ${{ runner.temp }}\${{ env.INSTALLER }}
