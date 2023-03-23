@@ -81,7 +81,8 @@ jobs:
 
       - name: Build Online Installer
         run: |
-          pwd 
+          ls .
+          ls utils/
           cd ${{ env.SOURCE_DIR }}
           utils/binarycreator.exe --online-only -c config/config.xml -p packages installer.exe
           xcopy /s ${{ runner.temp }}\installer.exe ${{ env.SOURCE_DIR }}\installer.exe
