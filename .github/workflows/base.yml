@@ -10,6 +10,7 @@ env:
   QT_VERSION:   5.15.2
   ARTIFACT:     final-build.zip
   INSTALLER:    WeighPro-OnlineInstaller.zip
+  REPO: repository-${{ github.event.head_commit.message }}
 
 jobs:
   build-package-qt:
@@ -78,20 +79,53 @@ jobs:
               ls .
               xcopy /s ${{ runner.temp }}\build\release\* ${{ env.SOURCE_DIR }}\packages\A\data\
       
+      - name: Print commit message
+        run: echo "The commit message is: ${{ github.event.head_commit.message }}"
+
       - name: Build online repository
-        run: utils/repogen.exe -p packages repository
+        run: utils/repogen.exe -p packages ${{ env.REPO }}
 
-      - name: Commit changes of repository
-        run: |
-          git config --global user.email "actions@github.com"
-          git config --global user.name "GitHub Actions"
-          ls .
-          git add ${{ env.SOURCE_DIR }}\repository\
-          git commit -m "Updating Repository"
+      - name: Copy new folder to other branch
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ env.REPO }}
+          path: ${{ env.REPO }}
 
-      - name: Push changes to repository branchs
-        run: |
-          git subtree push --prefix ${{ env.SOURCE_DIR }}\repository\ origin repository
+      - name: Name of checkout folder
+      - uses: actions/checkout@v2
+        with:
+          ref: repository
+
+      - name: Download new folder artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: ${{ env.REPO }}
+          path: ${{ env.REPO }}
+
+      - name: Add new folder to other branch
+        run: git add ${{ env.REPO }}/
+
+      - name: Commit changes to other branch
+        uses: actions/github-script@v4
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            git config --global user.email "actions@github.com"
+            git config --global user.name "GitHub Actions"
+            git commit -m "Add ${{ env.REPO }}"
+            git push origin repository
+
+      # - name: Commit changes of repository
+      #   run: |
+      #     git config --global user.email "actions@github.com"
+      #     git config --global user.name "GitHub Actions"
+      #     ls .
+      #     git add ${{ env.SOURCE_DIR }}\repository\
+      #     git commit -m "Updating Repository"
+
+      # - name: Push changes to repository branchs
+      #   run: |
+      #     git subtree push --prefix ${{ env.SOURCE_DIR }}\repository\ origin repository
 
       - name: Build Online Installer
         run: |
