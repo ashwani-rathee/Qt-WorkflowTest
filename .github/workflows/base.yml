@@ -93,7 +93,7 @@ jobs:
           path: ${{ env.REPO }}
 
       - name: Name of checkout folder
-      - uses: actions/checkout@v2
+        uses: actions/checkout@v2
         with:
           ref: repository
 
