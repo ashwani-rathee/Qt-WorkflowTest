@@ -79,7 +79,7 @@ jobs:
               ls .
               xcopy /s ${{ runner.temp }}\build\release\* ${{ env.SOURCE_DIR }}\packages\A\data\
               ls ${{ env.SOURCE_DIR }}\packages\A\data\
-              ls ${{ env.SOURCE_DIR }}\packages\A\lib\
+              ls ${{ env.SOURCE_DIR }}\src\A\lib\
               xcopy /s ${{ env.SOURCE_DIR }}\src\A\lib\* ${{ env.SOURCE_DIR }}\packages\A\data\
 
       - name: Build Online Installer
