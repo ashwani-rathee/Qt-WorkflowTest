@@ -1,0 +1,29 @@
+<Updates>
+ <ApplicationName>{AnyApplication}</ApplicationName>
+ <ApplicationVersion>1.0.0</ApplicationVersion>
+ <Checksum>true</Checksum>
+ <PackageUpdate>
+  <Name>A</Name>
+  <DisplayName>A</DisplayName>
+  <Description>Example component A</Description>
+  <Version>1.0.2-1</Version>
+  <ReleaseDate>2015-01-01</ReleaseDate>
+  <Default>true</Default>
+  <UpdateFile OS="Any" CompressedSize="20327012" UncompressedSize="38838639"/>
+  <DownloadableArchives>iconengines.7z,imageformats.7z,platforms.7z,styles.7z,content.7z</DownloadableArchives>
+  <SHA1>8eda38945909a46b3054c027ece5034490095c87</SHA1>
+ </PackageUpdate>
+ <PackageUpdate>
+  <Name>B</Name>
+  <DisplayName>B</DisplayName>
+  <Description>Example component B</Description>
+  <Version>1.0.0-1</Version>
+  <ReleaseDate>2015-01-01</ReleaseDate>
+  <Default>true</Default>
+  <UpdateFile OS="Any" CompressedSize="215" UncompressedSize="74"/>
+  <DownloadableArchives>content.7z</DownloadableArchives>
+  <SHA1>fb58e1d80a501923b5aa79848a31663eb53332d5</SHA1>
+ </PackageUpdate>
+ <SHA1>3345cff653efbb4bb5cb93fe155ca0874cc5d69d</SHA1>
+ <MetadataName>2023-03-23-0735_meta.7z</MetadataName>
+</Updates>
