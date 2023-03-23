@@ -80,7 +80,8 @@ jobs:
               xcopy /s ${{ runner.temp }}\build\release\* ${{ env.SOURCE_DIR }}\packages\A\data\
       
       - name: Print commit message
-        run: echo "The commit message is: ${{ github.event.head_commit.message }}"
+        run: | 
+          echo "The commit message is: ${{ github.event.head_commit.message }}"
 
       - name: Build online repository
         run: utils/repogen.exe -p packages ${{ env.REPO }}
